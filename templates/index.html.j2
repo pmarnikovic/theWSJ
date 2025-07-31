@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-NEWS Report</title>
+    <style>
+        body { font-family: monospace; background-color: #f0f0f0; color: #333; }
+      .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 15px; }
+        a { text-decoration: none; color: #0000ff; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI-NEWS REPORT</h1>
+        <ul>
+            {% for item in news_items %}
+            <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
