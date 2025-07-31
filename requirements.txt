@@ -1,1 +1,4 @@
 Jinja2
+feedparser
+google-generativeai
+arxiv
