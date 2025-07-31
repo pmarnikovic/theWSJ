@@ -16,7 +16,13 @@ except KeyError:
     exit()
 
 # List of RSS feeds to parse for AI news
-RSS_FEEDS =
+RSS_FEEDS = [
+    "http://www.theverge.com/rss/group/ai-artificial-intelligence/index.xml",
+    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "https://www.wired.com/feed/category/business/artificial-intelligence/latest/rss",
+    "https://news.mit.edu/topic/artificial-intelligence2-rss.xml",
+    "https://ai.googleblog.com/feeds/posts/default"
+]
 
 MAX_ARTICLES_PER_SOURCE = 3 # Max articles to process from each source
 MAX_TOTAL_ARTICLES = 15     # Max total articles for the final webpage
@@ -89,6 +95,7 @@ if __name__ == "__main__":
 
     # 2. Generate headlines and build the final list
     final_news_items =
+    # Limit the total number of articles to process
     for article in all_articles:
         print(f"Generating headline for: {article['title']}")
         headline = generate_drudge_headline(article['title'])
