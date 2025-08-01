@@ -98,12 +98,12 @@ def get_articles_from_arxiv():
 
 def get_headline_and_score(title):
     """Uses a single Gemini API call to get both a headline and a sensationalism score."""
-    fallback_headline = title.upper().strip() + "..."
+    fallback_headline = title.strip()
     prompt = f"""
     Analyze the following article title. First, on a scale of 1 to 10, rate how provocative and sensational it is. Higher scores for titles that evoke strong emotions, controversy, or breakthroughs.
-    Second, rewrite the title as an irresistible, punchy, and sensational headline in all-caps, in the style of Matt Drudge.
+    Second, rewrite the title as an irresistible, punchy, and sensational headline in sentence case, like normal grammar: capitalize the first letter and proper names, but keep the rest lowercase.
 
-    Respond with the score and the headline separated by a pipe character (|). For example: 8|SCIENTISTS UNLEASH 'CHILD' AI... FEARS GROW...
+    Respond with the score and the headline separated by a pipe character (|). For example: 8|Scientists unleash 'child' AI... fears grow...
 
     Article Title: "{title}"
     """
