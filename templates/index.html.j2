@@ -3,25 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-NEWS Report</title>
+    <title>AI-Drudge Report</title>
     <style>
-        body { font-family: monospace; background-color: #f0f0f0; color: #333; }
-      .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { text-align: center; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 15px; }
+        body { font-family: monospace; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; }
+       .container { max-width: 960px; margin: 0 auto; padding: 10px; }
         a { text-decoration: none; color: #0000ff; }
         a:hover { text-decoration: underline; }
+        ul { list-style-type: none; padding: 0; margin: 0; }
+        li { margin-bottom: 12px; }
+       .main-headline-container { text-align: center; margin-bottom: 20px; }
+       .main-headline-container h1 { font-size: 2em; margin: 0; }
+       .columns-container { display: flex; justify-content: space-between; }
+       .column { width: 32%; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>AI-NEWS REPORT</h1>
-        <ul>
-            {% for item in news_items %}
-            <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
-            {% endfor %}
-        </ul>
+        {% if main_headline %}
+        <div class="main-headline-container">
+            <a href="{{ main_headline.url }}">
+                <h1>{{ main_headline.headline }}</h1>
+            </a>
+        </div>
+        {% endif %}
+
+        <div class="columns-container">
+            <div class="column">
+                <ul>
+                    {% for item in column1 %}
+                    <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    {% for item in column2 %}
+                    <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    {% for item in column3 %}
+                    <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
