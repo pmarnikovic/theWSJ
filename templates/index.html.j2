@@ -15,7 +15,7 @@
       "@type": "NewsArticle",
       "headline": "{{ main_headline.headline }}",
       "image": "{{ main_headline.image_url or 'https://your-default-image-url.com/ai-placeholder.jpg' }}",
-      "datePublished": "{{ main_headline.published | default(now('utc'), true) | strftime('%Y-%m-%dT%H:%M:%SZ') }}",
+      "datePublished": "{{ main_headline.published }}",
       "author": {
         "@type": "Organization",
         "name": "AI Report"
