@@ -13,9 +13,9 @@
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "Anthropic studied what gives an AI system its ‘personality’ — and what makes it ‘evil’",
+      "headline": "Google bets on STAN, an Indian social gaming platform",
       "image": "https://your-default-image-url.com/ai-placeholder.jpg",
-      "datePublished": "2025-08-01T16:58:16+00:00",
+      "datePublished": "2025-08-01T17:05:45+00:00",
       "author": {
         "@type": "Organization",
         "name": "Exhaustive AI"
@@ -62,18 +62,20 @@
             padding: 40px; /* Increased padding for more space */
             text-align: center;
             line-height: 1.6; /* Better line spacing */
+            font-size: 14px; /* Smaller base text size */
         }
         h1 {
-            font-size: 60px; /* Larger title */
+            font-size: 48px; /* Reduced title size from 60px */
             font-weight: bold;
             margin: 0 0 40px; /* More bottom margin */
             color: var(--headline-color);
         }
         .main-headline {
-            font-size: 48px; /* Even larger main headline */
+            font-size: 36px; /* Reduced main headline size from 48px */
             font-weight: bold;
             margin: 40px 0; /* Increased spacing */
             color: var(--headline-color);
+            text-decoration: underline; /* Underline */
         }
         .main-headline a {
             color: var(--link-color);
@@ -105,10 +107,11 @@
             border-right: none; /* No line after the last column */
         }
         .headline {
-            font-size: 24px; /* Larger headline font */
+            font-size: 20px; /* Reduced headline size from 24px */
             font-weight: bold;
             margin: 20px 0; /* More vertical spacing between headlines */
             color: var(--headline-color);
+            text-decoration: underline; /* Underline */
         }
         .headline a {
             color: var(--link-color);
@@ -130,7 +133,7 @@
             text-align: left;
         }
         footer h2 {
-            font-size: 28px;
+            font-size: 24px; /* Reduced from 28px */
             margin-bottom: 20px;
             color: var(--headline-color);
         }
@@ -142,6 +145,7 @@
         }
         footer li {
             margin-bottom: 10px;
+            font-size: 14px; /* Smaller footer text */
         }
         footer a {
             color: var(--link-color);
@@ -173,6 +177,12 @@
             .main-image, .headline img {
                 max-width: 100%; /* Ensure images don't overflow */
             }
+            body, footer li {
+                font-size: 12px; /* Even smaller base text on mobile */
+            }
+            footer h2 {
+                font-size: 20px;
+            }
         }
         @media (max-width: 480px) { /* Extra tweaks for very small phones */
             body {
@@ -189,13 +199,18 @@
     
     
     <div class="main-headline">
-        <a href="https://www.theverge.com/anthropic/717551/anthropic-research-fellows-ai-personality-claude-sycophantic-evil">Anthropic studied what gives an AI system its ‘personality’ — and what makes it ‘evil’</a>
+        <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/">Google bets on STAN, an Indian social gaming platform</a>
     </div>
     
     
     
     <div class="columns">
         <div class="column">
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/anthropic/717551/anthropic-research-fellows-ai-personality-claude-sycophantic-evil">Anthropic studied what gives an AI system its ‘personality’ — and what makes it ‘evil’</a>
+                
+            </div>
             
             <div class="headline">
                 <a href="https://techcrunch.com/podcast/from-metas-massive-offers-to-anthropics-massive-valuation-does-ai-have-a-ceiling/">From Meta’s massive offers to Anthropic’s massive valuation, does AI have a ceiling?</a>
@@ -232,15 +247,15 @@
                 
             </div>
             
+        </div>
+        <div class="column">
+            
             <div class="headline">
                 <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/mosquito-up-close-blue-cloth.jpeg?auto=webp" alt="Article image for These Genetically Engineered Mosquitoes Could Wipe Out Malaria" loading="lazy">
                 
             </div>
-            
-        </div>
-        <div class="column">
             
             <div class="headline">
                 <a href="https://www.analyticsvidhya.com/blog/2025/08/canva-ai-features/">5 Canva AI Features That Tech Professionals Must Know</a>
@@ -277,13 +292,13 @@
                 
             </div>
             
+        </div>
+        <div class="column">
+            
             <div class="headline">
                 <a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook">Tim Cook says Apple is ‘open to’ AI acquisitions</a>
                 
             </div>
-            
-        </div>
-        <div class="column">
             
             <div class="headline">
                 <a href="http://arxiv.org/abs/2507.23784v1">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
@@ -323,11 +338,6 @@
                 <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/">Where Is AI on the Enshittification Curve?</a>
                 
                 <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for Where Is AI on the Enshittification Curve?" loading="lazy">
-                
-            </div>
-            
-            <div class="headline">
-                <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/">Google's big india bet: a social gaming giant is born</a>
                 
             </div>
             
