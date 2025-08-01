@@ -52,6 +52,18 @@ def get_articles_from_rss():
             for entry in feed.entries[:MAX_ARTICLES_PER_SOURCE]:
                 if entry.get('title') and entry.get('link'):
                     article = {'title': entry.title, 'url': entry.link}
+                    # Extract image URL if available
+                    image_url = None
+                    if 'media_content' in entry and entry.media_content:
+                        image_url = entry.media_content[0].get('url')
+                    elif 'media_thumbnail' in entry and entry.media_thumbnail:
+                        image_url = entry.media_thumbnail[0].get('url')
+                    elif 'enclosures' in entry and entry.enclosures:
+                        for enc in entry.enclosures:
+                            if 'image' in enc.get('type', ''):
+                                image_url = enc.get('href')
+                                break
+                    article['image_url'] = image_url
                     if 'published_parsed' in entry and entry.published_parsed:
                         dt = datetime.fromtimestamp(time.mktime(entry.published_parsed))
                         article['published'] = dt.replace(tzinfo=timezone.utc)
@@ -73,7 +85,13 @@ def get_articles_from_arxiv():
         )
         client = arxiv.Client()
         for result in client.results(search):
-            articles.append({'title': result.title, 'url': result.entry_id, 'published': result.published})
+            # For arXiv, no direct image; use a placeholder or None
+            articles.append({
+                'title': result.title,
+                'url': result.entry_id,
+                'published': result.published,
+                'image_url': None  # Or a default image URL if desired
+            })
     except Exception as e:
         print(f"Error fetching from arXiv: {e}")
     return articles
@@ -130,7 +148,8 @@ if __name__ == "__main__":
         processed_articles.append({
             'headline': headline,
             'url': article['url'],
-            'score': score
+            'score': score,
+            'image_url': article.get('image_url')
         })
         print(f"  -> Score: {score}, Headline: {headline}")
 
