@@ -234,13 +234,11 @@ if __name__ == "__main__":
         h1 {
             font-size: 60px;  /* Larger title */
             font-weight: bold;
-            text-transform: uppercase;
             margin: 0 0 40px;  /* More bottom margin */
         }
         .main-headline {
             font-size: 48px;  /* Even larger main headline */
             font-weight: bold;
-            text-transform: uppercase;
             margin: 40px 0;  /* Increased spacing */
         }
         .main-headline a {
@@ -270,7 +268,6 @@ if __name__ == "__main__":
         .headline {
             font-size: 24px;  /* Larger headline font */
             font-weight: bold;
-            text-transform: uppercase;
             margin: 20px 0;  /* More vertical spacing between headlines */
         }
         .headline a {
