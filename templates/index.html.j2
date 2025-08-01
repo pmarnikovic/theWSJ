@@ -3,52 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhaustive AI</title>
+    <title>AI REPORT</title>
     <style>
-        body { font-family: monospace; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; }
-      .container { max-width: 960px; margin: 0 auto; padding: 10px; }
-        a { text-decoration: none; color: #0000ff; }
-        a:hover { text-decoration: underline; }
-        ul { list-style-type: none; padding: 0; margin: 0; }
-        li { margin-bottom: 12px; }
-      .main-headline-container { text-align: center; margin-bottom: 20px; }
-      .main-headline-container h1 { font-size: 2em; margin: 0; }
-      .columns-container { display: flex; justify-content: space-between; }
-      .column { width: 32%; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0 0 20px;
+        }
+        .main-headline {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+        .main-headline a {
+            color: #000;
+            text-decoration: none;
+        }
+        .main-headline a:hover {
+            text-decoration: underline;
+        }
+        .main-image {
+            max-width: 600px;
+            height: auto;
+            margin: 10px auto;
+            display: block;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            text-align: left;
+        }
+        .column {
+            width: 30%;
+            padding: 10px;
+        }
+        .headline {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+        .headline a {
+            color: #0000ff;  /* Blue links like Drudge */
+            text-decoration: none;
+        }
+        .headline a:hover {
+            text-decoration: underline;
+        }
+        .headline img {
+            max-width: 100%;
+            height: auto;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        {% if main_headline %}
-        <div class="main-headline-container">
-            <a href="{{ main_headline.url }}">
-                <h1>{{ main_headline.headline }}</h1>
-            </a>
+    <h1>AI REPORT</h1>
+    
+    {% if main_headline %}
+    <div class="main-headline">
+        <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
+    </div>
+    {% if main_headline.image_url %}
+    <img src="{{ main_headline.image_url }}" alt="Main article image" class="main-image">
+    {% endif %}
+    {% endif %}
+    
+    <div class="columns">
+        <div class="column">
+            {% for item in column1 %}
+            <div class="headline">
+                <a href="{{ item.url }}">{{ item.headline }}</a>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image">
+                {% endif %}
+            </div>
+            {% endfor %}
         </div>
-        {% endif %}
-
-        <div class="columns-container">
-            <div class="column">
-                <ul>
-                    {% for item in column1 %}
-                    <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
-                    {% endfor %}
-                </ul>
+        <div class="column">
+            {% for item in column2 %}
+            <div class="headline">
+                <a href="{{ item.url }}">{{ item.headline }}</a>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image">
+                {% endif %}
             </div>
-            <div class="column">
-                <ul>
-                    {% for item in column2 %}
-                    <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
-                    {% endfor %}
-                </ul>
+            {% endfor %}
+        </div>
+        <div class="column">
+            {% for item in column3 %}
+            <div class="headline">
+                <a href="{{ item.url }}">{{ item.headline }}</a>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image">
+                {% endif %}
             </div>
-            <div class="column">
-                <ul>
-                    {% for item in column3 %}
-                    <li><a href="{{ item.url }}">{{ item.headline }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </body>
