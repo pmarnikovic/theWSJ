@@ -7,282 +7,284 @@
     <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
     <title>Exhaustive AI</title>
     
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QVFJX51QK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5QVFJX51QK');
-</script>
-
-<!-- Add JSON-LD schema here -->
-{% if main_headline %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  "headline": "{{ main_headline.headline }}",
-  "image": "{{ main_headline.image_url or 'https://your-default-image-url.com/ai-placeholder.jpg' }}",
-  "datePublished": "{{ main_headline.published }}",
-  "author": {
-    "@type": "Organization",
-    "name": "Exhaustive AI"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Exhaustive AI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://your-logo-url.com/logo.png"
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QVFJX51QK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5QVFJX51QK');
+    </script>
+    
+    <!-- Add JSON-LD schema here -->
+    {% if main_headline %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{{ main_headline.headline }}",
+      "image": "{{ main_headline.image_url or 'https://your-default-image-url.com/ai-placeholder.jpg' }}",
+      "datePublished": "{{ main_headline.published }}",
+      "author": {
+        "@type": "Organization",
+        "name": "Exhaustive AI"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Exhaustive AI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://your-logo-url.com/logo.png"
+        }
+      }
     }
-  }
-}
-</script>
-{% endif %}
-
-<style>
-    :root {
-        --bg-color: #121212; /* Dark gray background default for better readability */
-        --text-color: #e0e0e0; /* Light gray text for contrast */
-        --link-color: #e0e0e0; /* Light grey links in dark mode */
-        --hover-color: #ffffff; /* White on hover */
-        --border-color: #333; /* Dark borders */
-        --headline-color: #e0e0e0; /* Very light grey headlines in dark mode */
-        --summary-color: #b3b3b3; /* Slightly darker grey for summaries */
-    }
-
-    /* Light mode override if user prefers it */
-    @media (prefers-color-scheme: light) {
+    </script>
+    {% endif %}
+    
+    <style>
         :root {
-            --bg-color: #fff;
-            --text-color: #000;
-            --link-color: #000;
-            --hover-color: #0000ff;
-            --border-color: #ccc;
-            --headline-color: #333; /* Dark grey in light mode for headlines */
-            --summary-color: #666; /* Medium grey for summaries in light mode */
+            --bg-color: #121212; /* Dark gray background default for better readability */
+            --text-color: #e0e0e0; /* Light gray text for contrast */
+            --link-color: #e0e0e0; /* Light grey links in dark mode */
+            --hover-color: #ffffff; /* White on hover */
+            --border-color: #333; /* Dark borders */
+            --headline-color: #e0e0e0; /* Very light grey headlines in dark mode */
+            --summary-color: #b3b3b3; /* Slightly darker grey for summaries */
         }
-    }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        margin: 0;
-        padding: 40px; /* Increased padding for more space */
-        text-align: center;
-        line-height: 1.6; /* Better line spacing */
-    }
-    h1 {
-        font-size: 60px; /* Larger title */
-        font-weight: bold;
-        margin: 0 0 40px; /* More bottom margin */
-        color: var(--headline-color);
-    }
-    .main-headline {
-        font-size: 36px; /* Reduced main headline size */
-        font-weight: bold;
-        margin: 40px 0; /* Increased spacing */
-        color: var(--headline-color);
-        text-decoration: underline; /* Underline */
-    }
-    .main-headline a {
-        color: var(--link-color);
-        text-decoration: none;
-    }
-    .main-headline a:hover {
-        text-decoration: underline;
-        color: var(--hover-color);
-    }
-    .main-image {
-        max-width: 800px;
-        height: auto;
-        margin: 20px auto;
-        display: block;
-    }
-    .columns {
-        display: flex;
-        justify-content: space-between; /* Spread columns further */
-        text-align: left;
-        max-width: 1200px; /* Limit total width for centering */
-        margin: 0 auto;
-    }
-    .column {
-        width: 32%; /* Slightly narrower columns for more space between */
-        padding: 20px; /* Increased internal padding */
-        border-right: 1px solid var(--border-color); /* Thin line between columns */
-    }
-    .column:last-child {
-        border-right: none; /* No line after the last column */
-    }
-    .headline {
-        font-size: 20px; /* Reduced sub-headline size */
-        font-weight: bold;
-        margin: 20px 0; /* More vertical spacing between headlines */
-        color: var(--headline-color);
-        text-decoration: underline; /* Underline sub-headlines */
-    }
-    .headline a {
-        color: var(--link-color);
-        text-decoration: none;
-    }
-    .headline a:hover {
-        text-decoration: underline;
-        color: var(--hover-color);
-    }
-    .summary {
-        font-size: 16px;
-        color: var(--summary-color);
-        margin-top: 5px;
-    }
-    .headline img {
-        max-width: 100%;
-        height: auto;
-        margin: 10px 0;
-    }
-    footer {
-        margin-top: 60px; /* Space above footer */
-        padding-top: 20px;
-        border-top: 2px solid var(--border-color); /* Themed border */
-        text-align: left;
-    }
-    footer h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: var(--headline-color);
-    }
-    footer ul {
-        list-style-type: none;
-        padding: 0;
-        columns: 2; /* Split into two columns for better spread */
-        column-gap: 40px;
-    }
-    footer li {
-        margin-bottom: 10px;
-    }
-    footer a {
-        color: var(--link-color);
-        text-decoration: none;
-    }
-    footer a:hover {
-        text-decoration: underline;
-        color: var(--hover-color);
-    }
-    /* Media queries for mobile optimization */
-    @media (max-width: 768px) { /* Target tablets and phones */
-        .columns {
-            flex-direction: column; /* Stack columns vertically */
+        /* Light mode override if user prefers it */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #fff;
+                --text-color: #000;
+                --link-color: #000;
+                --hover-color: #0000ff;
+                --border-color: #ccc;
+                --headline-color: #333; /* Dark grey in light mode for headlines */
+                --summary-color: #666; /* Medium grey for summaries in light mode */
+            }
         }
-        .column {
-            width: 100%; /* Full width on mobile */
-            padding: 10px; /* Reduce padding for smaller screens */
-            border-right: none; /* Remove lines on mobile */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px; /* Increased padding for more space */
+            text-align: center;
+            line-height: 1.6; /* Better line spacing */
         }
         h1 {
-            font-size: 36px; /* Smaller title */
+            font-size: 60px; /* Larger title */
+            font-weight: bold;
+            margin: 0 0 40px; /* More bottom margin */
+            color: var(--headline-color);
         }
         .main-headline {
-            font-size: 28px; /* Reduce main headline */
+            font-size: 52px; /* Increased to 52px to stand out more */
+            font-weight: bold;
+            margin: 40px 0; /* Increased spacing */
+            color: var(--headline-color);
+            text-decoration: underline; /* Underline */
+        }
+        .main-headline a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        .main-headline a:hover {
+            text-decoration: underline;
+            color: var(--hover-color);
+        }
+        .main-image {
+            max-width: 600px; /* Sized nicely to coordinate with headline */
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px; /* Rounded corners for nicer look */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+        .columns {
+            display: flex;
+            justify-content: space-between; /* Spread columns further */
+            text-align: left;
+            max-width: 1200px; /* Limit total width for centering */
+            margin: 0 auto;
+        }
+        .column {
+            width: 32%; /* Slightly narrower columns for more space between */
+            padding: 20px; /* Increased internal padding */
+            border-right: 1px solid var(--border-color); /* Thin line between columns */
+        }
+        .column:last-child {
+            border-right: none; /* No line after the last column */
         }
         .headline {
-            font-size: 18px; /* Smaller sub-headlines */
+            font-size: 20px; /* Reduced sub-headline size */
+            font-weight: bold;
+            margin: 20px 0; /* More vertical spacing between headlines */
+            color: var(--headline-color);
+            text-decoration: underline; /* Underline sub-headlines */
+        }
+        .headline a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        .headline a:hover {
+            text-decoration: underline;
+            color: var(--hover-color);
         }
         .summary {
-            font-size: 14px;
+            font-size: 16px;
+            color: var(--summary-color);
+            margin-top: 5px;
         }
-        .main-image, .headline img {
-            max-width: 100%; /* Ensure images don't overflow */
+        .headline img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
         }
-    }
-    @media (max-width: 480px) { /* Extra tweaks for very small phones */
-        body {
-            padding: 20px; /* Less side padding */
+        footer {
+            margin-top: 60px; /* Space above footer */
+            padding-top: 20px;
+            border-top: 2px solid var(--border-color); /* Themed border */
+            text-align: left;
+        }
+        footer h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--headline-color);
         }
         footer ul {
-            columns: 1; /* Single column in footer for mobile */
+            list-style-type: none;
+            padding: 0;
+            columns: 2; /* Split into two columns for better spread */
+            column-gap: 40px;
         }
-    }
-</style></head>
+        footer li {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: var(--hover-color);
+        }
+        /* Media queries for mobile optimization */
+        @media (max-width: 768px) { /* Target tablets and phones */
+            .columns {
+                flex-direction: column; /* Stack columns vertically */
+            }
+            .column {
+                width: 100%; /* Full width on mobile */
+                padding: 10px; /* Reduce padding for smaller screens */
+                border-right: none; /* Remove lines on mobile */
+            }
+            h1 {
+                font-size: 36px; /* Smaller title */
+            }
+            .main-headline {
+                font-size: 32px; /* Adjusted larger main headline on mobile */
+            }
+            .headline {
+                font-size: 18px; /* Adjusted reduced sub-headlines on mobile */
+            }
+            .summary {
+                font-size: 14px;
+            }
+            .main-image, .headline img {
+                max-width: 100%; /* Ensure images don't overflow */
+            }
+        }
+        @media (max-width: 480px) { /* Extra tweaks for very small phones */
+            body {
+                padding: 20px; /* Less side padding */
+            }
+            footer ul {
+                columns: 1; /* Single column in footer for mobile */
+            }
+        }
+    </style>
+</head>
 <body>
     <h1>Exhaustive AI</h1>
     
-{% if main_headline %}
-<div class="main-headline">
-    <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
-    <p class="summary">{{ main_headline.summary }}</p>
-</div>
-{% if main_headline.image_url %}
-<img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image" loading="lazy" onerror="this.style.display='none';">
-{% endif %}
-{% endif %}
+    {% if main_headline %}
+    <div class="main-headline">
+        <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
+        <p class="summary">{{ main_headline.summary }}</p>
+    </div>
+    {% if main_headline.image_url %}
+    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image" loading="lazy" onerror="this.style.display='none';">
+    {% endif %}
+    {% endif %}
+    
+    <div class="columns">
+        <div class="column">
+            {% for item in column1 %}
+            <div class="headline">
+                <a href="{{ item.url }}">{{ item.headline }}</a>
+                <p class="summary">{{ item.summary }}</p>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="column">
+            {% for item in column2 %}
+            <div class="headline">
+                <a href="{{ item.url }}">{{ item.headline }}</a>
+                <p class="summary">{{ item.summary }}</p>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="column">
+            {% for item in column3 %}
+            <div class="headline">
+                <a href="{{ item.url }}">{{ item.headline }}</a>
+                <p class="summary">{{ item.summary }}</p>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
-<div class="columns">
-    <div class="column">
-        {% for item in column1 %}
-        <div class="headline">
-            <a href="{{ item.url }}">{{ item.headline }}</a>
-            <p class="summary">{{ item.summary }}</p>
-            {% if item.image_url %}
-            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
-            {% endif %}
-        </div>
-        {% endfor %}
-    </div>
-    <div class="column">
-        {% for item in column2 %}
-        <div class="headline">
-            <a href="{{ item.url }}">{{ item.headline }}</a>
-            <p class="summary">{{ item.summary }}</p>
-            {% if item.image_url %}
-            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
-            {% endif %}
-        </div>
-        {% endfor %}
-    </div>
-    <div class="column">
-        {% for item in column3 %}
-        <div class="headline">
-            <a href="{{ item.url }}">{{ item.headline }}</a>
-            <p class="summary">{{ item.summary }}</p>
-            {% if item.image_url %}
-            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
-            {% endif %}
-        </div>
-        {% endfor %}
-    </div>
-</div>
-
-<footer>
-    <h2>Top 25 AI Websites</h2>
-    <ul>
-        <li><a href="https://openai.com">OpenAI</a></li>
-        <li><a href="https://ai.google">Google AI</a></li>
-        <li><a href="https://www.microsoft.com/en-us/ai">Microsoft AI</a></li>
-        <li><a href="https://huggingface.co">Hugging Face</a></li>
-        <li><a href="https://techcrunch.com/category/artificial-intelligence/">TechCrunch AI</a></li>
-        <li><a href="https://venturebeat.com/category/ai/">VentureBeat AI</a></li>
-        <li><a href="https://www.wired.com/tag/artificial-intelligence/">Wired AI</a></li>
-        <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/">MIT Technology Review</a></li>
-        <li><a href="https://aimagazine.com">AI Magazine</a></li>
-        <li><a href="https://www.analyticsvidhya.com">Analytics Vidhya</a></li>
-        <li><a href="https://www.aitrends.com">AI Trends</a></li>
-        <li><a href="https://news.mit.edu/topic/artificial-intelligence2">MIT News AI</a></li>
-        <li><a href="https://www.dataversity.net">Dataversity</a></li>
-        <li><a href="https://emerj.com">Emerj</a></li>
-        <li><a href="https://www.kdnuggets.com">KDnuggets</a></li>
-        <li><a href="https://www.analyticsinsight.net">Analytics Insight</a></li>
-        <li><a href="https://insidebigdata.com">Inside Big Data</a></li>
-        <li><a href="https://www.datasciencecentral.com">Data Science Central</a></li>
-        <li><a href="https://developer.ibm.com">IBM Developer</a></li>
-        <li><a href="https://intelligence.org">Machine Intelligence Research Institute</a></li>
-        <li><a href="https://paperswithcode.com">Papers with Code</a></li>
-        <li><a href="https://www.anthropic.com">Anthropic</a></li>
-        <li><a href="https://stability.ai">Stability AI</a></li>
-        <li><a href="https://www.perplexity.ai">Perplexity AI</a></li>
-        <li><a href="https://www.artificialintelligence-news.com">Artificial Intelligence News</a></li>
-    </ul>
-</footer></body>
+    <footer>
+        <h2>Top 25 AI Websites</h2>
+        <ul>
+            <li><a href="https://openai.com">OpenAI</a></li>
+            <li><a href="https://ai.google">Google AI</a></li>
+            <li><a href="https://www.microsoft.com/en-us/ai">Microsoft AI</a></li>
+            <li><a href="https://huggingface.co">Hugging Face</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/">TechCrunch AI</a></li>
+            <li><a href="https://venturebeat.com/category/ai/">VentureBeat AI</a></li>
+            <li><a href="https://www.wired.com/tag/artificial-intelligence/">Wired AI</a></li>
+            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/">MIT Technology Review</a></li>
+            <li><a href="https://aimagazine.com">AI Magazine</a></li>
+            <li><a href="https://www.analyticsvidhya.com">Analytics Vidhya</a></li>
+            <li><a href="https://www.aitrends.com">AI Trends</a></li>
+            <li><a href="https://news.mit.edu/topic/artificial-intelligence2">MIT News AI</a></li>
+            <li><a href="https://www.dataversity.net">Dataversity</a></li>
+            <li><a href="https://emerj.com">Emerj</a></li>
+            <li><a href="https://www.kdnuggets.com">KDnuggets</a></li>
+            <li><a href="https://www.analyticsinsight.net">Analytics Insight</a></li>
+            <li><a href="https://insidebigdata.com">Inside Big Data</a></li>
+            <li><a href="https://www.datasciencecentral.com">Data Science Central</a></li>
+            <li><a href="https://developer.ibm.com">IBM Developer</a></li>
+            <li><a href="https://intelligence.org">Machine Intelligence Research Institute</a></li>
+            <li><a href="https://paperswithcode.com">Papers with Code</a></li>
+            <li><a href="https://www.anthropic.com">Anthropic</a></li>
+            <li><a href="https://stability.ai">Stability AI</a></li>
+            <li><a href="https://www.perplexity.ai">Perplexity AI</a></li>
+            <li><a href="https://www.artificialintelligence-news.com">Artificial Intelligence News</a></li>
+        </ul>
+    </footer>
+</body>
 </html>
-
