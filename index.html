@@ -13,7 +13,7 @@
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "Open-source AI: America's new national obsession",
+      "headline": "Why open-source AI became an American national priority",
       "image": "https://your-default-image-url.com/ai-placeholder.jpg",
       "datePublished": "2025-08-01T19:07:25+00:00",
       "author": {
@@ -25,7 +25,7 @@
         "name": "Exhaustive AI",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
+          "url": "https://your-logo-url.com/logo.png"
         }
       }
     }
@@ -39,7 +39,7 @@
             --link-color: #bb86fc; /* Purple links for dark mode */
             --hover-color: #03dac6; /* Teal on hover */
             --border-color: #333; /* Dark borders */
-            --headline-color: #ffffff; /* White headlines */
+            --headline-color: #e0e0e0; /* Very light grey headlines */
         }
 
         /* Light mode override if user prefers it */
@@ -50,7 +50,7 @@
                 --link-color: #000;
                 --hover-color: #0000ff;
                 --border-color: #ccc;
-                --headline-color: #000;
+                --headline-color: #333; /* Dark grey in light mode for headlines */
             }
         }
 
@@ -63,11 +63,11 @@
             text-align: center;
             line-height: 1.6; /* Better line spacing */
         }
-        .logo {
-            max-width: 400px; /* Adjust size as needed */
-            height: auto;
-            margin: 0 auto 40px; /* Center and add bottom margin */
-            display: block;
+        h1 {
+            font-size: 60px; /* Larger title */
+            font-weight: bold;
+            margin: 0 0 40px; /* More bottom margin */
+            color: var(--headline-color);
         }
         .main-headline {
             font-size: 48px; /* Even larger main headline */
@@ -163,8 +163,8 @@
                 padding: 10px; /* Reduce padding for smaller screens */
                 border-right: none; /* Remove lines on mobile */
             }
-            .logo {
-                max-width: 300px; /* Smaller logo on mobile */
+            h1 {
+                font-size: 36px; /* Smaller title */
             }
             .main-headline {
                 font-size: 28px; /* Reduce main headline */
@@ -187,11 +187,11 @@
     </style>
 </head>
 <body>
-    <img src="https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg" alt="Exhaustive AI Logo" class="logo">
+    <h1>Exhaustive AI</h1>
     
     
     <div class="main-headline">
-        <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/">Open-source AI: America's new national obsession</a>
+        <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/">Why open-source AI became an American national priority</a>
     </div>
     
     
@@ -201,6 +201,11 @@
             
             <div class="headline">
                 <a href="https://futurism.com/scientists-quantum-computer-space">Scientists Just Launched the First Quantum Computer Into Space</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/">Google bets on STAN, an Indian social gaming platform</a>
                 
             </div>
             
@@ -234,13 +239,13 @@
                 
             </div>
             
+        </div>
+        <div class="column">
+            
             <div class="headline">
                 <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
                 
             </div>
-            
-        </div>
-        <div class="column">
             
             <div class="headline">
                 <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
@@ -279,13 +284,13 @@
                 
             </div>
             
+        </div>
+        <div class="column">
+            
             <div class="headline">
                 <a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook">Tim Cook says Apple is ‘open to’ AI acquisitions</a>
                 
             </div>
-            
-        </div>
-        <div class="column">
             
             <div class="headline">
                 <a href="http://arxiv.org/abs/2507.23784v1">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
@@ -325,11 +330,6 @@
                 <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/">Where Is AI on the Enshittification Curve?</a>
                 
                 <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for Where Is AI on the Enshittification Curve?" loading="lazy">
-                
-            </div>
-            
-            <div class="headline">
-                <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/">Google's big india gamble: a social gaming giant is born</a>
                 
             </div>
             
