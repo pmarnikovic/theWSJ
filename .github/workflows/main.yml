@@ -2,7 +2,7 @@ name: build-and-deploy
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Run every hour; adjust as needed (e.g., '0 */3 * * *' for every 3 hours)
+    - cron: '0 * * * *'  # Run every hour on the hour
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
