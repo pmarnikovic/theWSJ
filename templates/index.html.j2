@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily AI news aggregated from top sources, featuring sensational headlines and breakthroughs in artificial intelligence.">
+    <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
     <title>AI REPORT</title>
     <style>
         body {
@@ -10,20 +12,21 @@
             background-color: #fff;
             color: #000;
             margin: 0;
-            padding: 20px;
+            padding: 40px;  /* Increased padding for more space */
             text-align: center;
+            line-height: 1.6;  /* Better line spacing */
         }
         h1 {
-            font-size: 48px;
+            font-size: 60px;  /* Larger title */
             font-weight: bold;
             text-transform: uppercase;
-            margin: 0 0 20px;
+            margin: 0 0 40px;  /* More bottom margin */
         }
         .main-headline {
-            font-size: 36px;
+            font-size: 48px;  /* Even larger main headline */
             font-weight: bold;
             text-transform: uppercase;
-            margin: 20px 0;
+            margin: 40px 0;  /* Increased spacing */
         }
         .main-headline a {
             color: #000;
@@ -33,25 +36,27 @@
             text-decoration: underline;
         }
         .main-image {
-            max-width: 600px;
+            max-width: 800px;  /* Larger max width for image */
             height: auto;
-            margin: 10px auto;
+            margin: 20px auto;
             display: block;
         }
         .columns {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;  /* Spread columns further */
             text-align: left;
+            max-width: 1200px;  /* Limit total width for centering */
+            margin: 0 auto;
         }
         .column {
-            width: 30%;
-            padding: 10px;
+            width: 32%;  /* Slightly narrower columns for more space between */
+            padding: 20px;  /* Increased internal padding */
         }
         .headline {
-            font-size: 18px;
+            font-size: 24px;  /* Larger headline font */
             font-weight: bold;
             text-transform: uppercase;
-            margin: 5px 0;
+            margin: 20px 0;  /* More vertical spacing between headlines */
         }
         .headline a {
             color: #0000ff;  /* Blue links like Drudge */
@@ -63,7 +68,33 @@
         .headline img {
             max-width: 100%;
             height: auto;
-            margin: 5px 0;
+            margin: 10px 0;
+        }
+        footer {
+            margin-top: 60px;  /* Space above footer */
+            padding-top: 20px;
+            border-top: 2px solid #000;  /* Thicker line for separation */
+            text-align: left;
+        }
+        footer h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            columns: 2;  /* Split into two columns for better spread */
+            column-gap: 40px;
+        }
+        footer li {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #0000ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -75,7 +106,7 @@
         <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
     </div>
     {% if main_headline.image_url %}
-    <img src="{{ main_headline.image_url }}" alt="Main article image" class="main-image">
+    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image">
     {% endif %}
     {% endif %}
     
@@ -85,7 +116,7 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
                 {% endif %}
             </div>
             {% endfor %}
@@ -95,7 +126,7 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
                 {% endif %}
             </div>
             {% endfor %}
@@ -105,11 +136,42 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
                 {% endif %}
             </div>
             {% endfor %}
         </div>
     </div>
+
+    <footer>
+        <h2>Top 25 AI Websites</h2>
+        <ul>
+            <li><a href="https://openai.com">OpenAI</a></li>
+            <li><a href="https://ai.google">Google AI</a></li>
+            <li><a href="https://www.microsoft.com/en-us/ai">Microsoft AI</a></li>
+            <li><a href="https://huggingface.co">Hugging Face</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/">TechCrunch AI</a></li>
+            <li><a href="https://venturebeat.com/category/ai/">VentureBeat AI</a></li>
+            <li><a href="https://www.wired.com/tag/artificial-intelligence/">Wired AI</a></li>
+            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/">MIT Technology Review</a></li>
+            <li><a href="https://aimagazine.com">AI Magazine</a></li>
+            <li><a href="https://www.analyticsvidhya.com">Analytics Vidhya</a></li>
+            <li><a href="https://www.aitrends.com">AI Trends</a></li>
+            <li><a href="https://news.mit.edu/topic/artificial-intelligence2">MIT News AI</a></li>
+            <li><a href="https://www.dataversity.net">Dataversity</a></li>
+            <li><a href="https://emerj.com">Emerj</a></li>
+            <li><a href="https://www.kdnuggets.com">KDnuggets</a></li>
+            <li><a href="https://www.analyticsinsight.net">Analytics Insight</a></li>
+            <li><a href="https://insidebigdata.com">Inside Big Data</a></li>
+            <li><a href="https://www.datasciencecentral.com">Data Science Central</a></li>
+            <li><a href="https://developer.ibm.com">IBM Developer</a></li>
+            <li><a href="https://intelligence.org">Machine Intelligence Research Institute</a></li>
+            <li><a href="https://paperswithcode.com">Papers with Code</a></li>
+            <li><a href="https://www.anthropic.com">Anthropic</a></li>
+            <li><a href="https://stability.ai">Stability AI</a></li>
+            <li><a href="https://www.perplexity.ai">Perplexity AI</a></li>
+            <li><a href="https://www.artificialintelligence-news.com">Artificial Intelligence News</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
