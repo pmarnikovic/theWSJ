@@ -2,7 +2,7 @@ name: build-and-deploy
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Run every hour; adjust as needed
+    - cron: '0 * * * *'  # Run every hour; adjust as needed (e.g., '0 */3 * * *' for every 3 hours)
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use for authentication
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,6 +34,8 @@ jobs:
 
       - name: Commit and push if it changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "actions@github.com"
-          git add index
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "actions@github.com"
+          git add index.html || echo "No file to add"
+          git commit -m "Update index.html with latest AI news" || echo "No changes to commit"
+          git push || echo "No changes to push"
