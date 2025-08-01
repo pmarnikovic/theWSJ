@@ -8,14 +8,14 @@
     <title>AI REPORT</title>
     
     <!-- Add JSON-LD schema here -->
-    {% if main_headline %}
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "{{ main_headline.headline }}",
-      "image": "{{ main_headline.image_url or 'https://your-default-image-url.com/ai-placeholder.jpg' }}",
-      "datePublished": "{{ main_headline.published | default(now('utc'), true) | strftime('%Y-%m-%dT%H:%M:%SZ') }}",
+      "headline": "AI AGENTS RUN WILD!  OPEN-SOURCE 'SOCIETY' SIM SPARKS FEARS OF UNCONTROLLABLE AI!",
+      "image": "https://your-default-image-url.com/ai-placeholder.jpg",
+      "datePublished": "2025-07-31T21:12:44+00:00",
       "author": {
         "@type": "Organization",
         "name": "AI Report"
@@ -30,7 +30,7 @@
       }
     }
     </script>
-    {% endif %}
+    
     
     <style>
         body {
@@ -127,45 +127,150 @@
 <body>
     <h1>AI REPORT</h1>
     
-    {% if main_headline %}
+    
     <div class="main-headline">
-        <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
+        <a href="https://www.marktechpost.com/2025/07/31/agentsociety-an-open-source-ai-framework-for-simulating-large-scale-societal-interactions-with-llm-agents/">AI AGENTS RUN WILD!  OPEN-SOURCE 'SOCIETY' SIM SPARKS FEARS OF UNCONTROLLABLE AI!</a>
     </div>
-    {% if main_headline.image_url %}
-    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image">
-    {% endif %}
-    {% endif %}
+    
+    
     
     <div class="columns">
         <div class="column">
-            {% for item in column1 %}
+            
             <div class="headline">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-                {% endif %}
+                <a href="https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/">OPENAI REMOVES CHATGPT FEATURE AFTER PRIVATE CONVERSATIONS LEAK TO GOOGLE SEARCH...</a>
+                
             </div>
-            {% endfor %}
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/2025/07/31/female-founded-semiconductor-ai-startup-sixsense-raises-funding/">FEMALE-FOUNDED SEMICONDUCTOR AI STARTUP SIXSENSE RAISES $8.5M...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/2025/07/31/amazon-ceo-wants-to-put-ads-in-your-alexa-conversations/">AMAZON CEO WANTS TO PUT ADS IN YOUR ALEXA+ CONVERSATIONS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/podcast/who-really-benefits-from-the-ai-boom/">WHAT’S THE REAL COST OF CHASING AGI? POWER CONSOLIDATION IS JUST THE START, SAYS THE AI NOW INSTITUTE....</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.marktechpost.com/2025/07/31/a-coding-guide-to-build-an-intelligent-conversational-ai-agent-with-agent-memory-using-cognee-and-free-hugging-face-models/">A CODING GUIDE TO BUILD AN INTELLIGENT CONVERSATIONAL AI AGENT WITH AGENT MEMORY USING COGNEE AND FREE HUGGING FACE MODELS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://venturebeat.com/ai/deep-cogito-goes-big-releasing-4-new-open-source-hybrid-reasoning-models-with-self-improving-intuition/">DEEP COGITO GOES BIG, RELEASING 4 NEW OPEN SOURCE HYBRID REASONING MODELS WITH SELF-IMPROVING ‘INTUITION’...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://venturebeat.com/ai/hard-won-vibe-coding-insights-mailchimps-40-speed-gain-came-with-governance-price/">HARD-WON VIBE CODING INSIGHTS: MAILCHIMP’S 40% SPEED GAIN CAME WITH GOVERNANCE PRICE...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook">TIM COOK SAYS APPLE IS ‘OPEN TO’ AI ACQUISITIONS...</a>
+                
+            </div>
+            
         </div>
         <div class="column">
-            {% for item in column2 %}
+            
             <div class="headline">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-                {% endif %}
+                <a href="https://futurism.com/judge-accused-ai-ruling">JUDGE ACCUSED OF USING AI TO ISSUE GARBLED RULING...</a>
+                
             </div>
-            {% endfor %}
+            
+            <div class="headline">
+                <a href="https://futurism.com/nasa-searching-workers">NASA ANNOUNCES IT WILL BE RANDOMLY SEARCHING EMPLOYEES...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://futurism.com/basic-flaw-mark-zuckerberg-plan-superintelligent-ai">THERE'S A VERY BASIC FLAW IN MARK ZUCKERBERG'S PLAN FOR SUPERINTELLIGENT AI...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/news/716783/microsoft-4-trillion-market-cap-valuation">MICROSOFT BECOMES THE SECOND $4 TRILLION COMPANY...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/">THE ONLY GUIDE YOU WILL EVER NEED FOR MODEL CONTEXT PROTOCOL (MCP)...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/what-is-claude-code/">CLAUDE CODE: MASTER IT IN 20 MINUTES FOR 10X FASTER CODING...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/decoder-podcast-with-nilay-patel/716633/ai-talent-war-meta-mark-zuckerberg-openai-nba-all-stars">WHY AI RESEARCHERS ARE GETTING PAID LIKE NBA ALL-STARS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/">MINI HUMAN ORGANS JUST GOT MUCH CLOSER TO MATCHING THE REAL THING...</a>
+                
+                <img src="https://singularityhub.com/uploads/2025/07/brain-organoids-in-a-flask-1.jpeg?auto=webp" alt="Article image for MINI HUMAN ORGANS JUST GOT MUCH CLOSER TO MATCHING THE REAL THING...">
+                
+            </div>
+            
         </div>
         <div class="column">
-            {% for item in column3 %}
+            
             <div class="headline">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-                {% endif %}
+                <a href="https://www.marktechpost.com/2025/07/31/the-ultimate-2025-guide-to-coding-llm-benchmarks-and-performance-metrics/">THE ULTIMATE 2025 GUIDE TO CODING LLM BENCHMARKS AND PERFORMANCE METRICS...</a>
+                
             </div>
-            {% endfor %}
+            
+            <div class="headline">
+                <a href="http://arxiv.org/abs/2507.22887v1">WHERE TO SHOW DEMOS IN YOUR PROMPT: A POSITIONAL BIAS OF IN-CONTEXT LEARNING...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="http://arxiv.org/abs/2507.22876v1">AUTOMATICALLY DISCOVERING HEURISTICS IN A COMPLEX SAT SOLVER WITH LARGE LANGUAGE MODELS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="http://arxiv.org/abs/2507.22854v1">A BIT OF FREEDOM GOES A LONG WAY: CLASSICAL AND QUANTUM ALGORITHMS FOR REINFORCEMENT LEARNING UNDER A GENERATIVE MODEL...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/manus-vs-chatgpt-agent/">MANUS VS CHATGPT AGENT: WHICH IS BETTER?...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/">AI AGENTS ARE HERE. THIS IS WHAT THEY CAN DO—AND HOW THEY CAN GO WRONG...</a>
+                
+                <img src="https://singularityhub.com/uploads/2025/07/ai-agent-bot-in-a-field-2.jpeg?auto=webp" alt="Article image for AI AGENTS ARE HERE. THIS IS WHAT THEY CAN DO—AND HOW THEY CAN GO WRONG...">
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://singularityhub.com/2025/07/28/anthropic-says-ai-needs-a-whole-lot-more-power-stat/">ANTHROPIC SAYS AI NEEDS A WHOLE LOT MORE POWER—STAT...</a>
+                
+                <img src="https://singularityhub.com/uploads/2025/07/power-electricity-infrastructure.jpeg?auto=webp" alt="Article image for ANTHROPIC SAYS AI NEEDS A WHOLE LOT MORE POWER—STAT...">
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/">WHERE IS AI ON THE ENSHITTIFICATION CURVE?...</a>
+                
+                <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for WHERE IS AI ON THE ENSHITTIFICATION CURVE?...">
+                
+            </div>
+            
         </div>
     </div>
 
