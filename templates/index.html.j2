@@ -33,31 +33,10 @@
     {% endif %}
     
     <style>
-        :root {
-            --bg-color: #000; /* Dark background default */
-            --text-color: #fff; /* White text default */
-            --link-color: #add8e6; /* Light blue links for dark mode */
-            --hover-color: #fff; /* White on hover */
-            --border-color: #333; /* Dark borders */
-            --headline-color: #fff; /* White headlines */
-        }
-
-        /* Light mode override if user prefers it */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #fff;
-                --text-color: #000;
-                --link-color: #000;
-                --hover-color: #0000ff;
-                --border-color: #ccc;
-                --headline-color: #000;
-            }
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 40px; /* Increased padding for more space */
             text-align: center;
@@ -67,24 +46,23 @@
             font-size: 60px; /* Larger title */
             font-weight: bold;
             margin: 0 0 40px; /* More bottom margin */
-            color: var(--headline-color);
         }
         .main-headline {
-            font-size: 48px; /* Even larger main headline */
+            font-size: 40px; /* Reduced from 48px */
             font-weight: bold;
+            text-transform: uppercase; /* Ensure capitalized */
+            text-decoration: underline; /* Underline */
             margin: 40px 0; /* Increased spacing */
-            color: var(--headline-color);
         }
         .main-headline a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         .main-headline a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         .main-image {
-            max-width: 800px;
+            max-width: 800px; /* Larger max width for image */
             height: auto;
             margin: 20px auto;
             display: block;
@@ -95,30 +73,23 @@
             text-align: left;
             max-width: 1200px; /* Limit total width for centering */
             margin: 0 auto;
-            gap: 20px; /* Added gap for better separation */
         }
         .column {
             width: 32%; /* Slightly narrower columns for more space between */
             padding: 20px; /* Increased internal padding */
-            border-right: 1px solid var(--border-color); /* Thin line between columns */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
-        .column:last-child {
-            border-right: none; /* No line after last column */
         }
         .headline {
-            font-size: 24px; /* Larger headline font */
+            font-size: 20px; /* Reduced from 24px */
             font-weight: bold;
+            text-decoration: underline; /* Underline */
             margin: 20px 0; /* More vertical spacing between headlines */
-            color: var(--headline-color);
         }
         .headline a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         .headline a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         .headline img {
             max-width: 100%;
@@ -128,13 +99,12 @@
         footer {
             margin-top: 60px; /* Space above footer */
             padding-top: 20px;
-            border-top: 2px solid var(--border-color); /* Themed border */
+            border-top: 2px solid #000; /* Thicker line for separation */
             text-align: left;
         }
         footer h2 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: var(--headline-color);
         }
         footer ul {
             list-style-type: none;
@@ -146,12 +116,11 @@
             margin-bottom: 10px;
         }
         footer a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         footer a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         /* Media queries for mobile optimization */
         @media (max-width: 768px) { /* Target tablets and phones */
@@ -161,7 +130,6 @@
             .column {
                 width: 100%; /* Full width on mobile */
                 padding: 10px; /* Reduce padding for smaller screens */
-                border-right: none; /* Remove lines on mobile for clean stack */
             }
             h1 {
                 font-size: 36px; /* Smaller title */
