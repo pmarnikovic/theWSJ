@@ -6,6 +6,32 @@
     <meta name="description" content="Daily AI news aggregated from top sources, featuring sensational headlines and breakthroughs in artificial intelligence.">
     <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
     <title>AI REPORT</title>
+    
+    <!-- Add JSON-LD schema here -->
+    {% if main_headline %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{{ main_headline.headline }}",
+      "image": "{{ main_headline.image_url or 'https://your-default-image-url.com/ai-placeholder.jpg' }}",
+      "datePublished": "{{ main_headline.published | default(now('utc'), true) | strftime('%Y-%m-%dT%H:%M:%SZ') }}",
+      "author": {
+        "@type": "Organization",
+        "name": "AI Report"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AI Report",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://your-logo-url.com/logo.png"
+        }
+      }
+    }
+    </script>
+    {% endif %}
+    
     <style>
         body {
             font-family: Arial, sans-serif;
