@@ -33,60 +33,34 @@
     {% endif %}
     
     <style>
-        :root {
-            --bg-color: #000; /* Dark background default */
-            --text-color: #fff; /* White text default */
-            --link-color: #add8e6; /* Light blue links for dark mode */
-            --hover-color: #fff; /* White on hover */
-            --border-color: #444; /* Dark gray borders for lines in dark mode */
-            --headline-color: #fff; /* White headlines */
-        }
-
-        /* Light mode override if user prefers it */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #fff;
-                --text-color: #000;
-                --link-color: #000;
-                --hover-color: #0000ff;
-                --border-color: #ccc; /* Light gray borders for lines in light mode */
-                --headline-color: #000;
-            }
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 40px; /* Increased padding for more space */
             text-align: center;
             line-height: 1.6; /* Better line spacing */
-            font-size: 14px; /* Smaller base text size */
         }
         h1 {
-            font-size: 48px; /* Reduced title size from 60px */
+            font-size: 60px; /* Kept title size the same */
             font-weight: bold;
             margin: 0 0 40px; /* More bottom margin */
-            color: var(--headline-color);
         }
         .main-headline {
-            font-size: 36px; /* Reduced main headline size from 48px */
+            font-size: 40px; /* Reduced main headline size */
             font-weight: bold;
             margin: 40px 0; /* Increased spacing */
-            color: var(--headline-color);
-            text-decoration: underline; /* Underline */
         }
         .main-headline a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         .main-headline a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         .main-image {
-            max-width: 800px;
+            max-width: 800px; /* Larger max width for image */
             height: auto;
             margin: 20px auto;
             display: block;
@@ -101,25 +75,18 @@
         .column {
             width: 32%; /* Slightly narrower columns for more space between */
             padding: 20px; /* Increased internal padding */
-            border-right: 1px solid var(--border-color); /* Thin line between columns */
-        }
-        .column:last-child {
-            border-right: none; /* No line after the last column */
         }
         .headline {
-            font-size: 20px; /* Reduced headline size from 24px */
+            font-size: 22px; /* Reduced sub-headline size */
             font-weight: bold;
             margin: 20px 0; /* More vertical spacing between headlines */
-            color: var(--headline-color);
-            text-decoration: underline; /* Underline */
         }
         .headline a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         .headline a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         .headline img {
             max-width: 100%;
@@ -129,13 +96,12 @@
         footer {
             margin-top: 60px; /* Space above footer */
             padding-top: 20px;
-            border-top: 2px solid var(--border-color); /* Themed border */
+            border-top: 2px solid #000; /* Thicker line for separation */
             text-align: left;
         }
         footer h2 {
-            font-size: 24px; /* Reduced from 28px */
+            font-size: 28px;
             margin-bottom: 20px;
-            color: var(--headline-color);
         }
         footer ul {
             list-style-type: none;
@@ -145,15 +111,13 @@
         }
         footer li {
             margin-bottom: 10px;
-            font-size: 14px; /* Smaller footer text */
         }
         footer a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         footer a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         /* Media queries for mobile optimization */
         @media (max-width: 768px) { /* Target tablets and phones */
@@ -163,25 +127,18 @@
             .column {
                 width: 100%; /* Full width on mobile */
                 padding: 10px; /* Reduce padding for smaller screens */
-                border-right: none; /* Remove lines on mobile */
             }
             h1 {
                 font-size: 36px; /* Smaller title */
             }
             .main-headline {
-                font-size: 28px; /* Reduce main headline */
+                font-size: 32px; /* Adjusted reduced main headline on mobile */
             }
             .headline {
-                font-size: 18px; /* Smaller sub-headlines */
+                font-size: 20px; /* Adjusted reduced sub-headlines on mobile */
             }
             .main-image, .headline img {
                 max-width: 100%; /* Ensure images don't overflow */
-            }
-            body, footer li {
-                font-size: 12px; /* Even smaller base text on mobile */
-            }
-            footer h2 {
-                font-size: 20px;
             }
         }
         @media (max-width: 480px) { /* Extra tweaks for very small phones */
@@ -199,7 +156,7 @@
     
     {% if main_headline %}
     <div class="main-headline">
-        <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
+        <a href="{{ main_headline.url }}" target="_blank" rel="noopener noreferrer">{{ main_headline.headline }}</a>
     </div>
     {% if main_headline.image_url %}
     <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image" loading="lazy">
@@ -210,7 +167,7 @@
         <div class="column">
             {% for item in column1 %}
             <div class="headline">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
                 {% if item.image_url %}
                 <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
@@ -220,7 +177,7 @@
         <div class="column">
             {% for item in column2 %}
             <div class="headline">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
                 {% if item.image_url %}
                 <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
@@ -230,7 +187,7 @@
         <div class="column">
             {% for item in column3 %}
             <div class="headline">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
                 {% if item.image_url %}
                 <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
@@ -242,31 +199,31 @@
     <footer>
         <h2>Top 25 AI Websites</h2>
         <ul>
-            <li><a href="https://openai.com">OpenAI</a></li>
-            <li><a href="https://ai.google">Google AI</a></li>
-            <li><a href="https://www.microsoft.com/en-us/ai">Microsoft AI</a></li>
-            <li><a href="https://huggingface.co">Hugging Face</a></li>
-            <li><a href="https://techcrunch.com/category/artificial-intelligence/">TechCrunch AI</a></li>
-            <li><a href="https://venturebeat.com/category/ai/">VentureBeat AI</a></li>
-            <li><a href="https://www.wired.com/tag/artificial-intelligence/">Wired AI</a></li>
-            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/">MIT Technology Review</a></li>
-            <li><a href="https://aimagazine.com">AI Magazine</a></li>
-            <li><a href="https://www.analyticsvidhya.com">Analytics Vidhya</a></li>
-            <li><a href="https://www.aitrends.com">AI Trends</a></li>
-            <li><a href="https://news.mit.edu/topic/artificial-intelligence2">MIT News AI</a></li>
-            <li><a href="https://www.dataversity.net">Dataversity</a></li>
-            <li><a href="https://emerj.com">Emerj</a></li>
-            <li><a href="https://www.kdnuggets.com">KDnuggets</a></li>
-            <li><a href="https://www.analyticsinsight.net">Analytics Insight</a></li>
-            <li><a href="https://insidebigdata.com">Inside Big Data</a></li>
-            <li><a href="https://www.datasciencecentral.com">Data Science Central</a></li>
-            <li><a href="https://developer.ibm.com">IBM Developer</a></li>
-            <li><a href="https://intelligence.org">Machine Intelligence Research Institute</a></li>
-            <li><a href="https://paperswithcode.com">Papers with Code</a></li>
-            <li><a href="https://www.anthropic.com">Anthropic</a></li>
-            <li><a href="https://stability.ai">Stability AI</a></li>
-            <li><a href="https://www.perplexity.ai">Perplexity AI</a></li>
-            <li><a href="https://www.artificialintelligence-news.com">Artificial Intelligence News</a></li>
+            <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
+            <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
+            <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
+            <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
+            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
+            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
+            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
+            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
+            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
+            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
+            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
+            <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
+            <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
+            <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
+            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
+            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
+            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
+            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
+            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
+            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
+            <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
+            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
+            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
+            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
         </ul>
     </footer>
 </body>
