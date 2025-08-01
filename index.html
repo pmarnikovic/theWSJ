@@ -33,60 +33,34 @@
     
     
     <style>
-        :root {
-            --bg-color: #000; /* Dark background default */
-            --text-color: #fff; /* White text default */
-            --link-color: #add8e6; /* Light blue links for dark mode */
-            --hover-color: #fff; /* White on hover */
-            --border-color: #444; /* Dark gray borders for lines in dark mode */
-            --headline-color: #fff; /* White headlines */
-        }
-
-        /* Light mode override if user prefers it */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #fff;
-                --text-color: #000;
-                --link-color: #000;
-                --hover-color: #0000ff;
-                --border-color: #ccc; /* Light gray borders for lines in light mode */
-                --headline-color: #000;
-            }
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 40px; /* Increased padding for more space */
             text-align: center;
             line-height: 1.6; /* Better line spacing */
-            font-size: 14px; /* Smaller base text size */
         }
         h1 {
-            font-size: 48px; /* Reduced title size from 60px */
+            font-size: 60px; /* Kept title size the same */
             font-weight: bold;
             margin: 0 0 40px; /* More bottom margin */
-            color: var(--headline-color);
         }
         .main-headline {
-            font-size: 36px; /* Reduced main headline size from 48px */
+            font-size: 40px; /* Reduced main headline size */
             font-weight: bold;
             margin: 40px 0; /* Increased spacing */
-            color: var(--headline-color);
-            text-decoration: underline; /* Underline */
         }
         .main-headline a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         .main-headline a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         .main-image {
-            max-width: 800px;
+            max-width: 800px; /* Larger max width for image */
             height: auto;
             margin: 20px auto;
             display: block;
@@ -101,25 +75,18 @@
         .column {
             width: 32%; /* Slightly narrower columns for more space between */
             padding: 20px; /* Increased internal padding */
-            border-right: 1px solid var(--border-color); /* Thin line between columns */
-        }
-        .column:last-child {
-            border-right: none; /* No line after the last column */
         }
         .headline {
-            font-size: 20px; /* Reduced headline size from 24px */
+            font-size: 22px; /* Reduced sub-headline size */
             font-weight: bold;
             margin: 20px 0; /* More vertical spacing between headlines */
-            color: var(--headline-color);
-            text-decoration: underline; /* Underline */
         }
         .headline a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         .headline a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         .headline img {
             max-width: 100%;
@@ -129,13 +96,12 @@
         footer {
             margin-top: 60px; /* Space above footer */
             padding-top: 20px;
-            border-top: 2px solid var(--border-color); /* Themed border */
+            border-top: 2px solid #000; /* Thicker line for separation */
             text-align: left;
         }
         footer h2 {
-            font-size: 24px; /* Reduced from 28px */
+            font-size: 28px;
             margin-bottom: 20px;
-            color: var(--headline-color);
         }
         footer ul {
             list-style-type: none;
@@ -145,15 +111,13 @@
         }
         footer li {
             margin-bottom: 10px;
-            font-size: 14px; /* Smaller footer text */
         }
         footer a {
-            color: var(--link-color);
+            color: #000;
             text-decoration: none;
         }
         footer a:hover {
             text-decoration: underline;
-            color: var(--hover-color);
         }
         /* Media queries for mobile optimization */
         @media (max-width: 768px) { /* Target tablets and phones */
@@ -163,25 +127,18 @@
             .column {
                 width: 100%; /* Full width on mobile */
                 padding: 10px; /* Reduce padding for smaller screens */
-                border-right: none; /* Remove lines on mobile */
             }
             h1 {
                 font-size: 36px; /* Smaller title */
             }
             .main-headline {
-                font-size: 28px; /* Reduce main headline */
+                font-size: 32px; /* Adjusted reduced main headline on mobile */
             }
             .headline {
-                font-size: 18px; /* Smaller sub-headlines */
+                font-size: 20px; /* Adjusted reduced sub-headlines on mobile */
             }
             .main-image, .headline img {
                 max-width: 100%; /* Ensure images don't overflow */
-            }
-            body, footer li {
-                font-size: 12px; /* Even smaller base text on mobile */
-            }
-            footer h2 {
-                font-size: 20px;
             }
         }
         @media (max-width: 480px) { /* Extra tweaks for very small phones */
@@ -199,7 +156,7 @@
     
     
     <div class="main-headline">
-        <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/">Google bets on STAN, an Indian social gaming platform</a>
+        <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/" target="_blank" rel="noopener noreferrer">Google bets on STAN, an Indian social gaming platform</a>
     </div>
     
     
@@ -208,42 +165,42 @@
         <div class="column">
             
             <div class="headline">
-                <a href="https://www.theverge.com/anthropic/717551/anthropic-research-fellows-ai-personality-claude-sycophantic-evil">Anthropic studied what gives an AI system its ‘personality’ — and what makes it ‘evil’</a>
+                <a href="https://futurism.com/the-byte/horrifying-video-amusement-park-ride-breaking" target="_blank" rel="noopener noreferrer">Horrifying Video Shows Amusement Park Ride Breaking Apart Mid-Ride</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://techcrunch.com/podcast/from-metas-massive-offers-to-anthropics-massive-valuation-does-ai-have-a-ceiling/">From Meta’s massive offers to Anthropic’s massive valuation, does AI have a ceiling?</a>
+                <a href="https://www.theverge.com/anthropic/717551/anthropic-research-fellows-ai-personality-claude-sycophantic-evil" target="_blank" rel="noopener noreferrer">Anthropic studied what gives an AI system its ‘personality’ — and what makes it ‘evil’</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://futurism.com/tesla-diner-patio-accident">Tesla Diner Patio Covering Collapses, Smashes Mother on Head and Barely Misses Baby</a>
+                <a href="https://techcrunch.com/podcast/from-metas-massive-offers-to-anthropics-massive-valuation-does-ai-have-a-ceiling/" target="_blank" rel="noopener noreferrer">From Meta’s massive offers to Anthropic’s massive valuation, does AI have a ceiling?</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://techcrunch.com/2025/08/01/more-details-emerge-on-how-windsurfs-vcs-and-founders-got-paid-from-the-google-deal/">More details emerge on how Windsurf’s VCs and founders got paid from the Google deal</a>
+                <a href="https://futurism.com/tesla-diner-patio-accident" target="_blank" rel="noopener noreferrer">Tesla Diner Patio Covering Collapses, Smashes Mother on Head and Barely Misses Baby</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
+                <a href="https://techcrunch.com/2025/08/01/more-details-emerge-on-how-windsurfs-vcs-and-founders-got-paid-from-the-google-deal/" target="_blank" rel="noopener noreferrer">More details emerge on how Windsurf’s VCs and founders got paid from the Google deal</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://futurism.com/the-byte/humanoid-robot-loading-washing-machine">Wild Video Shows Humanoid Robot Loading a Washing Machine Pretty Well</a>
+                <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" target="_blank" rel="noopener noreferrer">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
+                <a href="https://futurism.com/the-byte/humanoid-robot-loading-washing-machine" target="_blank" rel="noopener noreferrer">Wild Video Shows Humanoid Robot Loading a Washing Machine Pretty Well</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://futurism.com/scientists-alarmed-whales-silent">Scientists Alarmed as Whales Suddenly Going Silent</a>
+                <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" target="_blank" rel="noopener noreferrer">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
                 
             </div>
             
@@ -251,44 +208,44 @@
         <div class="column">
             
             <div class="headline">
-                <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
+                <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/" target="_blank" rel="noopener noreferrer">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/mosquito-up-close-blue-cloth.jpeg?auto=webp" alt="Article image for These Genetically Engineered Mosquitoes Could Wipe Out Malaria" loading="lazy">
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/canva-ai-features/">5 Canva AI Features That Tech Professionals Must Know</a>
+                <a href="https://www.analyticsvidhya.com/blog/2025/08/canva-ai-features/" target="_blank" rel="noopener noreferrer">5 Canva AI Features That Tech Professionals Must Know</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.theverge.com/analysis/717167/bing-market-share-growth-google-ai">Bing made Google dance and then stole some search traffic</a>
+                <a href="https://www.theverge.com/analysis/717167/bing-market-share-growth-google-ai" target="_blank" rel="noopener noreferrer">Bing made Google dance and then stole some search traffic</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.marktechpost.com/2025/08/01/falcon-llm-team-releases-falcon-h1-technical-report-a-hybrid-attention-ssm-model-that-rivals-70b-llms/">Falcon LLM Team Releases Falcon-H1 Technical Report: A Hybrid Attention–SSM Model That Rivals 70B LLMs</a>
+                <a href="https://www.marktechpost.com/2025/08/01/falcon-llm-team-releases-falcon-h1-technical-report-a-hybrid-attention-ssm-model-that-rivals-70b-llms/" target="_blank" rel="noopener noreferrer">Falcon LLM Team Releases Falcon-H1 Technical Report: A Hybrid Attention–SSM Model That Rivals 70B LLMs</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.marktechpost.com/2025/08/01/meet-smallthinker-a-family-of-efficient-large-language-models-llms-natively-trained-for-local-deployment/">Meet SmallThinker: A Family of Efficient Large Language Models LLMs Natively Trained for Local Deployment</a>
+                <a href="https://www.marktechpost.com/2025/08/01/meet-smallthinker-a-family-of-efficient-large-language-models-llms-natively-trained-for-local-deployment/" target="_blank" rel="noopener noreferrer">Meet SmallThinker: A Family of Efficient Large Language Models LLMs Natively Trained for Local Deployment</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.marktechpost.com/2025/07/31/google-ai-introduces-the-test-time-diffusion-deep-researcher-ttd-dr-a-human-inspired-diffusion-framework-for-advanced-deep-research-agents/">Google AI Introduces the Test-Time Diffusion Deep Researcher (TTD-DR): A Human-Inspired Diffusion Framework for Advanced Deep Research Agents</a>
+                <a href="https://www.marktechpost.com/2025/07/31/google-ai-introduces-the-test-time-diffusion-deep-researcher-ttd-dr-a-human-inspired-diffusion-framework-for-advanced-deep-research-agents/" target="_blank" rel="noopener noreferrer">Google AI Introduces the Test-Time Diffusion Deep Researcher (TTD-DR): A Human-Inspired Diffusion Framework for Advanced Deep Research Agents</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/">OpenAI removes ChatGPT feature after private conversations leak to Google search</a>
+                <a href="https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/" target="_blank" rel="noopener noreferrer">OpenAI removes ChatGPT feature after private conversations leak to Google search</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://venturebeat.com/ai/deep-cogito-goes-big-releasing-4-new-open-source-hybrid-reasoning-models-with-self-improving-intuition/">Deep Cogito goes big, releasing 4 new open source hybrid reasoning models with self-improving ‘intuition’</a>
+                <a href="https://venturebeat.com/ai/deep-cogito-goes-big-releasing-4-new-open-source-hybrid-reasoning-models-with-self-improving-intuition/" target="_blank" rel="noopener noreferrer">Deep Cogito goes big, releasing 4 new open source hybrid reasoning models with self-improving ‘intuition’</a>
                 
             </div>
             
@@ -296,46 +253,46 @@
         <div class="column">
             
             <div class="headline">
-                <a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook">Tim Cook says Apple is ‘open to’ AI acquisitions</a>
+                <a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook" target="_blank" rel="noopener noreferrer">Tim Cook says Apple is ‘open to’ AI acquisitions</a>
                 
             </div>
             
             <div class="headline">
-                <a href="http://arxiv.org/abs/2507.23784v1">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
+                <a href="http://arxiv.org/abs/2507.23784v1" target="_blank" rel="noopener noreferrer">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
                 
             </div>
             
             <div class="headline">
-                <a href="http://arxiv.org/abs/2507.23779v1">Phi-Ground Tech Report: Advancing Perception in GUI Grounding</a>
+                <a href="http://arxiv.org/abs/2507.23779v1" target="_blank" rel="noopener noreferrer">Phi-Ground Tech Report: Advancing Perception in GUI Grounding</a>
                 
             </div>
             
             <div class="headline">
-                <a href="http://arxiv.org/abs/2507.23773v1">SimuRA: Towards General Goal-Oriented Agent via Simulative Reasoning Architecture with LLM-Based World Model</a>
+                <a href="http://arxiv.org/abs/2507.23773v1" target="_blank" rel="noopener noreferrer">SimuRA: Towards General Goal-Oriented Agent via Simulative Reasoning Architecture with LLM-Based World Model</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/">The Only Guide You Will Ever Need For Model Context Protocol (MCP)</a>
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/" target="_blank" rel="noopener noreferrer">The Only Guide You Will Ever Need For Model Context Protocol (MCP)</a>
                 
             </div>
             
             <div class="headline">
-                <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/">Mini Human Organs Just Got Much Closer to Matching the Real Thing</a>
+                <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/" target="_blank" rel="noopener noreferrer">Mini Human Organs Just Got Much Closer to Matching the Real Thing</a>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/brain-organoids-in-a-flask-1.jpeg?auto=webp" alt="Article image for Mini Human Organs Just Got Much Closer to Matching the Real Thing" loading="lazy">
                 
             </div>
             
             <div class="headline">
-                <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/">AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong</a>
+                <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/" target="_blank" rel="noopener noreferrer">AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong</a>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/ai-agent-bot-in-a-field-2.jpeg?auto=webp" alt="Article image for AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong" loading="lazy">
                 
             </div>
             
             <div class="headline">
-                <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/">Where Is AI on the Enshittification Curve?</a>
+                <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/" target="_blank" rel="noopener noreferrer">Where Is AI on the Enshittification Curve?</a>
                 
                 <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for Where Is AI on the Enshittification Curve?" loading="lazy">
                 
@@ -347,31 +304,31 @@
     <footer>
         <h2>Top 25 AI Websites</h2>
         <ul>
-            <li><a href="https://openai.com">OpenAI</a></li>
-            <li><a href="https://ai.google">Google AI</a></li>
-            <li><a href="https://www.microsoft.com/en-us/ai">Microsoft AI</a></li>
-            <li><a href="https://huggingface.co">Hugging Face</a></li>
-            <li><a href="https://techcrunch.com/category/artificial-intelligence/">TechCrunch AI</a></li>
-            <li><a href="https://venturebeat.com/category/ai/">VentureBeat AI</a></li>
-            <li><a href="https://www.wired.com/tag/artificial-intelligence/">Wired AI</a></li>
-            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/">MIT Technology Review</a></li>
-            <li><a href="https://aimagazine.com">AI Magazine</a></li>
-            <li><a href="https://www.analyticsvidhya.com">Analytics Vidhya</a></li>
-            <li><a href="https://www.aitrends.com">AI Trends</a></li>
-            <li><a href="https://news.mit.edu/topic/artificial-intelligence2">MIT News AI</a></li>
-            <li><a href="https://www.dataversity.net">Dataversity</a></li>
-            <li><a href="https://emerj.com">Emerj</a></li>
-            <li><a href="https://www.kdnuggets.com">KDnuggets</a></li>
-            <li><a href="https://www.analyticsinsight.net">Analytics Insight</a></li>
-            <li><a href="https://insidebigdata.com">Inside Big Data</a></li>
-            <li><a href="https://www.datasciencecentral.com">Data Science Central</a></li>
-            <li><a href="https://developer.ibm.com">IBM Developer</a></li>
-            <li><a href="https://intelligence.org">Machine Intelligence Research Institute</a></li>
-            <li><a href="https://paperswithcode.com">Papers with Code</a></li>
-            <li><a href="https://www.anthropic.com">Anthropic</a></li>
-            <li><a href="https://stability.ai">Stability AI</a></li>
-            <li><a href="https://www.perplexity.ai">Perplexity AI</a></li>
-            <li><a href="https://www.artificialintelligence-news.com">Artificial Intelligence News</a></li>
+            <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
+            <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
+            <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
+            <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
+            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
+            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
+            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
+            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
+            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
+            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
+            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
+            <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
+            <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
+            <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
+            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
+            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
+            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
+            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
+            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
+            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
+            <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
+            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
+            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
+            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
         </ul>
     </footer>
 </body>
