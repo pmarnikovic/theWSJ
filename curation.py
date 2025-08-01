@@ -106,14 +106,14 @@ def get_headline_and_score(title):
 # --- MAIN EXECUTION ---
 
 if __name__ == "__main__":
-    print("Starting AI-Drudge content generation...")
+    print("Starting content generation for Exhaustive AI...")
 
     # 1. Fetch and deduplicate articles
     all_articles = get_articles_from_rss() + get_articles_from_arxiv()
     seen_urls = set()
     unique_articles =
     for article in all_articles:
-        if article['url'] not in seen_urls:
+        if article.get('url') and article['url'] not in seen_urls:
             unique_articles.append(article)
             seen_urls.add(article['url'])
 
