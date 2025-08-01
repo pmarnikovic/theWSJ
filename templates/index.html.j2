@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Daily AI news aggregated from top sources, featuring sensational headlines and breakthroughs in artificial intelligence.">
     <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
-    <title>AI REPORT</title>
+    <title>Exhaustive AI</title>
     
     <!-- Add JSON-LD schema here -->
     {% if main_headline %}
@@ -18,11 +18,11 @@
       "datePublished": "{{ main_headline.published }}",
       "author": {
         "@type": "Organization",
-        "name": "AI Report"
+        "name": "Exhaustive AI"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "AI Report",
+        "name": "Exhaustive AI",
         "logo": {
           "@type": "ImageObject",
           "url": "https://your-logo-url.com/logo.png"
@@ -55,7 +55,7 @@
             margin: 40px 0;  /* Increased spacing */
         }
         .main-headline a {
-            color: #000;
+            color: #000;  /* Black headlines */
             text-decoration: none;
         }
         .main-headline a:hover {
@@ -85,7 +85,7 @@
             margin: 20px 0;  /* More vertical spacing between headlines */
         }
         .headline a {
-            color: #0000ff;  /* Blue links like Drudge */
+            color: #000;  /* Black headlines */
             text-decoration: none;
         }
         .headline a:hover {
@@ -95,6 +95,14 @@
             max-width: 100%;
             height: auto;
             margin: 10px 0;
+        }
+        /* Vary font styles for readability (different text appearance) */
+        .headline:nth-child(odd) {
+            font-family: 'Georgia', serif;  /* Serif font for odd headlines */
+            font-style: italic;  /* Italics for variation */
+        }
+        .headline:nth-child(even) {
+            font-family: 'Arial Black', sans-serif;  /* Bold sans-serif for even */
         }
         footer {
             margin-top: 60px;  /* Space above footer */
@@ -116,7 +124,7 @@
             margin-bottom: 10px;
         }
         footer a {
-            color: #0000ff;
+            color: #000;  /* Black in footer too */
             text-decoration: none;
         }
         footer a:hover {
@@ -155,7 +163,7 @@
     </style>
 </head>
 <body>
-    <h1>AI REPORT</h1>
+    <h1>Exhaustive AI</h1>  <!-- Updated visible title -->
     
     {% if main_headline %}
     <div class="main-headline">
