@@ -45,18 +45,18 @@ MAX_TOTAL_ARTICLES = 25
 
 def get_articles_from_rss():
     """Fetches and parses articles from the list of RSS feeds."""
-    articles =
+    articles = []
     for feed_url in RSS_FEEDS:
         try:
             feed = feedparser.parse(feed_url)
-            for entry in feed.entries:
+            for entry in feed.entries[:MAX_ARTICLES_PER_SOURCE]:
                 if entry.get('title') and entry.get('link'):
                     article = {'title': entry.title, 'url': entry.link}
                     if 'published_parsed' in entry and entry.published_parsed:
                         dt = datetime.fromtimestamp(time.mktime(entry.published_parsed))
                         article['published'] = dt.replace(tzinfo=timezone.utc)
                     else:
-                        article['published'] = datetime.now(timezone.utc)
+                        article['published'] = datetime.min.replace(tzinfo=timezone.utc)  # Use min to sort last if missing
                     articles.append(article)
         except Exception as e:
             print(f"Error fetching RSS feed {feed_url}: {e}")
@@ -64,7 +64,7 @@ def get_articles_from_rss():
 
 def get_articles_from_arxiv():
     """Fetches recent research papers from arXiv's Computer Science AI category."""
-    articles =
+    articles = []
     try:
         search = arxiv.Search(
             query="cat:cs.AI",
@@ -93,8 +93,8 @@ def get_headline_and_score(title):
         response = gemini_model.generate_content(prompt)
         parts = response.text.strip().split('|', 1)
         if len(parts) == 2:
-            score = int(parts.strip())
-            headline = parts.[1]strip().replace('*', '')
+            score = int(parts[0].strip())
+            headline = parts[1].strip().replace('*', '')
             return headline, score
         else:
             # If the model doesn't respond in the correct format, fallback
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     # 1. Fetch and deduplicate articles
     all_articles = get_articles_from_rss() + get_articles_from_arxiv()
     seen_urls = set()
-    unique_articles =
+    unique_articles = []
     for article in all_articles:
         if article.get('url') and article['url'] not in seen_urls:
             unique_articles.append(article)
@@ -119,11 +119,11 @@ if __name__ == "__main__":
 
     # 2. Sort by date and take the most recent
     unique_articles.sort(key=lambda x: x['published'], reverse=True)
-    articles_to_process = unique_articles
+    articles_to_process = unique_articles[:MAX_TOTAL_ARTICLES]  # Limit before processing
     print(f"Selected the top {len(articles_to_process)} most recent articles.")
 
     # 3. Generate headlines and scores for each article
-    processed_articles =
+    processed_articles = []
     for article in articles_to_process:
         print(f"Processing: {article['title']}")
         headline, score = get_headline_and_score(article['title'])
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     processed_articles.sort(key=lambda x: x['score'], reverse=True)
 
     # 5. Separate the main headline from the rest
-    main_headline = processed_articles if processed_articles else None
+    main_headline = processed_articles[0] if processed_articles else None
     other_headlines = processed_articles[1:]
 
     # 6. Split the rest into three columns for the template
