@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Daily AI news aggregated from top sources, featuring sensational headlines and breakthroughs in artificial intelligence.">
     <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
-    <title>Exhaustive AI</title>  <!-- Changed title here; this sets the browser tab/page title -->
+    <title>AI REPORT</title>
     
     <!-- Add JSON-LD schema here -->
-    {% if main_headline %}
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "{{ main_headline.headline }}",
-      "image": "{{ main_headline.image_url or 'https://your-default-image-url.com/ai-placeholder.jpg' }}",
-      "datePublished": "{{ main_headline.published }}",
+      "headline": "OPENAI REMOVES CHATGPT FEATURE AFTER PRIVATE CONVERSATIONS LEAK TO GOOGLE SEARCH...",
+      "image": "https://your-default-image-url.com/ai-placeholder.jpg",
+      "datePublished": "2025-08-01T00:49:25+00:00",
       "author": {
         "@type": "Organization",
-        "name": "Exhaustive AI"  <!-- Updated organization name here for consistency -->
+        "name": "AI Report"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Exhaustive AI",  <!-- Updated organization name here -->
+        "name": "AI Report",
         "logo": {
           "@type": "ImageObject",
           "url": "https://your-logo-url.com/logo.png"
@@ -30,72 +30,63 @@
       }
     }
     </script>
-    {% endif %}
+    
     
     <style>
         body {
-            font-family: Arial, sans-serif;  /* Base font like Drudge */
+            font-family: Arial, sans-serif;
             background-color: #fff;
             color: #000;
             margin: 0;
-            padding: 50px;  /* Further increased padding for separation */
+            padding: 40px;  /* Increased padding for more space */
             text-align: center;
-            line-height: 1.8;  /* Increased line height for readability */
+            line-height: 1.6;  /* Better line spacing */
         }
         h1 {
-            font-size: 48px;  /* Slightly reduced from 60px */
+            font-size: 60px;  /* Larger title */
             font-weight: bold;
             text-transform: uppercase;
-            margin: 0 0 50px;  /* More bottom margin for separation */
+            margin: 0 0 40px;  /* More bottom margin */
         }
         .main-headline {
-            font-size: 36px;  /* Reduced from 48px */
+            font-size: 48px;  /* Even larger main headline */
             font-weight: bold;
             text-transform: uppercase;
-            margin: 50px 0;  /* Increased spacing */
-            text-decoration: underline;  /* Underline main headline */
-            font-style: italic;  /* Add italics where it fits (e.g., for dramatic effect) */
+            margin: 40px 0;  /* Increased spacing */
         }
         .main-headline a {
-            color: #000;  /* Black links */
+            color: #000;
             text-decoration: none;
-        }
-        .main-headline a:active {
-            color: #ff0000;  /* Red on click (active state) */
         }
         .main-headline a:hover {
             text-decoration: underline;
         }
         .main-image {
-            max-width: 800px;
+            max-width: 800px;  /* Larger max width for image */
             height: auto;
-            margin: 30px auto;  /* More space around images */
+            margin: 20px auto;
             display: block;
         }
         .columns {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between;  /* Spread columns further */
             text-align: left;
-            max-width: 1200px;
+            max-width: 1200px;  /* Limit total width for centering */
             margin: 0 auto;
         }
         .column {
-            width: 32%;
-            padding: 30px;  /* Increased padding for more separation */
+            width: 32%;  /* Slightly narrower columns for more space between */
+            padding: 20px;  /* Increased internal padding */
         }
         .headline {
-            font-size: 20px;  /* Reduced from 24px for easier reading */
+            font-size: 24px;  /* Larger headline font */
             font-weight: bold;
             text-transform: uppercase;
-            margin: 30px 0;  /* Increased vertical spacing between headlines */
-            text-decoration: underline;  /* Underline sub-headlines */
+            margin: 20px 0;  /* More vertical spacing between headlines */
         }
         .headline a {
-            color: #000;  /* Black links */
+            color: #0000ff;  /* Blue links like Drudge */
             text-decoration: none;
-        }
-        .headline a:active {
-            color: #ff0000;  /* Red on click */
         }
         .headline a:hover {
             text-decoration: underline;
@@ -103,50 +94,30 @@
         .headline img {
             max-width: 100%;
             height: auto;
-            margin: 15px 0;  /* More space around images */
-        }
-        /* Vary font styles per headline for Drudge-like variation */
-        .headline:nth-child(odd) {
-            font-family: 'Times New Roman', serif;  /* Serif for odd headlines */
-            font-style: italic;  /* Italics for some */
-        }
-        .headline:nth-child(even) {
-            font-family: Arial, sans-serif;  /* Sans-serif for even */
-        }
-        /* Add quotes to headlines where it fits (via pseudo-elements; can be selective if needed) */
-        .headline.quote-style:before {
-            content: '"';
-            font-size: 1.2em;
-        }
-        .headline.quote-style:after {
-            content: '"';
-            font-size: 1.2em;
+            margin: 10px 0;
         }
         footer {
-            margin-top: 80px;  /* More space above footer */
-            padding-top: 30px;
-            border-top: 2px solid #000;
+            margin-top: 60px;  /* Space above footer */
+            padding-top: 20px;
+            border-top: 2px solid #000;  /* Thicker line for separation */
             text-align: left;
         }
         footer h2 {
-            font-size: 24px;  /* Reduced slightly */
-            margin-bottom: 25px;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
         footer ul {
             list-style-type: none;
             padding: 0;
-            columns: 2;
-            column-gap: 50px;  /* Increased gap */
+            columns: 2;  /* Split into two columns for better spread */
+            column-gap: 40px;
         }
         footer li {
-            margin-bottom: 15px;  /* More separation */
+            margin-bottom: 10px;
         }
         footer a {
-            color: #000;  /* Black links in footer too */
+            color: #0000ff;
             text-decoration: none;
-        }
-        footer a:active {
-            color: #ff0000;
         }
         footer a:hover {
             text-decoration: underline;
@@ -154,47 +125,152 @@
     </style>
 </head>
 <body>
-    <h1>Exhaustive AI</h1>  <!-- Changed visible title here; this is the on-page header -->
+    <h1>AI REPORT</h1>
     
-    {% if main_headline %}
+    
     <div class="main-headline">
-        <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
+        <a href="https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/">OPENAI REMOVES CHATGPT FEATURE AFTER PRIVATE CONVERSATIONS LEAK TO GOOGLE SEARCH...</a>
     </div>
-    {% if main_headline.image_url %}
-    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image">
-    {% endif %}
-    {% endif %}
+    
+    
     
     <div class="columns">
         <div class="column">
-            {% for item in column1 %}
-            <div class="headline {% if loop.index % 2 == 0 %}quote-style{% endif %}">  <!-- Add quotes to even headlines for variation -->
-                <a href="{{ item.url }}">{{ item.headline }}</a>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-                {% endif %}
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/2025/07/31/female-founded-semiconductor-ai-startup-sixsense-raises-funding/">FEMALE-FOUNDED SEMICONDUCTOR AI STARTUP SIXSENSE RAISES $8.5M...</a>
+                
             </div>
-            {% endfor %}
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/2025/07/31/amazon-ceo-wants-to-put-ads-in-your-alexa-conversations/">AMAZON CEO WANTS TO PUT ADS IN YOUR ALEXA+ CONVERSATIONS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://techcrunch.com/podcast/who-really-benefits-from-the-ai-boom/">WHAT’S THE REAL COST OF CHASING AGI? POWER CONSOLIDATION IS JUST THE START, SAYS THE AI NOW INSTITUTE....</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.marktechpost.com/2025/07/31/a-coding-guide-to-build-an-intelligent-conversational-ai-agent-with-agent-memory-using-cognee-and-free-hugging-face-models/">A CODING GUIDE TO BUILD AN INTELLIGENT CONVERSATIONAL AI AGENT WITH AGENT MEMORY USING COGNEE AND FREE HUGGING FACE MODELS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://venturebeat.com/ai/deep-cogito-goes-big-releasing-4-new-open-source-hybrid-reasoning-models-with-self-improving-intuition/">DEEP COGITO GOES BIG, RELEASING 4 NEW OPEN SOURCE HYBRID REASONING MODELS WITH SELF-IMPROVING ‘INTUITION’...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://venturebeat.com/ai/hard-won-vibe-coding-insights-mailchimps-40-speed-gain-came-with-governance-price/">HARD-WON VIBE CODING INSIGHTS: MAILCHIMP’S 40% SPEED GAIN CAME WITH GOVERNANCE PRICE...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook">TIM COOK SAYS APPLE IS ‘OPEN TO’ AI ACQUISITIONS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.marktechpost.com/2025/07/31/agentsociety-an-open-source-ai-framework-for-simulating-large-scale-societal-interactions-with-llm-agents/">AGENTSOCIETY: AN OPEN SOURCE AI FRAMEWORK FOR SIMULATING LARGE-SCALE SOCIETAL INTERACTIONS WITH LLM AGENTS...</a>
+                
+            </div>
+            
         </div>
         <div class="column">
-            {% for item in column2 %}
-            <div class="headline {% if loop.index % 2 == 1 %}quote-style{% endif %}">  <!-- Quotes on odd for variety -->
-                <a href="{{ item.url }}">{{ item.headline }}</a>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-                {% endif %}
+            
+            <div class="headline">
+                <a href="https://futurism.com/judge-accused-ai-ruling">JUDGE ACCUSED OF USING AI TO ISSUE GARBLED RULING...</a>
+                
             </div>
-            {% endfor %}
+            
+            <div class="headline">
+                <a href="https://futurism.com/nasa-searching-workers">NASA ANNOUNCES IT WILL BE RANDOMLY SEARCHING EMPLOYEES...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://futurism.com/basic-flaw-mark-zuckerberg-plan-superintelligent-ai">THERE'S A VERY BASIC FLAW IN MARK ZUCKERBERG'S PLAN FOR SUPERINTELLIGENT AI...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="http://arxiv.org/abs/2507.23784v1">SUB: BENCHMARKING CBM GENERALIZATION VIA SYNTHETIC ATTRIBUTE SUBSTITUTIONS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="http://arxiv.org/abs/2507.23779v1">PHI-GROUND TECH REPORT: ADVANCING PERCEPTION IN GUI GROUNDING...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="http://arxiv.org/abs/2507.23773v1">SIMURA: TOWARDS GENERAL GOAL-ORIENTED AGENT VIA SIMULATIVE REASONING ARCHITECTURE WITH LLM-BASED WORLD MODEL...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/news/716783/microsoft-4-trillion-market-cap-valuation">MICROSOFT BECOMES THE SECOND $4 TRILLION COMPANY...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/">THE ONLY GUIDE YOU WILL EVER NEED FOR MODEL CONTEXT PROTOCOL (MCP)...</a>
+                
+            </div>
+            
         </div>
         <div class="column">
-            {% for item in column3 %}
-            <div class="headline {% if loop.index % 2 == 0 %}quote-style{% endif %}">
-                <a href="{{ item.url }}">{{ item.headline }}</a>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-                {% endif %}
+            
+            <div class="headline">
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/what-is-claude-code/">CLAUDE CODE: MASTER IT IN 20 MINUTES FOR 10X FASTER CODING...</a>
+                
             </div>
-            {% endfor %}
+            
+            <div class="headline">
+                <a href="https://www.theverge.com/decoder-podcast-with-nilay-patel/716633/ai-talent-war-meta-mark-zuckerberg-openai-nba-all-stars">WHY AI RESEARCHERS ARE GETTING PAID LIKE NBA ALL-STARS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/">MINI HUMAN ORGANS JUST GOT MUCH CLOSER TO MATCHING THE REAL THING...</a>
+                
+                <img src="https://singularityhub.com/uploads/2025/07/brain-organoids-in-a-flask-1.jpeg?auto=webp" alt="Article image for MINI HUMAN ORGANS JUST GOT MUCH CLOSER TO MATCHING THE REAL THING...">
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.marktechpost.com/2025/07/31/the-ultimate-2025-guide-to-coding-llm-benchmarks-and-performance-metrics/">THE ULTIMATE 2025 GUIDE TO CODING LLM BENCHMARKS AND PERFORMANCE METRICS...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.analyticsvidhya.com/blog/2025/07/manus-vs-chatgpt-agent/">MANUS VS CHATGPT AGENT: WHICH IS BETTER?...</a>
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/">AI AGENTS ARE HERE. THIS IS WHAT THEY CAN DO—AND HOW THEY CAN GO WRONG...</a>
+                
+                <img src="https://singularityhub.com/uploads/2025/07/ai-agent-bot-in-a-field-2.jpeg?auto=webp" alt="Article image for AI AGENTS ARE HERE. THIS IS WHAT THEY CAN DO—AND HOW THEY CAN GO WRONG...">
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://singularityhub.com/2025/07/28/anthropic-says-ai-needs-a-whole-lot-more-power-stat/">ANTHROPIC SAYS AI NEEDS A WHOLE LOT MORE POWER—STAT...</a>
+                
+                <img src="https://singularityhub.com/uploads/2025/07/power-electricity-infrastructure.jpeg?auto=webp" alt="Article image for ANTHROPIC SAYS AI NEEDS A WHOLE LOT MORE POWER—STAT...">
+                
+            </div>
+            
+            <div class="headline">
+                <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/">WHERE IS AI ON THE ENSHITTIFICATION CURVE?...</a>
+                
+                <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for WHERE IS AI ON THE ENSHITTIFICATION CURVE?...">
+                
+            </div>
+            
         </div>
     </div>
 
