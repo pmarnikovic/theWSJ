@@ -25,7 +25,7 @@
         "name": "Exhaustive AI",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
+          "url": "https://your-logo-url.com/logo.png"
         }
       }
     }
@@ -39,7 +39,7 @@
             --link-color: #bb86fc; /* Purple links for dark mode */
             --hover-color: #03dac6; /* Teal on hover */
             --border-color: #333; /* Dark borders */
-            --headline-color: #ffffff; /* White headlines */
+            --headline-color: #e0e0e0; /* Very light grey headlines */
         }
 
         /* Light mode override if user prefers it */
@@ -50,7 +50,7 @@
                 --link-color: #000;
                 --hover-color: #0000ff;
                 --border-color: #ccc;
-                --headline-color: #000;
+                --headline-color: #333; /* Dark grey in light mode for headlines */
             }
         }
 
@@ -63,11 +63,11 @@
             text-align: center;
             line-height: 1.6; /* Better line spacing */
         }
-        .logo {
-            max-width: 400px; /* Adjust size as needed */
-            height: auto;
-            margin: 0 auto 40px; /* Center and add bottom margin */
-            display: block;
+        h1 {
+            font-size: 60px; /* Larger title */
+            font-weight: bold;
+            margin: 0 0 40px; /* More bottom margin */
+            color: var(--headline-color);
         }
         .main-headline {
             font-size: 48px; /* Even larger main headline */
@@ -163,8 +163,8 @@
                 padding: 10px; /* Reduce padding for smaller screens */
                 border-right: none; /* Remove lines on mobile */
             }
-            .logo {
-                max-width: 300px; /* Smaller logo on mobile */
+            h1 {
+                font-size: 36px; /* Smaller title */
             }
             .main-headline {
                 font-size: 28px; /* Reduce main headline */
@@ -187,7 +187,7 @@
     </style>
 </head>
 <body>
-    <img src="https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg" alt="Exhaustive AI Logo" class="logo">
+    <h1>Exhaustive AI</h1>
     
     {% if main_headline %}
     <div class="main-headline">
