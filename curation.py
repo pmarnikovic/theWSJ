@@ -149,7 +149,8 @@ if __name__ == "__main__":
             'headline': headline,
             'url': article['url'],
             'score': score,
-            'image_url': article.get('image_url')
+            'image_url': article.get('image_url'),
+            'published': article['published']
         })
         print(f"  -> Score: {score}, Headline: {headline}")
 
