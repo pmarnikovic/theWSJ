@@ -145,12 +145,15 @@ if __name__ == "__main__":
     for article in articles_to_process:
         print(f"Processing: {article['title']}")
         headline, score = get_headline_and_score(article['title'])
+        pub_date = article['published']
+        if pub_date == datetime.min.replace(tzinfo=timezone.utc):
+            pub_date = datetime.now(timezone.utc)
         processed_articles.append({
             'headline': headline,
             'url': article['url'],
             'score': score,
             'image_url': article.get('image_url'),
-            'published': article['published']
+            'published': pub_date.isoformat()  # Convert to ISO string for template
         })
         print(f"  -> Score: {score}, Headline: {headline}")
 
