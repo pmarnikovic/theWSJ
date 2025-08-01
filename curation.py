@@ -10,7 +10,6 @@ from datetime import datetime, timezone
 
 # Configure the Gemini API client
 try:
-    # Use os.getenv() for safer key retrieval
     gemini_api_key = os.getenv('GEMINI_API_KEY')
     if not gemini_api_key:
         raise KeyError("GEMINI_API_KEY environment variable not set.")
@@ -53,12 +52,10 @@ def get_articles_from_rss():
             for entry in feed.entries:
                 if entry.get('title') and entry.get('link'):
                     article = {'title': entry.title, 'url': entry.link}
-                    # Normalize RSS date (struct_time) to timezone-aware datetime
                     if 'published_parsed' in entry and entry.published_parsed:
                         dt = datetime.fromtimestamp(time.mktime(entry.published_parsed))
                         article['published'] = dt.replace(tzinfo=timezone.utc)
                     else:
-                        # Fallback for feeds without dates
                         article['published'] = datetime.now(timezone.utc)
                     articles.append(article)
         except Exception as e:
@@ -76,47 +73,43 @@ def get_articles_from_arxiv():
         )
         client = arxiv.Client()
         for result in client.results(search):
-            # arXiv 'published' is already a timezone-aware datetime
             articles.append({'title': result.title, 'url': result.entry_id, 'published': result.published})
     except Exception as e:
         print(f"Error fetching from arXiv: {e}")
     return articles
 
-def generate_drudge_headline(title):
-    """Uses the Gemini API to generate a sensational, Drudge-style headline."""
+def get_headline_and_score(title):
+    """Uses a single Gemini API call to get both a headline and a sensationalism score."""
     fallback_headline = title.upper().strip() + "..."
     prompt = f"""
-    You are an AI news editor with the personality of Matt Drudge. Your job is to write an irresistible, punchy, and sensational headline in all-caps. The headline should be provocative and short.
+    Analyze the following article title. First, on a scale of 1 to 10, rate how provocative and sensational it is. Higher scores for titles that evoke strong emotions, controversy, or breakthroughs.
+    Second, rewrite the title as an irresistible, punchy, and sensational headline in all-caps, in the style of Matt Drudge.
 
-    Based on the following article title, generate one headline.
+    Respond with the score and the headline separated by a pipe character (|). For example: 8|SCIENTISTS UNLEASH 'CHILD' AI... FEARS GROW...
 
     Article Title: "{title}"
-
-    Example Headline Format:
-    * SCIENTISTS UNLEASH 'CHILD' AI... FEARS GROW...
-    * NEW GOOGLE MODEL SEES THROUGH WALLS... PRIVACY DECLARED DEAD?
-    * PAPER REVEALS CHATGPT COST... $700K A DAY TO RUN...
-
-    Now, generate the headline for the provided title.
     """
     try:
         response = gemini_model.generate_content(prompt)
-        headline = response.text.strip().replace('*', '').strip()
-        return headline if headline else fallback_headline
+        parts = response.text.strip().split('|', 1)
+        if len(parts) == 2:
+            score = int(parts.strip())
+            headline = parts.[1]strip().replace('*', '')
+            return headline, score
+        else:
+            # If the model doesn't respond in the correct format, fallback
+            return fallback_headline, 5
     except Exception as e:
-        print(f"Error generating headline for '{title}': {e}")
-        return fallback_headline
+        print(f"Error processing title '{title}': {e}")
+        return fallback_headline, 5
 
 # --- MAIN EXECUTION ---
 
 if __name__ == "__main__":
     print("Starting AI-Drudge content generation...")
 
-    # 1. Fetch articles from all sources
+    # 1. Fetch and deduplicate articles
     all_articles = get_articles_from_rss() + get_articles_from_arxiv()
-    print(f"Fetched {len(all_articles)} total raw articles.")
-
-    # 2. Deduplicate articles based on URL
     seen_urls = set()
     unique_articles =
     for article in all_articles:
@@ -124,30 +117,49 @@ if __name__ == "__main__":
             unique_articles.append(article)
             seen_urls.add(article['url'])
 
-    # 3. Sort all unique articles by publication date, newest first
+    # 2. Sort by date and take the most recent
     unique_articles.sort(key=lambda x: x['published'], reverse=True)
-    print(f"Processing {len(unique_articles)} unique articles after deduplication.")
-
-    # 4. Take the most recent articles, respecting the total limit
     articles_to_process = unique_articles
-    print(f"Selected the top {len(articles_to_process)} most recent articles for headline generation.")
+    print(f"Selected the top {len(articles_to_process)} most recent articles.")
 
-    # 5. Generate headlines for the final list
-    final_news_items =
+    # 3. Generate headlines and scores for each article
+    processed_articles =
     for article in articles_to_process:
-        print(f"Generating headline for: {article['title']}")
-        headline = generate_drudge_headline(article['title'])
-        final_news_items.append({'headline': headline, 'url': article['url']})
-        print(f"  -> {headline}")
+        print(f"Processing: {article['title']}")
+        headline, score = get_headline_and_score(article['title'])
+        processed_articles.append({
+            'headline': headline,
+            'url': article['url'],
+            'score': score
+        })
+        print(f"  -> Score: {score}, Headline: {headline}")
 
-    # 6. Render the HTML template
+    # 4. Sort by score to find the main headline
+    processed_articles.sort(key=lambda x: x['score'], reverse=True)
+
+    # 5. Separate the main headline from the rest
+    main_headline = processed_articles if processed_articles else None
+    other_headlines = processed_articles[1:]
+
+    # 6. Split the rest into three columns for the template
+    col_size = (len(other_headlines) + 2) // 3  # Distribute items evenly
+    column1 = other_headlines[0:col_size]
+    column2 = other_headlines[col_size:col_size*2]
+    column3 = other_headlines[col_size*2:]
+
+    # 7. Render the HTML template
     template_loader = jinja2.FileSystemLoader(searchpath="./templates")
     template_env = jinja2.Environment(loader=template_loader)
     template = template_env.get_template("index.html.j2")
-    output_html = template.render(news_items=final_news_items)
+    output_html = template.render(
+        main_headline=main_headline,
+        column1=column1,
+        column2=column2,
+        column3=column3
+    )
 
-    # 7. Write the final HTML file
+    # 8. Write the final HTML file
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(output_html)
 
-    print(f"Successfully generated new index.html with {len(final_news_items)} headlines.")
+    print(f"Successfully generated new index.html with Drudge-style layout.")
