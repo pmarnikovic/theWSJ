@@ -122,6 +122,36 @@
         footer a:hover {
             text-decoration: underline;
         }
+        /* Media queries for mobile optimization */
+        @media (max-width: 768px) {  /* Target tablets and phones */
+            .columns {
+                flex-direction: column;  /* Stack columns vertically */
+            }
+            .column {
+                width: 100%;  /* Full width on mobile */
+                padding: 10px;  /* Reduce padding for smaller screens */
+            }
+            h1 {
+                font-size: 36px;  /* Smaller title */
+            }
+            .main-headline {
+                font-size: 28px;  /* Reduce main headline */
+            }
+            .headline {
+                font-size: 18px;  /* Smaller sub-headlines */
+            }
+            .main-image, .headline img {
+                max-width: 100%;  /* Ensure images don't overflow */
+            }
+        }
+        @media (max-width: 480px) {  /* Extra tweaks for very small phones */
+            body {
+                padding: 20px;  /* Less side padding */
+            }
+            footer ul {
+                columns: 1;  /* Single column in footer for mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,7 +162,7 @@
         <a href="{{ main_headline.url }}">{{ main_headline.headline }}</a>
     </div>
     {% if main_headline.image_url %}
-    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image">
+    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image" loading="lazy">
     {% endif %}
     {% endif %}
     
@@ -142,7 +172,7 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
             </div>
             {% endfor %}
@@ -152,7 +182,7 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
             </div>
             {% endfor %}
@@ -162,7 +192,7 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
             </div>
             {% endfor %}
