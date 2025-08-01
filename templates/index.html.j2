@@ -62,18 +62,20 @@
             padding: 40px; /* Increased padding for more space */
             text-align: center;
             line-height: 1.6; /* Better line spacing */
+            font-size: 14px; /* Smaller base text size */
         }
         h1 {
-            font-size: 60px; /* Larger title */
+            font-size: 48px; /* Reduced title size from 60px */
             font-weight: bold;
             margin: 0 0 40px; /* More bottom margin */
             color: var(--headline-color);
         }
         .main-headline {
-            font-size: 48px; /* Even larger main headline */
+            font-size: 36px; /* Reduced main headline size from 48px */
             font-weight: bold;
             margin: 40px 0; /* Increased spacing */
             color: var(--headline-color);
+            text-decoration: underline; /* Underline */
         }
         .main-headline a {
             color: var(--link-color);
@@ -105,10 +107,11 @@
             border-right: none; /* No line after the last column */
         }
         .headline {
-            font-size: 24px; /* Larger headline font */
+            font-size: 20px; /* Reduced headline size from 24px */
             font-weight: bold;
             margin: 20px 0; /* More vertical spacing between headlines */
             color: var(--headline-color);
+            text-decoration: underline; /* Underline */
         }
         .headline a {
             color: var(--link-color);
@@ -130,7 +133,7 @@
             text-align: left;
         }
         footer h2 {
-            font-size: 28px;
+            font-size: 24px; /* Reduced from 28px */
             margin-bottom: 20px;
             color: var(--headline-color);
         }
@@ -142,6 +145,7 @@
         }
         footer li {
             margin-bottom: 10px;
+            font-size: 14px; /* Smaller footer text */
         }
         footer a {
             color: var(--link-color);
@@ -172,6 +176,12 @@
             }
             .main-image, .headline img {
                 max-width: 100%; /* Ensure images don't overflow */
+            }
+            body, footer li {
+                font-size: 12px; /* Even smaller base text on mobile */
+            }
+            footer h2 {
+                font-size: 20px;
             }
         }
         @media (max-width: 480px) { /* Extra tweaks for very small phones */
@@ -212,7 +222,7 @@
             <div class="headline">
                 <a href="{{ item.url }}">{{ item.headline }}</a>
                 {% if item.image_url %}
-                <img src="{{ item.url }}" alt="Article image for {{ item.headline }}" loading="lazy">
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy">
                 {% endif %}
             </div>
             {% endfor %}
