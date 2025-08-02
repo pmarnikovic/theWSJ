@@ -7,392 +7,410 @@
     <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
     <title>Exhaustive AI</title>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QVFJX51QK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5QVFJX51QK');
-    </script>
-    
-    <!-- Add JSON-LD schema here -->
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "A Coding Guide to Build Intelligent Multi-Agent Systems with the PEER Pattern",
-      "image": "https://via.placeholder.com/600x300?text=AI+Headline+Image",
-      "datePublished": "2025-08-02T08:34:57+00:00",
-      "author": {
-        "@type": "Organization",
-        "name": "Exhaustive AI"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Exhaustive AI",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
-        }
-      }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QVFJX51QK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QVFJX51QK');
+</script>
+
+<!-- Add JSON-LD schema here -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "apple's ai war: cook issues chilling ultimatum to employees",
+  "image": "https://source.unsplash.com/600x300/?ai,technology",
+  "datePublished": "2025-08-02T21:21:22+00:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Exhaustive AI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Exhaustive AI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
     }
-    </script>
+  }
+}
+</script>
+
+
+<!-- Load Roboto font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg-color: #121212; /* Dark gray background default */
+        --text-color: #e0e0e0; /* Light gray text */
+        --link-color: #e0e0e0; /* Light grey links */
+        --hover-color: #ffffff; /* White on hover */
+        --border-color: #333; /* Dark borders */
+        --headline-color: #e0e0e0; /* Light grey headlines */
+        --source-color: #999999; /* Grey for source text */
+        --title-color: #eca213; /* Warm gold-orange for title */
+    }
     
-    
-    <!-- Load Roboto font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
+    /* Light mode override */
+    @media (prefers-color-scheme: light) {
         :root {
-            --bg-color: #121212; /* Dark gray background default */
-            --text-color: #e0e0e0; /* Light gray text */
-            --link-color: #e0e0e0; /* Light grey links */
-            --hover-color: #ffffff; /* White on hover */
-            --border-color: #333; /* Dark borders */
-            --headline-color: #e0e0e0; /* Light grey headlines */
-            --source-color: #999999; /* Grey for source text */
-            --title-color: #eca213; /* Warm gold-orange for title */
+            --bg-color: #fff;
+            --text-color: #000;
+            --link-color: #000;
+            --hover-color: #0000ff;
+            --border-color: #ccc;
+            --headline-color: #333; /* Dark grey in light mode */
+            --source-color: #666; /* Darker grey for sources in light mode */
+            --title-color: #eca213; /* Keep warm gold-orange */
         }
-        
-        /* Light mode override */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #fff;
-                --text-color: #000;
-                --link-color: #000;
-                --hover-color: #0000ff;
-                --border-color: #ccc;
-                --headline-color: #333; /* Dark grey in light mode */
-                --source-color: #666; /* Darker grey for sources in light mode */
-                --title-color: #eca213; /* Keep warm gold-orange */
-            }
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .logo {
-            max-width: 200px;
-            height: auto;
-        }
-        
-        h1 {
-            color: var(--title-color);
-            font-size: 2.5em;
-            text-align: center; /* Ensure centered */
-        }
-        
-        .main-headline {
-            font-size: 2.2em; /* Increased size */
-            color: var(--headline-color);
-            text-decoration: underline;
-            margin-bottom: 10px;
-        }
-        
-        .headline {
-            font-size: 1.4em;
-            color: var(--headline-color);
-            text-decoration: underline;
-            margin-bottom: 10px; /* Increased for better spacing */
-            display: block; /* Ensures full line */
-        }
-        
-        .source {
-            font-style: italic;
-            font-size: 0.9em;
-            color: var(--source-color);
-            margin-bottom: 15px; /* Added for separation */
-            display: block;
-        }
-        
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            color: var(--hover-color);
-        }
-        
-        .columns {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .column {
-            width: 30%;
-            padding: 10px;
-            border-right: 1px solid var(--border-color);
-        }
-        
-        .column:last-child {
-            border-right: none;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px; /* Increased */
-        }
-        
-        .article-item {
-            margin-bottom: 20px; /* Wrapper for each article to prevent scrunching */
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.8em;
-            color: var(--source-color);
-        }
-        
-        /* New: Define random styles for variety (Drudge-like flair) */
-        .style1 {
-            font-weight: bold;
-            text-transform: none; /* No uppercase */
-        }
-        .style2 {
-            font-style: italic;
-            color: var(--headline-color); /* Force light grey */
-        }
-        .style3 {
-            font-weight: bold;
-            font-size: 1.5em; /* Slightly larger */
-            color: var(--headline-color); /* Force light grey */
-        }
-        .style4 {
-            color: var(--headline-color); /* Force light grey */
-        }
-    </style>
-</head>
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .logo {
+        max-width: 200px;
+        height: auto;
+    }
+    
+    h1 {
+        color: var(--title-color);
+        font-size: 4em; /* Increased for bigger title */
+        text-align: center; /* Ensure centered */
+    }
+    
+    .main-headline {
+        font-size: 3em; /* Increased size for main headline */
+        color: var(--headline-color);
+        text-decoration: underline;
+        margin-bottom: 10px;
+    }
+    
+    .headline {
+        font-size: 1.4em;
+        color: var(--headline-color);
+        text-decoration: underline;
+        margin-bottom: 10px; /* Increased for better spacing */
+        display: block; /* Ensures full line */
+    }
+    
+    .source {
+        font-style: italic;
+        font-size: 0.9em;
+        color: var(--source-color);
+        margin-bottom: 15px; /* Added for separation */
+        display: block;
+    }
+    
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: var(--hover-color);
+    }
+    
+    .columns {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        width: 30%;
+        padding: 10px;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    .column:last-child {
+        border-right: none;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px; /* Increased */
+    }
+    
+    .article-item {
+        margin-bottom: 20px; /* Wrapper for each article to prevent scrunching */
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.8em;
+        color: var(--source-color);
+    }
+    
+    footer ul {
+        list-style-type: none; /* Remove bullets for clean look */
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Space between items */
+    }
+    
+    footer li {
+        flex-basis: 20%; /* Approximate for 5 columns on wide screens */
+        min-width: 150px; /* Prevent too narrow */
+    }
+    
+    footer a {
+        color: var(--link-color);
+        text-decoration: underline;
+    }
+    
+    /* New: Define random styles for variety (Drudge-like flair) */
+    .style1 {
+        font-weight: bold;
+        text-transform: none; /* No uppercase */
+        color: var(--headline-color); /* Same light grey */
+    }
+    .style2 {
+        font-style: italic;
+        color: var(--headline-color); /* Same light grey */
+    }
+    .style3 {
+        font-weight: bold;
+        font-size: 1.5em; /* Slightly larger */
+        color: var(--headline-color); /* Same light grey */
+    }
+    .style4 {
+        color: var(--headline-color); /* Same light grey */
+    }
+</style></head>
 <body>
     <header>
         <h1>Exhaustive AI</h1>
     </header>
     
+
+<section class="main-article">
+    <a href="https://techcrunch.com/2025/08/02/tim-cook-reportedly-tells-employees-apple-must-win-in-ai/" class="main-headline style2">apple's ai war: cook issues chilling ultimatum to employees</a>
+    <span class="source">(TechCrunch)</span>
     
-    <section class="main-article">
-        <a href="https://www.marktechpost.com/2025/08/02/a-coding-guide-to-build-intelligent-multi-agent-systems-with-the-peer-pattern/" class="main-headline style3">A Coding Guide to Build Intelligent Multi-Agent Systems with the PEER Pattern</a>
-        <span class="source">(MarkTechPost)</span>
+</section>
+
+
+<div class="columns">
+    <div class="column">
         
-    </section>
-    
-    
-    <div class="columns">
-        <div class="column">
-            
-            <div class="article-item">
-                <a href="https://aibusiness.com/generative-ai/most-read-nice-acquires-agentic-ai-company-in-955m-deal-department-of-energy-unveils-first-four-ai-data-center-sites" class="headline style1">Most Read: NiCE Acquires Agentic AI Company in $955M Deal; Department of Energy Unveils First Four AI Data Center Sites</a>
-                <span class="source">(Aibusiness)</span>
-                
-                <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/bltb518b440f6d9f0f6/6888e800562ed32a7da0e9a4/GettyImages-2222990006.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for Most Read: NiCE Acquires Agentic AI Company in $955M Deal; Department of Energy Unveils First Four AI Data Center Sites">
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://techcrunch.com/2025/08/02/tim-cook-reportedly-tells-employees-apple-must-win-in-ai/" class="headline style2">Tim Cook reportedly tells employees Apple ‘must’ win in AI</a>
-                <span class="source">(TechCrunch)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://futurism.com/parents-hide-airtags-shoes" class="headline style1">Surveillance-Minded Parents Can Now Hide AirTags In Kids Shoes</a>
-                <span class="source">(Futurism)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.theverge.com/news/717865/apple-ceo-tim-cook-ai-investment" class="headline style4">Tim Cook says Apple ‘must’ figure out AI and ‘will make the investment to do it’</a>
-                <span class="source">(The Verge)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" class="headline style2">Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI</a>
-                <span class="source">(The Verge)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.infoworld.com/article/4033040/apache-flink-integrates-ai-for-real-time-decision-making.html" class="headline style4">Apache Flink integrates AI for real-time decision-making</a>
-                <span class="source">(Infoworld)</span>
-                
-                <img src="https://www.infoworld.com/wp-content/uploads/2025/08/4033040-0-37177400-1754087218-shutterstock_2256482287-100943534-orig.jpg?quality=50&strip=all" alt="Article image for Apache Flink integrates AI for real-time decision-making">
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://techcrunch.com/2025/08/01/a-backlog-at-the-commerce-department-is-reportedly-stalling-nvidias-h20-chip-licenses/" class="headline style3">A backlog at the Commerce Department is reportedly stalling Nvidia’s H20 chip licenses</a>
-                <span class="source">(TechCrunch)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://aibusiness.com/data/oracle-s-ai-infrastructure-vision-building-for-a-collaborative-future" class="headline style2">Oracle's AI Infrastructure Vision: Building for a Collaborative Future</a>
-                <span class="source">(Aibusiness)</span>
-                
-                <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt930e55a60472689d/6744f2c3aeccf3ecf7a25265/with_people_resized_Data_Center_GettyImages-1461628149.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for Oracle's AI Infrastructure Vision: Building for a Collaborative Future">
-                
-            </div>
+        <div class="article-item">
+            <a href="https://www.marktechpost.com/2025/08/02/a-coding-guide-to-build-intelligent-multi-agent-systems-with-the-peer-pattern/" class="headline style1">A Coding Guide to Build Intelligent Multi-Agent Systems with the PEER Pattern</a>
+            <span class="source">(MarkTechPost)</span>
             
         </div>
         
-        <div class="column">
+        <div class="article-item">
+            <a href="https://aibusiness.com/generative-ai/most-read-nice-acquires-agentic-ai-company-in-955m-deal-department-of-energy-unveils-first-four-ai-data-center-sites" class="headline style1">Most Read: NiCE Acquires Agentic AI Company in $955M Deal; Department of Energy Unveils First Four AI Data Center Sites</a>
+            <span class="source">(Aibusiness)</span>
             
-            <div class="article-item">
-                <a href="https://www.marktechpost.com/2025/08/02/mit-researchers-develop-methods-to-control-transformer-sensitivity-with-provable-lipschitz-bounds-and-muon/" class="headline style4">MIT Researchers Develop Methods to Control Transformer Sensitivity with Provable Lipschitz Bounds and Muon</a>
-                <span class="source">(MarkTechPost)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.marktechpost.com/2025/08/02/how-to-use-the-shap-iq-package-to-uncover-and-visualize-feature-interactions-in-machine-learning-models-using-shapley-interaction-indices-sii/" class="headline style1">How to Use the SHAP-IQ Package to Uncover and Visualize Feature Interactions in Machine Learning Models Using Shapley Interaction Indices (SII)</a>
-                <span class="source">(MarkTechPost)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://techcrunch.com/2025/08/02/anthropic-cuts-off-openais-access-to-its-claude-models/" class="headline style4">Anthropic cuts off OpenAI’s access to its Claude models</a>
-                <span class="source">(TechCrunch)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://futurism.com/google-detect-earthquake-alerts" class="headline style3">Google Has Quietly Been Detecting Earthquakes by Sensing Rumbling in Android Phones For Years</a>
-                <span class="source">(Futurism)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" class="headline style1">Delta&#8217;s dynamic AI pricing plan sounds different now</a>
-                <span class="source">(The Verge)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" class="headline style3">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
-                <span class="source">(VentureBeat)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://singularityhub.com/2025/08/02/this-weeks-awesome-tech-stories-from-around-the-web-through-august-2/" class="headline style3">This Week’s Awesome Tech Stories From Around the Web (Through August 2)</a>
-                <span class="source">(Singularity Hub)</span>
-                
-                <img src="https://singularityhub.com/uploads/2025/08/digital-display-art.jpeg?auto=webp" alt="Article image for This Week’s Awesome Tech Stories From Around the Web (Through August 2)">
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://futurism.com/unitree-robots-boxing" class="headline style4">We Must Admit That This Video of Two Small Robots Punching Each Other With Boxing Gloves Is Pretty Awesome</a>
-                <span class="source">(Futurism)</span>
-                
-            </div>
+            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/bltb518b440f6d9f0f6/6888e800562ed32a7da0e9a4/GettyImages-2222990006.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for Most Read: NiCE Acquires Agentic AI Company in $955M Deal; Department of Energy Unveils First Four AI Data Center Sites">
             
         </div>
         
-        <div class="column">
-            
-            <div class="article-item">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/llm-engineer-interview-questions/" class="headline style2">Top 20 LLM Engineer Interview Questions</a>
-                <span class="source">(Analytics Vidhya)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/notebooklm-video-overviews-studio-upgrades/" class="headline style2">NotebookLM’s Latest Video Overviews & Studio Upgrades are a Must-Try!</a>
-                <span class="source">(Analytics Vidhya)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://venturebeat.com/ai/new-vision-model-from-cohere-runs-on-two-gpus-beats-top-tier-vlms-on-visual-tasks/" class="headline style2">New vision model from Cohere runs on two GPUs, beats top-tier VLMs on visual tasks</a>
-                <span class="source">(VentureBeat)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/" class="headline style1">Why open-source AI became an American national priority</a>
-                <span class="source">(VentureBeat)</span>
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://news.crunchbase.com/venture/biggest-funding-rounds-ramp-maplight/" class="headline style2">The Week’s 10 Biggest Funding Rounds: Ramp Ramps Up While AI And Healthcare Hold Strong</a>
-                <span class="source">(Crunchbase)</span>
-                
-                <img src="https://news.crunchbase.com/wp-content/uploads/Top_10_.jpeg" alt="Article image for The Week’s 10 Biggest Funding Rounds: Ramp Ramps Up While AI And Healthcare Hold Strong">
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.fastcompany.com/91378710/mcdonalds-announces-plans-strengthen-ai-investments-2027?utm_source=postup&utm_medium=email&utm_campaign=artificial-intelligence&position=1&partner=newsletter&campaign_date=08022025" class="headline style2">McDonald’s announces plans to strengthen AI investments by 2027</a>
-                <span class="source">(Fastcompany)</span>
-                
-                <img src="https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2025/08/2025-08-01T093812Z_2_LYNXMPEL701UW_RTROPTP_4_MCDONALDS-INDIA-CHEESE-CRACKDOWN.jpg" alt="Article image for McDonald’s announces plans to strengthen AI investments by 2027">
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://aibusiness.com/responsible-ai/when-ai-fights-ai" class="headline style4">When AI Fights AI</a>
-                <span class="source">(Aibusiness)</span>
-                
-                <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt038d9a4caf1f73a0/688cd8fa846b3dd3e96bb92e/Cybersecurity_firewall_lock_GettyImages-2180548732.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for When AI Fights AI">
-                
-            </div>
-            
-            <div class="article-item">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" class="headline style1">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
-                <span class="source">(Analytics Vidhya)</span>
-                
-            </div>
+        <div class="article-item">
+            <a href="https://futurism.com/parents-hide-airtags-shoes" class="headline style3">Surveillance-Minded Parents Can Now Hide AirTags In Kids Shoes</a>
+            <span class="source">(Futurism)</span>
             
         </div>
+        
+        <div class="article-item">
+            <a href="https://www.theverge.com/news/717865/apple-ceo-tim-cook-ai-investment" class="headline style4">Tim Cook says Apple ‘must’ figure out AI and ‘will make the investment to do it’</a>
+            <span class="source">(The Verge)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" class="headline style2">Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI</a>
+            <span class="source">(The Verge)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.infoworld.com/article/4033040/apache-flink-integrates-ai-for-real-time-decision-making.html" class="headline style1">Apache Flink integrates AI for real-time decision-making</a>
+            <span class="source">(Infoworld)</span>
+            
+            <img src="https://www.infoworld.com/wp-content/uploads/2025/08/4033040-0-37177400-1754087218-shutterstock_2256482287-100943534-orig.jpg?quality=50&strip=all" alt="Article image for Apache Flink integrates AI for real-time decision-making">
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://techcrunch.com/2025/08/01/a-backlog-at-the-commerce-department-is-reportedly-stalling-nvidias-h20-chip-licenses/" class="headline style2">A backlog at the Commerce Department is reportedly stalling Nvidia’s H20 chip licenses</a>
+            <span class="source">(TechCrunch)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://aibusiness.com/data/oracle-s-ai-infrastructure-vision-building-for-a-collaborative-future" class="headline style3">Oracle's AI Infrastructure Vision: Building for a Collaborative Future</a>
+            <span class="source">(Aibusiness)</span>
+            
+            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt930e55a60472689d/6744f2c3aeccf3ecf7a25265/with_people_resized_Data_Center_GettyImages-1461628149.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for Oracle's AI Infrastructure Vision: Building for a Collaborative Future">
+            
+        </div>
+        
     </div>
     
-    <footer>
-        &copy; 2025 Exhaustive AI. All rights reserved.
-        <h2>Top 25 AI Websites</h2>
-        <ul>
-            <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
-            <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
-            <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
-            <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
-            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
-            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
-            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
-            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
-            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
-            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
-            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
-            <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
-            <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
-            <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
-            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
-            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
-            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
-            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
-            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
-            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
-            <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
-            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
-            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
-            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
-        </ul>
-    </footer>
-</body>
+    <div class="column">
+        
+        <div class="article-item">
+            <a href="https://www.marktechpost.com/2025/08/02/mit-researchers-develop-methods-to-control-transformer-sensitivity-with-provable-lipschitz-bounds-and-muon/" class="headline style3">MIT Researchers Develop Methods to Control Transformer Sensitivity with Provable Lipschitz Bounds and Muon</a>
+            <span class="source">(MarkTechPost)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.marktechpost.com/2025/08/02/how-to-use-the-shap-iq-package-to-uncover-and-visualize-feature-interactions-in-machine-learning-models-using-shapley-interaction-indices-sii/" class="headline style2">How to Use the SHAP-IQ Package to Uncover and Visualize Feature Interactions in Machine Learning Models Using Shapley Interaction Indices (SII)</a>
+            <span class="source">(MarkTechPost)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://techcrunch.com/2025/08/02/anthropic-cuts-off-openais-access-to-its-claude-models/" class="headline style2">Anthropic cuts off OpenAI’s access to its Claude models</a>
+            <span class="source">(TechCrunch)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://futurism.com/google-detect-earthquake-alerts" class="headline style1">Google Has Quietly Been Detecting Earthquakes by Sensing Rumbling in Android Phones For Years</a>
+            <span class="source">(Futurism)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" class="headline style1">Delta&#8217;s dynamic AI pricing plan sounds different now</a>
+            <span class="source">(The Verge)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" class="headline style3">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
+            <span class="source">(VentureBeat)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://singularityhub.com/2025/08/02/this-weeks-awesome-tech-stories-from-around-the-web-through-august-2/" class="headline style1">This Week’s Awesome Tech Stories From Around the Web (Through August 2)</a>
+            <span class="source">(Singularity Hub)</span>
+            
+            <img src="https://singularityhub.com/uploads/2025/08/digital-display-art.jpeg?auto=webp" alt="Article image for This Week’s Awesome Tech Stories From Around the Web (Through August 2)">
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://futurism.com/unitree-robots-boxing" class="headline style3">We Must Admit That This Video of Two Small Robots Punching Each Other With Boxing Gloves Is Pretty Awesome</a>
+            <span class="source">(Futurism)</span>
+            
+        </div>
+        
+    </div>
+    
+    <div class="column">
+        
+        <div class="article-item">
+            <a href="https://www.analyticsvidhya.com/blog/2025/08/llm-engineer-interview-questions/" class="headline style3">Top 20 LLM Engineer Interview Questions</a>
+            <span class="source">(Analytics Vidhya)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.analyticsvidhya.com/blog/2025/08/notebooklm-video-overviews-studio-upgrades/" class="headline style2">NotebookLM’s Latest Video Overviews & Studio Upgrades are a Must-Try!</a>
+            <span class="source">(Analytics Vidhya)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://venturebeat.com/ai/new-vision-model-from-cohere-runs-on-two-gpus-beats-top-tier-vlms-on-visual-tasks/" class="headline style1">New vision model from Cohere runs on two GPUs, beats top-tier VLMs on visual tasks</a>
+            <span class="source">(VentureBeat)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/" class="headline style1">Why open-source AI became an American national priority</a>
+            <span class="source">(VentureBeat)</span>
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://news.crunchbase.com/venture/biggest-funding-rounds-ramp-maplight/" class="headline style2">The Week’s 10 Biggest Funding Rounds: Ramp Ramps Up While AI And Healthcare Hold Strong</a>
+            <span class="source">(Crunchbase)</span>
+            
+            <img src="https://news.crunchbase.com/wp-content/uploads/Top_10_.jpeg" alt="Article image for The Week’s 10 Biggest Funding Rounds: Ramp Ramps Up While AI And Healthcare Hold Strong">
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.fastcompany.com/91378710/mcdonalds-announces-plans-strengthen-ai-investments-2027?utm_source=postup&utm_medium=email&utm_campaign=artificial-intelligence&position=1&partner=newsletter&campaign_date=08022025" class="headline style1">McDonald’s announces plans to strengthen AI investments by 2027</a>
+            <span class="source">(Fastcompany)</span>
+            
+            <img src="https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2025/08/2025-08-01T093812Z_2_LYNXMPEL701UW_RTROPTP_4_MCDONALDS-INDIA-CHEESE-CRACKDOWN.jpg" alt="Article image for McDonald’s announces plans to strengthen AI investments by 2027">
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://aibusiness.com/responsible-ai/when-ai-fights-ai" class="headline style4">When AI Fights AI</a>
+            <span class="source">(Aibusiness)</span>
+            
+            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt038d9a4caf1f73a0/688cd8fa846b3dd3e96bb92e/Cybersecurity_firewall_lock_GettyImages-2180548732.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for When AI Fights AI">
+            
+        </div>
+        
+        <div class="article-item">
+            <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" class="headline style4">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
+            <span class="source">(Analytics Vidhya)</span>
+            
+        </div>
+        
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Exhaustive AI. All rights reserved.
+    <h2>Top 25 AI Websites</h2>
+    <ul>
+        <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
+        <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
+        <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
+        <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
+        <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
+        <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
+        <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
+        <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
+        <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
+        <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
+        <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
+        <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
+        <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
+        <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
+        <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
+        <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
+        <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
+        <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
+        <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
+        <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
+        <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
+        <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
+        <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
+        <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
+        <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
+    </ul>
+</footer></body>
 </html>
