@@ -34,7 +34,7 @@
         "name": "Exhaustive AI",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://your-logo-url.com/logo.png"
+          "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
         }
       }
     }
@@ -55,7 +55,7 @@
             --source-color: #999999; /* Grey for source text */
             --title-color: #eca213; /* Warm gold-orange for title */
         }
-
+        
         /* Light mode override */
         @media (prefers-color-scheme: light) {
             :root {
@@ -65,227 +65,143 @@
                 --hover-color: #0000ff;
                 --border-color: #ccc;
                 --headline-color: #333; /* Dark grey in light mode */
-                --source-color: #666666; /* Medium grey for source in light mode */
-                --title-color: #eca213; /* Keep title color consistent */
+                --source-color: #666; /* Darker grey for sources in light mode */
+                --title-color: #eca213; /* Keep warm gold-orange */
             }
         }
-
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 40px;
-            text-align: center;
+            padding: 20px;
             line-height: 1.6;
         }
-        h1 {
-            font-size: 80px; /* Increased size for prominence */
-            font-weight: bold;
-            font-family: 'Roboto', Arial, sans-serif; /* Formal yet contemporary font */
-            margin: 0 0 40px;
-            color: var(--title-color); /* #eca213 color */
-            text-decoration: underline; /* Underline the title */
-            pointer-events: none; /* Prevent it from being clickable like a link */
-            /* Thin black border effect using text-shadow */
-            text-shadow: 
-                -1px -1px 0 #000,
-                 1px -1px 0 #000,
-                -1px  1px 0 #000,
-                 1px  1px 0 #000;
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .headline-image {
-            max-width: 600px;
+        
+        .logo {
+            max-width: 200px;
             height: auto;
-            margin: 20px auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        
+        h1 {
+            color: var(--title-color);
+            font-size: 2.5em;
+        }
+        
         .main-headline {
-            font-size: 52px; /* Larger to stand out */
-            font-weight: bold;
-            margin: 20px 0; /* Adjusted spacing */
+            font-size: 1.8em;
             color: var(--headline-color);
             text-decoration: underline;
+            margin-bottom: 10px;
         }
-        .main-headline a {
+        
+        .headline {
+            font-size: 1.4em;
+            color: var(--headline-color);
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+        
+        .source {
+            font-style: italic;
+            font-size: 0.9em;
+            color: var(--source-color);
+        }
+        
+        a {
             color: var(--link-color);
             text-decoration: none;
         }
-        .main-headline a:hover {
-            text-decoration: underline;
+        
+        a:hover {
             color: var(--hover-color);
         }
-        .main-image {
-            max-width: 600px;
-            height: auto;
-            margin: 20px auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+        
         .columns {
             display: flex;
             justify-content: space-between;
-            text-align: left;
-            max-width: 1200px;
-            margin: 0 auto;
         }
+        
         .column {
-            width: 32%;
-            padding: 20px;
+            width: 30%;
+            padding: 10px;
             border-right: 1px solid var(--border-color);
         }
+        
         .column:last-child {
             border-right: none;
         }
-        .headline {
-            font-size: 20px;
-            margin: 20px 0;
-            color: var(--headline-color);
-            text-decoration: underline;
-        }
-        .headline a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        .headline a:hover {
-            text-decoration: underline;
-            color: var(--hover-color);
-        }
-        .source {
-            font-size: 0.8em;
-            color: var(--source-color);
-            margin-left: 5px;
-        }
-        .headline img {
+        
+        img {
             max-width: 100%;
             height: auto;
-            margin: 10px 0;
-        }
-        /* Random text styles for differentiation */
-        .style1 { font-family: 'Times New Roman', serif; font-weight: bold; }
-        .style2 { font-family: 'Georgia', serif; font-style: italic; }
-        .style3 { font-family: 'Arial', sans-serif; font-weight: normal; }
-        .style4 { font-family: 'Courier New', monospace; font-weight: bold; }
-        footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 2px solid var(--border-color);
-            text-align: left;
-        }
-        footer h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--headline-color);
-        }
-        footer ul {
-            list-style-type: none;
-            padding: 0;
-            columns: 2;
-            column-gap: 40px;
-        }
-        footer li {
             margin-bottom: 10px;
         }
-        footer a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-            color: var(--hover-color);
-        }
-        /* Media queries */
-        @media (max-width: 768px) {
-            .columns {
-                flex-direction: column;
-            }
-            .column {
-                width: 100%;
-                padding: 10px;
-                border-right: none;
-            }
-            h1 {
-                font-size: 48px; /* Adjusted for mobile */
-            }
-            .main-headline {
-                font-size: 32px;
-            }
-            .headline {
-                font-size: 18px;
-            }
-            .source {
-                font-size: 0.7em;
-            }
-            .headline-image, .main-image, .headline img {
-                max-width: 100%;
-            }
-        }
-        @media (max-width: 480px) {
-            body {
-                padding: 20px;
-            }
-            footer ul {
-                columns: 1;
-            }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: var(--source-color);
         }
     </style>
 </head>
 <body>
-    {% if main_headline and main_headline.related_image_url %}
-    <img src="{{ main_headline.related_image_url }}" alt="Headline-related image for {{ main_headline.headline }}" class="headline-image" loading="lazy" onerror="this.style.display='none';">
-    {% endif %}
-    <h1>Exhaustive AI</h1>
+    <header>
+        <img src="https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg" alt="Exhaustive AI Logo" class="logo">
+        <h1>Exhaustive AI</h1>
+    </header>
     
     {% if main_headline %}
-    <div class="main-headline {{ main_headline.style }}">
-        <a href="{{ main_headline.url }}" target="_blank" rel="noopener noreferrer">{{ main_headline.headline }}</a>
+    <section class="main-article">
+        <a href="{{ main_headline.url }}" class="main-headline">{{ main_headline.headline }}{% if main_headline.score > 15 %} 🔥{% endif %}</a>
         <span class="source">({{ main_headline.source }})</span>
-    </div>
-    {% if main_headline.image_url %}
-    <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}" class="main-image" loading="lazy" onerror="this.style.display='none';">
-    {% endif %}
+        {% if main_headline.image_url %}
+        <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}">
+        {% endif %}
+    </section>
     {% endif %}
     
     <div class="columns">
         <div class="column">
             {% for item in column1 %}
-            <div class="headline {{ item.style }}">
-                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
-                <span class="source">({{ item.source }})</span>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
-                {% endif %}
-            </div>
+            <a href="{{ item.url }}" class="headline">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
+            <span class="source">({{ item.source }})</span>
+            {% if item.image_url %}
+            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+            {% endif %}
             {% endfor %}
         </div>
+        
         <div class="column">
             {% for item in column2 %}
-            <div class="headline {{ item.style }}">
-                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
-                <span class="source">({{ item.source }})</span>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
-                {% endif %}
-            </div>
+            <a href="{{ item.url }}" class="headline">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
+            <span class="source">({{ item.source }})</span>
+            {% if item.image_url %}
+            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+            {% endif %}
             {% endfor %}
         </div>
+        
         <div class="column">
             {% for item in column3 %}
-            <div class="headline {{ item.style }}">
-                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
-                <span class="source">({{ item.source }})</span>
-                {% if item.image_url %}
-                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
-                {% endif %}
-            </div>
+            <a href="{{ item.url }}" class="headline">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
+            <span class="source">({{ item.source }})</span>
+            {% if item.image_url %}
+            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+            {% endif %}
             {% endfor %}
         </div>
     </div>
-
+    
     <footer>
+        &copy; {{ current_year }} Exhaustive AI. All rights reserved.
         <h2>Top 25 AI Websites</h2>
         <ul>
             <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
