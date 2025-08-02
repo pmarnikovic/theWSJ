@@ -105,13 +105,16 @@
             font-size: 1.4em;
             color: var(--headline-color);
             text-decoration: underline;
-            margin-bottom: 5px;
+            margin-bottom: 10px; /* Increased for better spacing */
+            display: block; /* Ensures full line */
         }
         
         .source {
             font-style: italic;
             font-size: 0.9em;
             color: var(--source-color);
+            margin-bottom: 15px; /* Added for separation */
+            display: block;
         }
         
         a {
@@ -141,7 +144,11 @@
         img {
             max-width: 100%;
             height: auto;
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Increased */
+        }
+        
+        .article-item {
+            margin-bottom: 20px; /* Wrapper for each article to prevent scrunching */
         }
         
         footer {
@@ -150,17 +157,33 @@
             font-size: 0.8em;
             color: var(--source-color);
         }
+        
+        /* New: Define random styles for variety (Drudge-like flair) */
+        .style1 {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .style2 {
+            font-style: italic;
+            color: #ffcc00; /* Yellow tint */
+        }
+        .style3 {
+            font-weight: bold;
+            font-size: 1.5em; /* Slightly larger */
+        }
+        .style4 {
+            color: #ff6666; /* Red tint for emphasis */
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg" alt="Exhaustive AI Logo" class="logo">
         <h1>Exhaustive AI</h1>
     </header>
     
     {% if main_headline %}
     <section class="main-article">
-        <a href="{{ main_headline.url }}" class="main-headline">{{ main_headline.headline }}{% if main_headline.score > 15 %} 🔥{% endif %}</a>
+        <a href="{{ main_headline.url }}" class="main-headline {{ main_headline.style }}">{{ main_headline.headline }}{% if main_headline.score > 15 %} 🔥{% endif %}</a>
         <span class="source">({{ main_headline.source }})</span>
         {% if main_headline.image_url %}
         <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}">
@@ -171,31 +194,37 @@
     <div class="columns">
         <div class="column">
             {% for item in column1 %}
-            <a href="{{ item.url }}" class="headline">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
-            <span class="source">({{ item.source }})</span>
-            {% if item.image_url %}
-            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-            {% endif %}
+            <div class="article-item">
+                <a href="{{ item.url }}" class="headline {{ item.style }}">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
+                <span class="source">({{ item.source }})</span>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+                {% endif %}
+            </div>
             {% endfor %}
         </div>
         
         <div class="column">
             {% for item in column2 %}
-            <a href="{{ item.url }}" class="headline">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
-            <span class="source">({{ item.source }})</span>
-            {% if item.image_url %}
-            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-            {% endif %}
+            <div class="article-item">
+                <a href="{{ item.url }}" class="headline {{ item.style }}">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
+                <span class="source">({{ item.source }})</span>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+                {% endif %}
+            </div>
             {% endfor %}
         </div>
         
         <div class="column">
             {% for item in column3 %}
-            <a href="{{ item.url }}" class="headline">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
-            <span class="source">({{ item.source }})</span>
-            {% if item.image_url %}
-            <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
-            {% endif %}
+            <div class="article-item">
+                <a href="{{ item.url }}" class="headline {{ item.style }}">{{ item.headline }}{% if item.score > 15 %} 🔥{% endif %}</a>
+                <span class="source">({{ item.source }})</span>
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
+                {% endif %}
+            </div>
             {% endfor %}
         </div>
     </div>
