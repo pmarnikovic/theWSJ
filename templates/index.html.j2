@@ -92,10 +92,11 @@
         h1 {
             color: var(--title-color);
             font-size: 2.5em;
+            text-align: center; /* Ensure centered */
         }
         
         .main-headline {
-            font-size: 1.8em;
+            font-size: 2.2em; /* Increased size */
             color: var(--headline-color);
             text-decoration: underline;
             margin-bottom: 10px;
@@ -161,18 +162,19 @@
         /* New: Define random styles for variety (Drudge-like flair) */
         .style1 {
             font-weight: bold;
-            text-transform: uppercase;
+            text-transform: none; /* No uppercase */
         }
         .style2 {
             font-style: italic;
-            color: #ffcc00; /* Yellow tint */
+            color: var(--headline-color); /* Force light grey */
         }
         .style3 {
             font-weight: bold;
             font-size: 1.5em; /* Slightly larger */
+            color: var(--headline-color); /* Force light grey */
         }
         .style4 {
-            color: #ff6666; /* Red tint for emphasis */
+            color: var(--headline-color); /* Force light grey */
         }
     </style>
 </head>
