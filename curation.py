@@ -64,6 +64,12 @@ SOURCE_MAP = {
     'analyticsvidhya': 'Analytics Vidhya',
     'oreilly': "O'Reilly",
     'dailyai': 'DailyAI',
+    # Added more mappings for potential future sources or variations
+    'x': 'X',
+    'twitter': 'X',
+    'bbc': 'BBC',
+    'cnn': 'CNN',
+    'nytimes': 'The New York Times',
     # Add more as needed for other sources
 }
 
