@@ -6,6 +6,8 @@ import google.generativeai as genai
 import time
 from datetime import datetime, timezone
 import random  # Added for random styles
+import tldextract  # Added for better source parsing
+from bs4 import BeautifulSoup  # Added for parsing embedded images in summaries
 
 # --- CONFIGURATION ---
 
@@ -45,6 +47,26 @@ MAX_TOTAL_ARTICLES = 25
 # Style options for random assignment
 STYLE_CLASSES = ['style1', 'style2', 'style3', 'style4']
 
+# Source mapping for friendly names
+SOURCE_MAP = {
+    'theverge': 'The Verge',
+    'techcrunch': 'TechCrunch',
+    'wired': 'Wired',
+    'mit': 'MIT News',
+    'googleblog': 'Google AI',
+    'marktechpost': 'MarkTechPost',
+    'unite': 'Unite.AI',
+    'venturebeat': 'VentureBeat',
+    'futurism': 'Futurism',
+    'singularityhub': 'Singularity Hub',
+    'openai': 'OpenAI',
+    'deepmind': 'DeepMind',
+    'analyticsvidhya': 'Analytics Vidhya',
+    'oreilly': "O'Reilly",
+    'dailyai': 'DailyAI',
+    # Add more as needed for other sources
+}
+
 # --- FUNCTIONS ---
 
 def get_articles_from_rss():
@@ -53,7 +75,10 @@ def get_articles_from_rss():
     for feed_url in RSS_FEEDS:
         try:
             feed = feedparser.parse(feed_url)
-            source_name = feed.feed.get('title', 'Unknown Source').split()[0] if feed.feed.get('title') else 'Unknown'  # Get short source name
+            # Extract source from URL using tldextract
+            extracted = tldextract.extract(feed_url)
+            domain = extracted.domain.lower()
+            source_name = SOURCE_MAP.get(domain, extracted.domain.capitalize())
             for entry in feed.entries[:MAX_ARTICLES_PER_SOURCE]:
                 if entry.get('title') and entry.get('link'):
                     article = {'title': entry.title, 'url': entry.link}
@@ -68,17 +93,26 @@ def get_articles_from_rss():
                             if 'image' in enc.get('type', ''):
                                 image_url = enc.get('href')
                                 break
+                    # Check for embedded image in summary if still none
+                    if not image_url and 'summary' in entry:
+                        soup = BeautifulSoup(entry.summary, 'html.parser')
+                        img = soup.find('img')
+                        if img and img.get('src'):
+                            image_url = img['src']
                     article['image_url'] = image_url
                     if 'summary' in entry:
                         article['summary'] = entry.summary
                     else:
                         article['summary'] = "No summary available."
+                    # Use published or updated date
                     if 'published_parsed' in entry and entry.published_parsed:
                         dt = datetime.fromtimestamp(time.mktime(entry.published_parsed))
-                        article['published'] = dt.replace(tzinfo=timezone.utc)
+                    elif 'updated_parsed' in entry and entry.updated_parsed:
+                        dt = datetime.fromtimestamp(time.mktime(entry.updated_parsed))
                     else:
-                        article['published'] = datetime.min.replace(tzinfo=timezone.utc)  # Use min to sort last if missing
-                    article['source'] = source_name  # Add short source
+                        dt = datetime.min
+                    article['published'] = dt.replace(tzinfo=timezone.utc)
+                    article['source'] = source_name  # Add mapped source
                     articles.append(article)
         except Exception as e:
             print(f"Error fetching RSS feed {feed_url}: {e}")
@@ -129,6 +163,7 @@ def get_headline_and_score(title):
             return fallback_headline, 5
     except Exception as e:
         print(f"Error processing title '{title}': {e}")
+        time.sleep(2)  # Backoff on error
         return fallback_headline, 5
 
 def get_related_image_url(headline):
@@ -179,6 +214,7 @@ if __name__ == "__main__":
             'style': style  # Add random style class
         })
         print(f"  -> Score: {score}, Headline: {headline}, Related Image: {related_image_url}, Style: {style}")
+        time.sleep(1)  # Delay between API calls to respect rate limits
 
     # 4. Sort by score to find the main headline
     processed_articles.sort(key=lambda x: x['score'], reverse=True)
