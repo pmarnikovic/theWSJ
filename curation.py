@@ -5,7 +5,7 @@ import arxiv
 import google.generativeai as genai
 import time
 from datetime import datetime, timezone
-import random  # Added for random headline styles
+import random  # Added for random styles
 
 # --- CONFIGURATION ---
 
@@ -41,6 +41,9 @@ RSS_FEEDS = [
 
 MAX_ARTICLES_PER_SOURCE = 3
 MAX_TOTAL_ARTICLES = 25
+
+# Style options for random assignment
+STYLE_CLASSES = ['style1', 'style2', 'style3', 'style4']
 
 # --- FUNCTIONS ---
 
@@ -154,7 +157,7 @@ if __name__ == "__main__":
     articles_to_process = unique_articles[:MAX_TOTAL_ARTICLES]  # Limit before processing
     print(f"Selected the top {len(articles_to_process)} most recent articles.")
 
-    # 3. Generate headlines and scores for each article
+    # 3. Generate headlines, scores, and random styles for each article
     processed_articles = []
     for article in articles_to_process:
         print(f"Processing: {article['title']}")
@@ -163,6 +166,7 @@ if __name__ == "__main__":
         if pub_date == datetime.min.replace(tzinfo=timezone.utc):
             pub_date = datetime.now(timezone.utc)
         related_image_url = get_related_image_url(headline)  # Add related image
+        style = random.choice(['style1', 'style2', 'style3', 'style4'])  # Random style per headline
         processed_articles.append({
             'headline': headline,
             'url': article['url'],
@@ -171,9 +175,10 @@ if __name__ == "__main__":
             'related_image_url': related_image_url,
             'summary': article.get('summary', "No summary available."),
             'source': article.get('source', 'Unknown Source'),
-            'published': pub_date.isoformat()
+            'published': pub_date.isoformat(),
+            'style': style  # Add random style class
         })
-        print(f"  -> Score: {score}, Headline: {headline}, Related Image: {related_image_url}")
+        print(f"  -> Score: {score}, Headline: {headline}, Related Image: {related_image_url}, Style: {style}")
 
     # 4. Sort by score to find the main headline
     processed_articles.sort(key=lambda x: x['score'], reverse=True)
