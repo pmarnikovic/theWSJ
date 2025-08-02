@@ -22,7 +22,7 @@
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "zuckerberg's secret ai plan: steal your free time",
+      "headline": "Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI",
       "image": "https://source.unsplash.com/600x300/?ai,technology",
       "datePublished": "2025-08-02T00:11:36+00:00",
       "author": {
@@ -49,9 +49,7 @@
             --hover-color: #ffffff; /* White on hover */
             --border-color: #333; /* Dark borders */
             --headline-color: #e0e0e0; /* Light grey headlines */
-            --summary-color: #b3b3b3; /* Slightly darker grey for summaries */
-            --title-color: #eca213; /* Warm gold-orange for title */
-            --source-color: #999; /* Grey for source text */
+            --source-color: #999999; /* Grey for source text */
         }
 
         /* Light mode override */
@@ -63,9 +61,7 @@
                 --hover-color: #0000ff;
                 --border-color: #ccc;
                 --headline-color: #333; /* Dark grey in light mode */
-                --summary-color: #666; /* Medium grey for summaries */
-                --title-color: #eca213; /* Keep title color consistent */
-                --source-color: #666; /* Medium grey for source in light mode */
+                --source-color: #666666; /* Medium grey for source in light mode */
             }
         }
 
@@ -79,13 +75,10 @@
             line-height: 1.6;
         }
         h1 {
-            font-size: 80px; /* Increased size for prominence */
+            font-size: 60px;
             font-weight: bold;
-            font-family: 'Georgia', serif; /* Elegant serif style for title */
             margin: 0 0 40px;
-            color: var(--title-color); /* #eca213 color */
-            text-decoration: underline; /* Underline the title */
-            pointer-events: none; /* Prevent it from being clickable like a link */
+            color: var(--headline-color);
         }
         .headline-image {
             max-width: 600px;
@@ -98,6 +91,7 @@
         .main-headline {
             font-size: 52px; /* Larger to stand out */
             font-weight: bold;
+            font-family: 'Times New Roman', serif; /* Serif style */
             margin: 20px 0; /* Adjusted spacing */
             color: var(--headline-color);
             text-decoration: underline;
@@ -148,25 +142,31 @@
             color: var(--hover-color);
         }
         .source {
-            font-size: 0.8em; /* Smaller text for source */
+            font-size: 0.8em;
             color: var(--source-color);
             margin-left: 5px;
-        }
-        .summary {
-            font-size: 16px;
-            color: var(--summary-color);
-            margin-top: 5px;
         }
         .headline img {
             max-width: 100%;
             height: auto;
             margin: 10px 0;
         }
-        /* Random text styles for differentiation */
-        .style1 { font-family: 'Times New Roman', serif; }
-        .style2 { font-family: 'Georgia', serif; font-style: italic; }
-        .style3 { font-family: 'Arial', sans-serif; font-weight: normal; }
-        .style4 { font-family: 'Courier New', monospace; font-weight: bold; }
+        /* Varied text styles for differentiation */
+        .main-headline {
+            font-family: 'Times New Roman', serif; /* Serif for main */
+        }
+        .column:nth-child(1) .headline {
+            font-family: 'Georgia', serif; /* Serif with italic */
+            font-style: italic;
+        }
+        .column:nth-child(2) .headline {
+            font-family: 'Arial', sans-serif; /* Sans-serif */
+            font-weight: normal;
+        }
+        .column:nth-child(3) .headline {
+            font-family: 'Courier New', monospace; /* Monospace */
+            font-weight: bold;
+        }
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -206,7 +206,7 @@
                 border-right: none;
             }
             h1 {
-                font-size: 48px; /* Adjusted for mobile */
+                font-size: 36px;
             }
             .main-headline {
                 font-size: 32px;
@@ -214,8 +214,8 @@
             .headline {
                 font-size: 18px;
             }
-            .summary {
-                font-size: 14px;
+            .source {
+                font-size: 0.7em;
             }
             .headline-image, .main-image, .headline img {
                 max-width: 100%;
@@ -233,15 +233,14 @@
 </head>
 <body>
     
-    <img src="https://source.unsplash.com/600x300/?ai,technology" alt="Headline-related image for zuckerberg's secret ai plan: steal your free time" class="headline-image" loading="lazy" onerror="this.style.display='none';">
+    <img src="https://source.unsplash.com/600x300/?ai,technology" alt="Headline-related image for Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI" class="headline-image" loading="lazy" onerror="this.style.display='none';">
     
     <h1>Exhaustive AI</h1>
     
     
-    <div class="main-headline  style3">
-        <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" target="_blank" rel="noopener noreferrer">zuckerberg's secret ai plan: steal your free time</a>
+    <div class="main-headline">
+        <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" target="_blank" rel="noopener noreferrer">Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI</a>
         <span class="source">(AI)</span>
-        <p class="summary">It has been another busy week. GPT-5 appears to be just around the corner… This week, I decode the meaning behind Mark Zuckerberg's "personal superintelligence" manifesto, and what it means for the broader AI race. Keep reading for my chat with a Figma exec on the company's IPO day, a bunch of good links, and [&#8230;]</p>
     </div>
     
     
@@ -249,245 +248,159 @@
     <div class="columns">
         <div class="column">
             
-            <div class="headline  style2">
-                <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" target="_blank" rel="noopener noreferrer">Delta's ai pricing: is your next flight about to get a lot more expensive?</a>
+            <div class="headline">
+                <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" target="_blank" rel="noopener noreferrer">Delta&#8217;s dynamic AI pricing plan sounds different now</a>
                 <span class="source">(AI)</span>
-                <p class="summary">Delta Air Lines is explaining more about its AI-assisted dynamic pricing model after coming under scrutiny for recent comments about the pricing. In November, Delta president Glen Hauenstein said at an investor day that “we will have a price that’s available on that flight, on that time, to you, the individual.” However, responding to questions [&#8230;]</p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://www.theverge.com/news/717865/apple-ceo-tim-cook-ai-investment" target="_blank" rel="noopener noreferrer">Tim Cook says Apple ‘must’ figure out AI and ‘will make the investment to do it’</a>
                 <span class="source">(AI)</span>
-                <p class="summary">Apple CEO Tim Cook boasted about the potential of AI and the company’s approach to developing it in a rare all-hands today that was reported on by Bloomberg. Apple has been slow to roll out some of its AI features and has stumbled with a planned AI-powered upgrade to Siri, which it delayed earlier this [&#8230;]</p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://venturebeat.com/ai/new-vision-model-from-cohere-runs-on-two-gpus-beats-top-tier-vlms-on-visual-tasks/" target="_blank" rel="noopener noreferrer">New vision model from Cohere runs on two GPUs, beats top-tier VLMs on visual tasks</a>
                 <span class="source">(AI)</span>
-                <p class="summary">Cohere's Command A Vision can read graphs and PDFs to make enterprise research richer and analyze the documents businesses actually rely on.</p>
                 
             </div>
             
-            <div class="headline  style3">
+            <div class="headline">
                 <a href="https://futurism.com/rain-drops-chemical-tfa" target="_blank" rel="noopener noreferrer">Almost All Rain Drops Contain the Same Weird Chemical</a>
                 <span class="source">(Futurism)</span>
-                <p class="summary"><p>Since the rise of commercial chemical manufacturing in the 1940s, the environment has been plagued by a growing concentration of man-made substances like microplastics, PCBs, and bisphenols. There's even a new one rising to prominence: the chemical compound trifluoroacetic acid, or TFA. New reporting by Nature detailed the troubling rise of TFA and its inexorable creep into every [&hellip;]</p></p>
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="https://techcrunch.com/2025/08/01/a-backlog-at-the-commerce-department-is-reportedly-stalling-nvidias-h20-chip-licenses/" target="_blank" rel="noopener noreferrer">A backlog at the Commerce Department is reportedly stalling Nvidia’s H20 chip licenses</a>
                 <span class="source">(AI)</span>
-                <p class="summary">News of a backlog at the U.S. federal department comes less than a week after national security experts urged the Trump administration to reverse its decision that allows Nvidia to export H20 chips to China.</p>
                 
             </div>
             
-            <div class="headline  style3">
+            <div class="headline">
                 <a href="https://futurism.com/jury-tesla-autopilot-death" target="_blank" rel="noopener noreferrer">"This Will Open the Floodgates": Tesla In Trouble as Jury Orders It to Pay $329 Million After Autopilot Death</a>
                 <span class="source">(Futurism)</span>
-                <p class="summary"><p>Tesla just got handed one of its biggest legal blows yet — one that could have seismic implications for its future operations. On Friday, a Miami jury ruled that the Elon Musk-owned automaker's Autopilot driver assistance software was partially at fault for a horrendous collision that killed a 22-year-old woman in 2019 and severely injured her boyfriend, The New York Times reports. In total, the jury ordered Tesla to pay $329 million to the family of the victims, Naibel Benavides and Dillon Angulo, including $200 million in punitive damages and $129 million in compensatory damages. It was not considered to […]</p></p>
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="https://futurism.com/trumps-tariffs-ozempic-novo-nordisk" target="_blank" rel="noopener noreferrer">A Side Effect of Trump's Tariffs: Making Ozempic Way More Expensive</a>
                 <span class="source">(Futurism)</span>
-                <p class="summary"><p>President Donald Trump's new European tariffs may spell bad news for Novo Nordisk, maker of Ozempic and Wegovy. As Axios reports, the 15 percent tariffs on goods imported into the United States from the European Union is likely to drive up already-expensive drug prices for the blockbuster weight loss jabs, which can cost more than $1,300 per month's supply without insurance. Slated to go into effect on August 7, this new agreement doesn't just target pharmaceuticals. Still, in scary letters sent to drugmakers on both sides of the pond, the American president also threatened to levy higher taxes on "freeloading" […]</p></p>
                 
             </div>
             
-            <div class="headline  style3">
+            <div class="headline">
                 <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/" target="_blank" rel="noopener noreferrer">Why open-source AI became an American national priority</a>
                 <span class="source">(AI)</span>
-                <p class="summary">To reflect democratic principles, AI must be built in the open. If the U.S. wants to lead the AI race, it must lead the open-source AI race.</p>
                 
             </div>
             
         </div>
         <div class="column">
             
-            <div class="headline  style3">
+            <div class="headline">
                 <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/" target="_blank" rel="noopener noreferrer">Google bets on STAN, an Indian social gaming platform</a>
                 <span class="source">(AI)</span>
-                <p class="summary">STAN, headquartered in Singapore, is trying to position itself as a gaming community platform to rival Discord, but its approach to the market is quite different.</p>
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="https://techcrunch.com/podcast/from-metas-massive-offers-to-anthropics-massive-valuation-does-ai-have-a-ceiling/" target="_blank" rel="noopener noreferrer">From Meta’s massive offers to Anthropic’s massive valuation, does AI have a ceiling?</a>
                 <span class="source">(AI)</span>
-                <p class="summary">Meta is still going all-in on the AI talent war, with Mark Zuckerberg reportedly reaching out to top recruits himself, throwing around jaw-dropping compensation packages that top $1 billion over multiple years. And Meta’s latest target? Mira Murati&#8217;s new startup, Thinking Machines Lab. It&#8217;s a bold play in an already overheated market. While Zuck eyes [&#8230;]</p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" target="_blank" rel="noopener noreferrer">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
                 <span class="source">(AI)</span>
-                <p class="summary">The Gemini 2.5 Deep Think released to users is not that same competition model, rather, a lower performing but apparently faster version.</p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" target="_blank" rel="noopener noreferrer">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
                 <span class="source">(Analytics)</span>
-                <p class="summary"><p>Most Python developers deal with fragmentation in the tools to manage environments and dependencies. There are many tools at your disposal &#8211; pip, virtualenv, Poetry, and conda. All of these tools have their constructs and requirements. However, when combined, you can quickly see how they can complicate any necessary workflows. This is where UV will [&#8230;]</p>
-<p>The post <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/">UV Ultimate Guide: The 100X Faster Python Package Manager</a> appeared first on <a href="https://www.analyticsvidhya.com">Analytics Vidhya</a>.</p></p>
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/" target="_blank" rel="noopener noreferrer">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
                 <span class="source">(SingularityHub)</span>
-                <p class="summary"><p>A new gene drive blocks malaria in generations of mosquitoes.</p>
-<p>The post <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/" rel="nofollow">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a> appeared first on <a href="https://singularityhub.com" rel="nofollow">SingularityHub</a>.</p></p>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/mosquito-up-close-blue-cloth.jpeg?auto=webp" alt="Article image for These Genetically Engineered Mosquitoes Could Wipe Out Malaria" loading="lazy" onerror="this.style.display='none';">
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://www.analyticsvidhya.com/blog/2025/08/canva-ai-features/" target="_blank" rel="noopener noreferrer">5 Canva AI Features That Tech Professionals Must Know</a>
                 <span class="source">(Analytics)</span>
-                <p class="summary"><p>There has been a seismic shift in the design landscape, with tech professionals standing at its very epicenter. Gone are the days when anyone had to spend years to become a compelling visual creator or pay through the nose for a software license. The recent Canva survey revealed that 78% of marketing leaders now view [&#8230;]</p>
-<p>The post <a href="https://www.analyticsvidhya.com/blog/2025/08/canva-ai-features/">5 Canva AI Features That Tech Professionals Must Know</a> appeared first on <a href="https://www.analyticsvidhya.com">Analytics Vidhya</a>.</p></p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://www.marktechpost.com/2025/08/01/falcon-llm-team-releases-falcon-h1-technical-report-a-hybrid-attention-ssm-model-that-rivals-70b-llms/" target="_blank" rel="noopener noreferrer">Falcon LLM Team Releases Falcon-H1 Technical Report: A Hybrid Attention–SSM Model That Rivals 70B LLMs</a>
                 <span class="source">(MarkTechPost)</span>
-                <p class="summary"><p>Introduction The Falcon-H1 series, developed by the Technology Innovation Institute (TII), marks a significant advancement in the evolution of large language models (LLMs). By integrating Transformer-based attention with Mamba-based State Space Models (SSMs) in a hybrid parallel configuration, Falcon-H1 achieves exceptional performance, memory efficiency, and scalability. Released in multiple sizes (0.5B to 34B parameters) and [&#8230;]</p>
-<p>The post <a href="https://www.marktechpost.com/2025/08/01/falcon-llm-team-releases-falcon-h1-technical-report-a-hybrid-attention-ssm-model-that-rivals-70b-llms/">Falcon LLM Team Releases Falcon-H1 Technical Report: A Hybrid Attention–SSM Model That Rivals 70B LLMs</a> appeared first on <a href="https://www.marktechpost.com">MarkTechPost</a>.</p></p>
                 
             </div>
             
-            <div class="headline  style3">
+            <div class="headline">
                 <a href="https://www.marktechpost.com/2025/08/01/meet-smallthinker-a-family-of-efficient-large-language-models-llms-natively-trained-for-local-deployment/" target="_blank" rel="noopener noreferrer">Meet SmallThinker: A Family of Efficient Large Language Models LLMs Natively Trained for Local Deployment</a>
                 <span class="source">(MarkTechPost)</span>
-                <p class="summary"><p>The generative AI landscape is dominated by massive language models, often designed for the vast capacities of cloud data centers. These models, while powerful, make it difficult or impossible for everyday users to deploy advanced AI privately and efficiently on local devices like laptops, smartphones, or embedded systems. Instead of compressing cloud-scale models for the [&#8230;]</p>
-<p>The post <a href="https://www.marktechpost.com/2025/08/01/meet-smallthinker-a-family-of-efficient-large-language-models-llms-natively-trained-for-local-deployment/">Meet SmallThinker: A Family of Efficient Large Language Models LLMs Natively Trained for Local Deployment</a> appeared first on <a href="https://www.marktechpost.com">MarkTechPost</a>.</p></p>
                 
             </div>
             
         </div>
         <div class="column">
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://www.marktechpost.com/2025/07/31/google-ai-introduces-the-test-time-diffusion-deep-researcher-ttd-dr-a-human-inspired-diffusion-framework-for-advanced-deep-research-agents/" target="_blank" rel="noopener noreferrer">Google AI Introduces the Test-Time Diffusion Deep Researcher (TTD-DR): A Human-Inspired Diffusion Framework for Advanced Deep Research Agents</a>
                 <span class="source">(MarkTechPost)</span>
-                <p class="summary"><p>Deep Research (DR) agents have rapidly gained popularity in both research and industry, thanks to recent progress in LLMs. However, most popular public DR agents are not designed with human thinking and writing processes in mind. They often lack structured steps that support human researchers, such as drafting, searching, and using feedback. Current DR agents [&#8230;]</p>
-<p>The post <a href="https://www.marktechpost.com/2025/07/31/google-ai-introduces-the-test-time-diffusion-deep-researcher-ttd-dr-a-human-inspired-diffusion-framework-for-advanced-deep-research-agents/">Google AI Introduces the Test-Time Diffusion Deep Researcher (TTD-DR): A Human-Inspired Diffusion Framework for Advanced Deep Research Agents</a> appeared first on <a href="https://www.marktechpost.com">MarkTechPost</a>.</p></p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="http://arxiv.org/abs/2507.23784v1" target="_blank" rel="noopener noreferrer">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
                 <span class="source">(arXiv)</span>
-                <p class="summary">Concept Bottleneck Models (CBMs) and other concept-based interpretable models
-show great promise for making AI applications more transparent, which is
-essential in fields like medicine. Despite their success, we demonstrate that
-CBMs struggle to reliably identify the correct concepts under distribution
-shifts. To assess the robustness of CBMs to concept variations, we introduce
-SUB: a fine-grained image and concept benchmark containing 38,400 synthetic
-images based on the CUB dataset. To create SUB, we select a CUB subset of 33
-bird classes and 45 concepts to generate images which substitute a specific
-concept, such as wing color or belly pattern. We introduce a novel Tied
-Diffusion Guidance (TDG) method to precisely control generated images, where
-noise sharing for two parallel denoising processes ensures that both the
-correct bird class and the correct attribute are generated. This novel
-benchmark enables rigorous evaluation of CBMs and similar interpretable models,
-contributing to the development of more robust methods. Our code is available
-at https://github.com/ExplainableML/sub and the dataset at
-http://huggingface.co/datasets/Jessica-bader/SUB.</p>
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="http://arxiv.org/abs/2507.23779v1" target="_blank" rel="noopener noreferrer">Phi-Ground Tech Report: Advancing Perception in GUI Grounding</a>
                 <span class="source">(arXiv)</span>
-                <p class="summary">With the development of multimodal reasoning models, Computer Use Agents
-(CUAs), akin to Jarvis from \textit{"Iron Man"}, are becoming a reality. GUI
-grounding is a core component for CUAs to execute actual actions, similar to
-mechanical control in robotics, and it directly leads to the success or failure
-of the system. It determines actions such as clicking and typing, as well as
-related parameters like the coordinates for clicks. Current end-to-end
-grounding models still achieve less than 65\% accuracy on challenging
-benchmarks like ScreenSpot-pro and UI-Vision, indicating they are far from
-being ready for deployment. % , as a single misclick can result in unacceptable
-consequences. In this work, we conduct an empirical study on the training of
-grounding models, examining details from data collection to model training.
-Ultimately, we developed the \textbf{Phi-Ground} model family, which achieves
-state-of-the-art performance across all five grounding benchmarks for models
-under $10B$ parameters in agent settings. In the end-to-end model setting, our
-model still achieves SOTA results with scores of \textit{\textbf{43.2}} on
-ScreenSpot-pro and \textit{\textbf{27.2}} on UI-Vision. We believe that the
-various details discussed in this paper, along with our successes and failures,
-not only clarify the construction of grounding models but also benefit other
-perception tasks. Project homepage:
-\href{https://zhangmiaosen2000.github.io/Phi-Ground/}{https://zhangmiaosen2000.github.io/Phi-Ground/}</p>
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="http://arxiv.org/abs/2507.23773v1" target="_blank" rel="noopener noreferrer">SimuRA: Towards General Goal-Oriented Agent via Simulative Reasoning Architecture with LLM-Based World Model</a>
                 <span class="source">(arXiv)</span>
-                <p class="summary">AI agents built on large language models (LLMs) hold enormous promise, but
-current practice focuses on a one-task-one-agent approach, which not only falls
-short of scalability and generality, but also suffers from the fundamental
-limitations of autoregressive LLMs. On the other hand, humans are general
-agents who reason by mentally simulating the outcomes of their actions and
-plans. Moving towards a more general and powerful AI agent, we introduce
-SimuRA, a goal-oriented architecture for generalized agentic reasoning. Based
-on a principled formulation of optimal agent in any environment, \modelname
-overcomes the limitations of autoregressive reasoning by introducing a world
-model for planning via simulation. The generalized world model is implemented
-using LLM, which can flexibly plan in a wide range of environments using the
-concept-rich latent space of natural language. Experiments on difficult web
-browsing tasks show that \modelname improves the success of flight search from
-0\% to 32.2\%. World-model-based planning, in particular, shows consistent
-advantage of up to 124\% over autoregressive planning, demonstrating the
-advantage of world model simulation as a reasoning paradigm. We are excited
-about the possibility for training a single, general agent model based on LLMs
-that can act superintelligently in all environments. To start, we make SimuRA,
-a web-browsing agent built on \modelname with pretrained LLMs, available as a
-research demo for public testing.</p>
                 
             </div>
             
-            <div class="headline  style4">
+            <div class="headline">
                 <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/" target="_blank" rel="noopener noreferrer">The Only Guide You Will Ever Need For Model Context Protocol (MCP)</a>
                 <span class="source">(Analytics)</span>
-                <p class="summary"><p>Large Language Models (LLMs) like Anthropic’s Claude have unlocked massive context windows (up to 200k tokens in Claude 4) that let them consider entire documents or codebases in a single go. However, effectively providing relevant context to these models remains a challenge. Traditionally, developers have resorted to complex prompt engineering or retrieval pipelines to feed [&#8230;]</p>
-<p>The post <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/">The Only Guide You Will Ever Need For Model Context Protocol (MCP)</a> appeared first on <a href="https://www.analyticsvidhya.com">Analytics Vidhya</a>.</p></p>
                 
             </div>
             
-            <div class="headline  style3">
+            <div class="headline">
                 <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/" target="_blank" rel="noopener noreferrer">Mini Human Organs Just Got Much Closer to Matching the Real Thing</a>
                 <span class="source">(SingularityHub)</span>
-                <p class="summary"><p>New models could shed light on early human development and be used for drug discovery and tissue transplants.</p>
-<p>The post <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/" rel="nofollow">Mini Human Organs Just Got Much Closer to Matching the Real Thing</a> appeared first on <a href="https://singularityhub.com" rel="nofollow">SingularityHub</a>.</p></p>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/brain-organoids-in-a-flask-1.jpeg?auto=webp" alt="Article image for Mini Human Organs Just Got Much Closer to Matching the Real Thing" loading="lazy" onerror="this.style.display='none';">
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/" target="_blank" rel="noopener noreferrer">AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong</a>
                 <span class="source">(SingularityHub)</span>
-                <p class="summary"><p>Agents are a step up from earlier AI tools. Knowing how they work is rapidly becoming essential.</p>
-<p>The post <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/" rel="nofollow">AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong</a> appeared first on <a href="https://singularityhub.com" rel="nofollow">SingularityHub</a>.</p></p>
                 
                 <img src="https://singularityhub.com/uploads/2025/07/ai-agent-bot-in-a-field-2.jpeg?auto=webp" alt="Article image for AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong" loading="lazy" onerror="this.style.display='none';">
                 
             </div>
             
-            <div class="headline  style1">
+            <div class="headline">
                 <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/" target="_blank" rel="noopener noreferrer">Where Is AI on the Enshittification Curve?</a>
                 <span class="source">(AI)</span>
-                <p class="summary">After listening to Andy Jassy’s “lean into AI” comments to CNBC about using AI to deliver a better experience to customers, I came across Ford CEO Jim Farley’s comments at the Aspen Ideas Festival predicting massive job losses from AI. It occurred to me that whether AI creates or destroys jobs depends on where companies [&#8230;]</p>
                 
                 <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for Where Is AI on the Enshittification Curve?" loading="lazy" onerror="this.style.display='none';">
                 
@@ -503,27 +416,27 @@ research demo for public testing.</p>
             <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
             <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
             <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
-            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat</a></li>
-            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired</a></li>
-            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT</a></li>
-            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AIMagazine</a></li>
-            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">AnalyticsVidhya</a></li>
-            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AITrends</a></li>
-            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MITNews</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
+            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
+            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
+            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
+            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
+            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
+            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
+            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
             <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
             <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
             <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
-            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">AnalyticsInsight</a></li>
-            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">InsideBigData</a></li>
-            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">DataScienceCentral</a></li>
-            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBMDeveloper</a></li>
-            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">MIRI</a></li>
-            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">PaperswithCode</a></li>
+            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
+            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
+            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
+            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
+            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
+            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
             <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
-            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">StabilityAI</a></li>
-            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">PerplexityAI</a></li>
-            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">AINews</a></li>
+            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
+            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
+            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
         </ul>
     </footer>
 </body>
