@@ -22,9 +22,9 @@
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "Tim Cook reportedly tells employees Apple ‘must’ win in AI",
-      "image": "https://source.unsplash.com/600x300/?ai,technology",
-      "datePublished": "2025-08-02T21:21:22+00:00",
+      "headline": "A Coding Guide to Build Intelligent Multi-Agent Systems with the PEER Pattern",
+      "image": "https://via.placeholder.com/600x300?text=AI+Headline+Image",
+      "datePublished": "2025-08-02T08:34:57+00:00",
       "author": {
         "@type": "Organization",
         "name": "Exhaustive AI"
@@ -34,7 +34,7 @@
         "name": "Exhaustive AI",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://your-logo-url.com/logo.png"
+          "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
         }
       }
     }
@@ -55,7 +55,7 @@
             --source-color: #999999; /* Grey for source text */
             --title-color: #eca213; /* Warm gold-orange for title */
         }
-
+        
         /* Light mode override */
         @media (prefers-color-scheme: light) {
             :root {
@@ -65,353 +65,233 @@
                 --hover-color: #0000ff;
                 --border-color: #ccc;
                 --headline-color: #333; /* Dark grey in light mode */
-                --source-color: #666666; /* Medium grey for source in light mode */
-                --title-color: #eca213; /* Keep title color consistent */
+                --source-color: #666; /* Darker grey for sources in light mode */
+                --title-color: #eca213; /* Keep warm gold-orange */
             }
         }
-
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 40px;
-            text-align: center;
+            padding: 20px;
             line-height: 1.6;
         }
-        h1 {
-            font-size: 80px; /* Increased size for prominence */
-            font-weight: bold;
-            font-family: 'Roboto', Arial, sans-serif; /* Formal yet contemporary font */
-            margin: 0 0 40px;
-            color: var(--title-color); /* #eca213 color */
-            text-decoration: underline; /* Underline the title */
-            pointer-events: none; /* Prevent it from being clickable like a link */
-            /* Thin black border effect using text-shadow */
-            text-shadow: 
-                -1px -1px 0 #000,
-                 1px -1px 0 #000,
-                -1px  1px 0 #000,
-                 1px  1px 0 #000;
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .headline-image {
-            max-width: 600px;
+        
+        .logo {
+            max-width: 200px;
             height: auto;
-            margin: 20px auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        
+        h1 {
+            color: var(--title-color);
+            font-size: 2.5em;
+        }
+        
         .main-headline {
-            font-size: 52px; /* Larger to stand out */
-            font-weight: bold;
-            margin: 20px 0; /* Adjusted spacing */
+            font-size: 1.8em;
             color: var(--headline-color);
             text-decoration: underline;
+            margin-bottom: 10px;
         }
-        .main-headline a {
+        
+        .headline {
+            font-size: 1.4em;
+            color: var(--headline-color);
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+        
+        .source {
+            font-style: italic;
+            font-size: 0.9em;
+            color: var(--source-color);
+        }
+        
+        a {
             color: var(--link-color);
             text-decoration: none;
         }
-        .main-headline a:hover {
-            text-decoration: underline;
+        
+        a:hover {
             color: var(--hover-color);
         }
-        .main-image {
-            max-width: 600px;
-            height: auto;
-            margin: 20px auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+        
         .columns {
             display: flex;
             justify-content: space-between;
-            text-align: left;
-            max-width: 1200px;
-            margin: 0 auto;
         }
+        
         .column {
-            width: 32%;
-            padding: 20px;
+            width: 30%;
+            padding: 10px;
             border-right: 1px solid var(--border-color);
         }
+        
         .column:last-child {
             border-right: none;
         }
-        .headline {
-            font-size: 20px;
-            margin: 20px 0;
-            color: var(--headline-color);
-            text-decoration: underline;
-        }
-        .headline a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        .headline a:hover {
-            text-decoration: underline;
-            color: var(--hover-color);
-        }
-        .source {
-            font-size: 0.8em;
-            color: var(--source-color);
-            margin-left: 5px;
-        }
-        .headline img {
+        
+        img {
             max-width: 100%;
             height: auto;
-            margin: 10px 0;
-        }
-        /* Random text styles for differentiation */
-        .style1 { font-family: 'Times New Roman', serif; font-weight: bold; }
-        .style2 { font-family: 'Georgia', serif; font-style: italic; }
-        .style3 { font-family: 'Arial', sans-serif; font-weight: normal; }
-        .style4 { font-family: 'Courier New', monospace; font-weight: bold; }
-        footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 2px solid var(--border-color);
-            text-align: left;
-        }
-        footer h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--headline-color);
-        }
-        footer ul {
-            list-style-type: none;
-            padding: 0;
-            columns: 2;
-            column-gap: 40px;
-        }
-        footer li {
             margin-bottom: 10px;
         }
-        footer a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-            color: var(--hover-color);
-        }
-        /* Media queries */
-        @media (max-width: 768px) {
-            .columns {
-                flex-direction: column;
-            }
-            .column {
-                width: 100%;
-                padding: 10px;
-                border-right: none;
-            }
-            h1 {
-                font-size: 48px; /* Adjusted for mobile */
-            }
-            .main-headline {
-                font-size: 32px;
-            }
-            .headline {
-                font-size: 18px;
-            }
-            .source {
-                font-size: 0.7em;
-            }
-            .headline-image, .main-image, .headline img {
-                max-width: 100%;
-            }
-        }
-        @media (max-width: 480px) {
-            body {
-                padding: 20px;
-            }
-            footer ul {
-                columns: 1;
-            }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: var(--source-color);
         }
     </style>
 </head>
 <body>
+    <header>
+        <img src="https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg" alt="Exhaustive AI Logo" class="logo">
+        <h1>Exhaustive AI</h1>
+    </header>
     
-    <img src="https://source.unsplash.com/600x300/?ai,technology" alt="Headline-related image for Tim Cook reportedly tells employees Apple ‘must’ win in AI" class="headline-image" loading="lazy" onerror="this.style.display='none';">
     
-    <h1>Exhaustive AI</h1>
-    
-    
-    <div class="main-headline style3">
-        <a href="https://techcrunch.com/2025/08/02/tim-cook-reportedly-tells-employees-apple-must-win-in-ai/" target="_blank" rel="noopener noreferrer">Tim Cook reportedly tells employees Apple ‘must’ win in AI</a>
-        <span class="source">(TechCrunch)</span>
-    </div>
-    
+    <section class="main-article">
+        <a href="https://www.marktechpost.com/2025/08/02/a-coding-guide-to-build-intelligent-multi-agent-systems-with-the-peer-pattern/" class="main-headline">A Coding Guide to Build Intelligent Multi-Agent Systems with the PEER Pattern</a>
+        <span class="source">(MarkTechPost)</span>
+        
+    </section>
     
     
     <div class="columns">
         <div class="column">
             
-            <div class="headline style4">
-                <a href="https://www.marktechpost.com/2025/08/02/mit-researchers-develop-methods-to-control-transformer-sensitivity-with-provable-lipschitz-bounds-and-muon/" target="_blank" rel="noopener noreferrer">MIT Researchers Develop Methods to Control Transformer Sensitivity with Provable Lipschitz Bounds and Muon</a>
-                <span class="source">(MarkTechPost)</span>
-                
-            </div>
+            <a href="https://aibusiness.com/generative-ai/most-read-nice-acquires-agentic-ai-company-in-955m-deal-department-of-energy-unveils-first-four-ai-data-center-sites" class="headline">Most Read: NiCE Acquires Agentic AI Company in $955M Deal; Department of Energy Unveils First Four AI Data Center Sites</a>
+            <span class="source">(Aibusiness)</span>
             
-            <div class="headline style3">
-                <a href="https://www.marktechpost.com/2025/08/02/how-to-use-the-shap-iq-package-to-uncover-and-visualize-feature-interactions-in-machine-learning-models-using-shapley-interaction-indices-sii/" target="_blank" rel="noopener noreferrer">How to Use the SHAP-IQ Package to Uncover and Visualize Feature Interactions in Machine Learning Models Using Shapley Interaction Indices (SII)</a>
-                <span class="source">(MarkTechPost)</span>
-                
-            </div>
+            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/bltb518b440f6d9f0f6/6888e800562ed32a7da0e9a4/GettyImages-2222990006.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for Most Read: NiCE Acquires Agentic AI Company in $955M Deal; Department of Energy Unveils First Four AI Data Center Sites">
             
-            <div class="headline style3">
-                <a href="https://techcrunch.com/2025/08/02/anthropic-cuts-off-openais-access-to-its-claude-models/" target="_blank" rel="noopener noreferrer">Anthropic cuts off OpenAI’s access to its Claude models</a>
-                <span class="source">(TechCrunch)</span>
-                
-            </div>
             
-            <div class="headline style1">
-                <a href="https://singularityhub.com/2025/08/02/this-weeks-awesome-tech-stories-from-around-the-web-through-august-2/" target="_blank" rel="noopener noreferrer">This Week’s Awesome Tech Stories From Around the Web (Through August 2)</a>
-                <span class="source">(Singularity Hub)</span>
-                
-                <img src="https://singularityhub.com/uploads/2025/08/digital-display-art.jpeg?auto=webp" alt="Article image for This Week’s Awesome Tech Stories From Around the Web (Through August 2)" loading="lazy" onerror="this.style.display='none';">
-                
-            </div>
+            <a href="https://techcrunch.com/2025/08/02/tim-cook-reportedly-tells-employees-apple-must-win-in-ai/" class="headline">apple's ai war: cook issues chilling ultimatum to employees</a>
+            <span class="source">(TechCrunch)</span>
             
-            <div class="headline style3">
-                <a href="https://futurism.com/unitree-robots-boxing" target="_blank" rel="noopener noreferrer">We Must Admit That This Video of Two Small Robots Punching Each Other With Boxing Gloves Is Pretty Awesome</a>
-                <span class="source">(Futurism)</span>
-                
-            </div>
             
-            <div class="headline style4">
-                <a href="https://futurism.com/parents-hide-airtags-shoes" target="_blank" rel="noopener noreferrer">Surveillance-Minded Parents Can Now Hide AirTags In Kids Shoes</a>
-                <span class="source">(Futurism)</span>
-                
-            </div>
+            <a href="https://www.theverge.com/news/717865/apple-ceo-tim-cook-ai-investment" class="headline">Tim Cook says Apple ‘must’ figure out AI and ‘will make the investment to do it’</a>
+            <span class="source">(The Verge)</span>
             
-            <div class="headline style1">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/llm-engineer-interview-questions/" target="_blank" rel="noopener noreferrer">Top 20 LLM Engineer Interview Questions</a>
-                <span class="source">(Analytics Vidhya)</span>
-                
-            </div>
             
-            <div class="headline style4">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/notebooklm-video-overviews-studio-upgrades/" target="_blank" rel="noopener noreferrer">NotebookLM’s Latest Video Overviews & Studio Upgrades are a Must-Try!</a>
-                <span class="source">(Analytics Vidhya)</span>
-                
-            </div>
+            <a href="https://futurism.com/parents-hide-airtags-shoes" class="headline">your kid's shoes aren't safe: hidden airtags track every step</a>
+            <span class="source">(Futurism)</span>
+            
+            
+            <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" class="headline">Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI</a>
+            <span class="source">(The Verge)</span>
+            
+            
+            <a href="https://www.infoworld.com/article/4033040/apache-flink-integrates-ai-for-real-time-decision-making.html" class="headline">Apache Flink integrates AI for real-time decision-making</a>
+            <span class="source">(Infoworld)</span>
+            
+            <img src="https://www.infoworld.com/wp-content/uploads/2025/08/4033040-0-37177400-1754087218-shutterstock_2256482287-100943534-orig.jpg?quality=50&strip=all" alt="Article image for Apache Flink integrates AI for real-time decision-making">
+            
+            
+            <a href="https://techcrunch.com/2025/08/01/a-backlog-at-the-commerce-department-is-reportedly-stalling-nvidias-h20-chip-licenses/" class="headline">A backlog at the Commerce Department is reportedly stalling Nvidia’s H20 chip licenses</a>
+            <span class="source">(TechCrunch)</span>
+            
+            
+            <a href="https://aibusiness.com/data/oracle-s-ai-infrastructure-vision-building-for-a-collaborative-future" class="headline">oracle's ai: the future is here (and it's collaborative!)</a>
+            <span class="source">(Aibusiness)</span>
+            
+            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt930e55a60472689d/6744f2c3aeccf3ecf7a25265/with_people_resized_Data_Center_GettyImages-1461628149.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for oracle's ai: the future is here (and it's collaborative!)">
+            
             
         </div>
+        
         <div class="column">
             
-            <div class="headline style1">
-                <a href="https://futurism.com/google-detect-earthquake-alerts" target="_blank" rel="noopener noreferrer">Google Has Quietly Been Detecting Earthquakes by Sensing Rumbling in Android Phones For Years</a>
-                <span class="source">(Futurism)</span>
-                
-            </div>
+            <a href="https://www.marktechpost.com/2025/08/02/mit-researchers-develop-methods-to-control-transformer-sensitivity-with-provable-lipschitz-bounds-and-muon/" class="headline">MIT Researchers Develop Methods to Control Transformer Sensitivity with Provable Lipschitz Bounds and Muon</a>
+            <span class="source">(MarkTechPost)</span>
             
-            <div class="headline style4">
-                <a href="https://www.marktechpost.com/2025/08/02/a-coding-guide-to-build-intelligent-multi-agent-systems-with-the-peer-pattern/" target="_blank" rel="noopener noreferrer">A Coding Guide to Build Intelligent Multi-Agent Systems with the PEER Pattern</a>
-                <span class="source">(MarkTechPost)</span>
-                
-            </div>
             
-            <div class="headline style4">
-                <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" target="_blank" rel="noopener noreferrer">Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI</a>
-                <span class="source">(The Verge)</span>
-                
-            </div>
+            <a href="https://www.marktechpost.com/2025/08/02/how-to-use-the-shap-iq-package-to-uncover-and-visualize-feature-interactions-in-machine-learning-models-using-shapley-interaction-indices-sii/" class="headline">How to Use the SHAP-IQ Package to Uncover and Visualize Feature Interactions in Machine Learning Models Using Shapley Interaction Indices (SII)</a>
+            <span class="source">(MarkTechPost)</span>
             
-            <div class="headline style2">
-                <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" target="_blank" rel="noopener noreferrer">Delta&#8217;s dynamic AI pricing plan sounds different now</a>
-                <span class="source">(The Verge)</span>
-                
-            </div>
             
-            <div class="headline style2">
-                <a href="https://www.theverge.com/news/717865/apple-ceo-tim-cook-ai-investment" target="_blank" rel="noopener noreferrer">Tim Cook says Apple ‘must’ figure out AI and ‘will make the investment to do it’</a>
-                <span class="source">(The Verge)</span>
-                
-            </div>
+            <a href="https://techcrunch.com/2025/08/02/anthropic-cuts-off-openais-access-to-its-claude-models/" class="headline">Anthropic cuts off OpenAI’s access to its Claude models</a>
+            <span class="source">(TechCrunch)</span>
             
-            <div class="headline style4">
-                <a href="https://venturebeat.com/ai/new-vision-model-from-cohere-runs-on-two-gpus-beats-top-tier-vlms-on-visual-tasks/" target="_blank" rel="noopener noreferrer">New vision model from Cohere runs on two GPUs, beats top-tier VLMs on visual tasks</a>
-                <span class="source">(VentureBeat)</span>
-                
-            </div>
             
-            <div class="headline style1">
-                <a href="https://techcrunch.com/2025/08/01/a-backlog-at-the-commerce-department-is-reportedly-stalling-nvidias-h20-chip-licenses/" target="_blank" rel="noopener noreferrer">A backlog at the Commerce Department is reportedly stalling Nvidia’s H20 chip licenses</a>
-                <span class="source">(TechCrunch)</span>
-                
-            </div>
+            <a href="https://futurism.com/google-detect-earthquake-alerts" class="headline">Google Has Quietly Been Detecting Earthquakes by Sensing Rumbling in Android Phones For Years</a>
+            <span class="source">(Futurism)</span>
             
-            <div class="headline style2">
-                <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/" target="_blank" rel="noopener noreferrer">Why open-source AI became an American national priority</a>
-                <span class="source">(VentureBeat)</span>
-                
-            </div>
+            
+            <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" class="headline">Delta&#8217;s dynamic AI pricing plan sounds different now</a>
+            <span class="source">(The Verge)</span>
+            
+            
+            <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" class="headline">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
+            <span class="source">(VentureBeat)</span>
+            
+            
+            <a href="https://singularityhub.com/2025/08/02/this-weeks-awesome-tech-stories-from-around-the-web-through-august-2/" class="headline">This Week’s Awesome Tech Stories From Around the Web (Through August 2)</a>
+            <span class="source">(Singularity Hub)</span>
+            
+            <img src="https://singularityhub.com/uploads/2025/08/digital-display-art.jpeg?auto=webp" alt="Article image for This Week’s Awesome Tech Stories From Around the Web (Through August 2)">
+            
+            
+            <a href="https://futurism.com/unitree-robots-boxing" class="headline">We Must Admit That This Video of Two Small Robots Punching Each Other With Boxing Gloves Is Pretty Awesome</a>
+            <span class="source">(Futurism)</span>
+            
             
         </div>
+        
         <div class="column">
             
-            <div class="headline style3">
-                <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" target="_blank" rel="noopener noreferrer">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
-                <span class="source">(VentureBeat)</span>
-                
-            </div>
+            <a href="https://www.analyticsvidhya.com/blog/2025/08/llm-engineer-interview-questions/" class="headline">Top 20 LLM Engineer Interview Questions</a>
+            <span class="source">(Analytics Vidhya)</span>
             
-            <div class="headline style1">
-                <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" target="_blank" rel="noopener noreferrer">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
-                <span class="source">(Analytics Vidhya)</span>
-                
-            </div>
             
-            <div class="headline style3">
-                <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/" target="_blank" rel="noopener noreferrer">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
-                <span class="source">(Singularity Hub)</span>
-                
-                <img src="https://singularityhub.com/uploads/2025/07/mosquito-up-close-blue-cloth.jpeg?auto=webp" alt="Article image for These Genetically Engineered Mosquitoes Could Wipe Out Malaria" loading="lazy" onerror="this.style.display='none';">
-                
-            </div>
+            <a href="https://www.analyticsvidhya.com/blog/2025/08/notebooklm-video-overviews-studio-upgrades/" class="headline">NotebookLM’s Latest Video Overviews & Studio Upgrades are a Must-Try!</a>
+            <span class="source">(Analytics Vidhya)</span>
             
-            <div class="headline style1">
-                <a href="http://arxiv.org/abs/2507.23784v1" target="_blank" rel="noopener noreferrer">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
-                <span class="source">(arXiv)</span>
-                
-            </div>
             
-            <div class="headline style4">
-                <a href="http://arxiv.org/abs/2507.23779v1" target="_blank" rel="noopener noreferrer">Phi-Ground Tech Report: Advancing Perception in GUI Grounding</a>
-                <span class="source">(arXiv)</span>
-                
-            </div>
+            <a href="https://venturebeat.com/ai/new-vision-model-from-cohere-runs-on-two-gpus-beats-top-tier-vlms-on-visual-tasks/" class="headline">New vision model from Cohere runs on two GPUs, beats top-tier VLMs on visual tasks</a>
+            <span class="source">(VentureBeat)</span>
             
-            <div class="headline style3">
-                <a href="http://arxiv.org/abs/2507.23773v1" target="_blank" rel="noopener noreferrer">SimuRA: Towards General Goal-Oriented Agent via Simulative Reasoning Architecture with LLM-Based World Model</a>
-                <span class="source">(arXiv)</span>
-                
-            </div>
             
-            <div class="headline style3">
-                <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/" target="_blank" rel="noopener noreferrer">Mini Human Organs Just Got Much Closer to Matching the Real Thing</a>
-                <span class="source">(Singularity Hub)</span>
-                
-                <img src="https://singularityhub.com/uploads/2025/07/brain-organoids-in-a-flask-1.jpeg?auto=webp" alt="Article image for Mini Human Organs Just Got Much Closer to Matching the Real Thing" loading="lazy" onerror="this.style.display='none';">
-                
-            </div>
+            <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/" class="headline">Why open-source AI became an American national priority</a>
+            <span class="source">(VentureBeat)</span>
             
-            <div class="headline style3">
-                <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/" target="_blank" rel="noopener noreferrer">Where Is AI on the Enshittification Curve?</a>
-                <span class="source">(O'Reilly)</span>
-                
-                <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for Where Is AI on the Enshittification Curve?" loading="lazy" onerror="this.style.display='none';">
-                
-            </div>
+            
+            <a href="https://news.crunchbase.com/venture/biggest-funding-rounds-ramp-maplight/" class="headline">The Week’s 10 Biggest Funding Rounds: Ramp Ramps Up While AI And Healthcare Hold Strong</a>
+            <span class="source">(Crunchbase)</span>
+            
+            <img src="https://news.crunchbase.com/wp-content/uploads/Top_10_.jpeg" alt="Article image for The Week’s 10 Biggest Funding Rounds: Ramp Ramps Up While AI And Healthcare Hold Strong">
+            
+            
+            <a href="https://www.fastcompany.com/91378710/mcdonalds-announces-plans-strengthen-ai-investments-2027?utm_source=postup&utm_medium=email&utm_campaign=artificial-intelligence&position=1&partner=newsletter&campaign_date=08022025" class="headline">McDonald’s announces plans to strengthen AI investments by 2027</a>
+            <span class="source">(Fastcompany)</span>
+            
+            <img src="https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2025/08/2025-08-01T093812Z_2_LYNXMPEL701UW_RTROPTP_4_MCDONALDS-INDIA-CHEESE-CRACKDOWN.jpg" alt="Article image for McDonald’s announces plans to strengthen AI investments by 2027">
+            
+            
+            <a href="https://aibusiness.com/responsible-ai/when-ai-fights-ai" class="headline">When AI Fights AI</a>
+            <span class="source">(Aibusiness)</span>
+            
+            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt038d9a4caf1f73a0/688cd8fa846b3dd3e96bb92e/Cybersecurity_firewall_lock_GettyImages-2180548732.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for When AI Fights AI">
+            
+            
+            <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" class="headline">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
+            <span class="source">(Analytics Vidhya)</span>
+            
             
         </div>
     </div>
-
+    
     <footer>
+        &copy; 2025 Exhaustive AI. All rights reserved.
         <h2>Top 25 AI Websites</h2>
         <ul>
             <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
