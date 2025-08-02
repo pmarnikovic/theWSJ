@@ -22,7 +22,7 @@
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI",
+      "headline": "Zuckerberg's AI plan: steal your free time?",
       "image": "https://source.unsplash.com/600x300/?ai,technology",
       "datePublished": "2025-08-02T00:11:36+00:00",
       "author": {
@@ -41,6 +41,9 @@
     </script>
     
     
+    <!-- Load Roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-color: #121212; /* Dark gray background default */
@@ -50,6 +53,7 @@
             --border-color: #333; /* Dark borders */
             --headline-color: #e0e0e0; /* Light grey headlines */
             --source-color: #999999; /* Grey for source text */
+            --title-color: #eca213; /* Warm gold-orange for title */
         }
 
         /* Light mode override */
@@ -62,6 +66,7 @@
                 --border-color: #ccc;
                 --headline-color: #333; /* Dark grey in light mode */
                 --source-color: #666666; /* Medium grey for source in light mode */
+                --title-color: #eca213; /* Keep title color consistent */
             }
         }
 
@@ -75,10 +80,19 @@
             line-height: 1.6;
         }
         h1 {
-            font-size: 60px;
+            font-size: 80px; /* Increased size for prominence */
             font-weight: bold;
+            font-family: 'Roboto', Arial, sans-serif; /* Formal yet contemporary font */
             margin: 0 0 40px;
-            color: var(--headline-color);
+            color: var(--title-color); /* #eca213 color */
+            text-decoration: underline; /* Underline the title */
+            pointer-events: none; /* Prevent it from being clickable like a link */
+            /* Thin black border effect using text-shadow */
+            text-shadow: 
+                -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000;
         }
         .headline-image {
             max-width: 600px;
@@ -91,7 +105,6 @@
         .main-headline {
             font-size: 52px; /* Larger to stand out */
             font-weight: bold;
-            font-family: 'Times New Roman', serif; /* Serif style */
             margin: 20px 0; /* Adjusted spacing */
             color: var(--headline-color);
             text-decoration: underline;
@@ -151,22 +164,11 @@
             height: auto;
             margin: 10px 0;
         }
-        /* Varied text styles for differentiation */
-        .main-headline {
-            font-family: 'Times New Roman', serif; /* Serif for main */
-        }
-        .column:nth-child(1) .headline {
-            font-family: 'Georgia', serif; /* Serif with italic */
-            font-style: italic;
-        }
-        .column:nth-child(2) .headline {
-            font-family: 'Arial', sans-serif; /* Sans-serif */
-            font-weight: normal;
-        }
-        .column:nth-child(3) .headline {
-            font-family: 'Courier New', monospace; /* Monospace */
-            font-weight: bold;
-        }
+        /* Random text styles for differentiation */
+        .style1 { font-family: 'Times New Roman', serif; font-weight: bold; }
+        .style2 { font-family: 'Georgia', serif; font-style: italic; }
+        .style3 { font-family: 'Arial', sans-serif; font-weight: normal; }
+        .style4 { font-family: 'Courier New', monospace; font-weight: bold; }
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -206,7 +208,7 @@
                 border-right: none;
             }
             h1 {
-                font-size: 36px;
+                font-size: 48px; /* Adjusted for mobile */
             }
             .main-headline {
                 font-size: 32px;
@@ -233,13 +235,13 @@
 </head>
 <body>
     
-    <img src="https://source.unsplash.com/600x300/?ai,technology" alt="Headline-related image for Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI" class="headline-image" loading="lazy" onerror="this.style.display='none';">
+    <img src="https://source.unsplash.com/600x300/?ai,technology" alt="Headline-related image for Zuckerberg's AI plan: steal your free time?" class="headline-image" loading="lazy" onerror="this.style.display='none';">
     
     <h1>Exhaustive AI</h1>
     
     
-    <div class="main-headline">
-        <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" target="_blank" rel="noopener noreferrer">Zuckerberg’s ‘personal superintelligence’ plan: fill your free time with more AI</a>
+    <div class="main-headline style1">
+        <a href="https://www.theverge.com/command-line-newsletter/717880/zuckerbergs-personal-superintelligence-plan-ai-chatgpt-race" target="_blank" rel="noopener noreferrer">Zuckerberg's AI plan: steal your free time?</a>
         <span class="source">(AI)</span>
     </div>
     
@@ -248,49 +250,49 @@
     <div class="columns">
         <div class="column">
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="https://www.theverge.com/news/717867/delta-ai-dynamic-pricing-model" target="_blank" rel="noopener noreferrer">Delta&#8217;s dynamic AI pricing plan sounds different now</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style3">
                 <a href="https://www.theverge.com/news/717865/apple-ceo-tim-cook-ai-investment" target="_blank" rel="noopener noreferrer">Tim Cook says Apple ‘must’ figure out AI and ‘will make the investment to do it’</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style3">
                 <a href="https://venturebeat.com/ai/new-vision-model-from-cohere-runs-on-two-gpus-beats-top-tier-vlms-on-visual-tasks/" target="_blank" rel="noopener noreferrer">New vision model from Cohere runs on two GPUs, beats top-tier VLMs on visual tasks</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style1">
                 <a href="https://futurism.com/rain-drops-chemical-tfa" target="_blank" rel="noopener noreferrer">Almost All Rain Drops Contain the Same Weird Chemical</a>
                 <span class="source">(Futurism)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="https://techcrunch.com/2025/08/01/a-backlog-at-the-commerce-department-is-reportedly-stalling-nvidias-h20-chip-licenses/" target="_blank" rel="noopener noreferrer">A backlog at the Commerce Department is reportedly stalling Nvidia’s H20 chip licenses</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://futurism.com/jury-tesla-autopilot-death" target="_blank" rel="noopener noreferrer">"This Will Open the Floodgates": Tesla In Trouble as Jury Orders It to Pay $329 Million After Autopilot Death</a>
                 <span class="source">(Futurism)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style1">
                 <a href="https://futurism.com/trumps-tariffs-ozempic-novo-nordisk" target="_blank" rel="noopener noreferrer">A Side Effect of Trump's Tariffs: Making Ozempic Way More Expensive</a>
                 <span class="source">(Futurism)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://venturebeat.com/ai/why-open-source-ai-became-an-american-national-priority/" target="_blank" rel="noopener noreferrer">Why open-source AI became an American national priority</a>
                 <span class="source">(AI)</span>
                 
@@ -299,31 +301,31 @@
         </div>
         <div class="column">
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://techcrunch.com/2025/08/01/google-bets-on-stan-an-indian-social-gaming-platform/" target="_blank" rel="noopener noreferrer">Google bets on STAN, an Indian social gaming platform</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style3">
                 <a href="https://techcrunch.com/podcast/from-metas-massive-offers-to-anthropics-massive-valuation-does-ai-have-a-ceiling/" target="_blank" rel="noopener noreferrer">From Meta’s massive offers to Anthropic’s massive valuation, does AI have a ceiling?</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style3">
                 <a href="https://venturebeat.com/ai/google-releases-olympiad-medal-winning-gemini-2-5-deep-think-ai-publicly-but-theres-a-catch/" target="_blank" rel="noopener noreferrer">Google releases Olympiad medal-winning Gemini 2.5 ‘Deep Think’ AI publicly — but there’s a catch…</a>
                 <span class="source">(AI)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="https://www.analyticsvidhya.com/blog/2025/08/uv-python-package-manager/" target="_blank" rel="noopener noreferrer">UV Ultimate Guide: The 100X Faster Python Package Manager</a>
                 <span class="source">(Analytics)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style3">
                 <a href="https://singularityhub.com/2025/08/01/these-genetically-engineered-mosquitoes-could-wipe-out-malaria/" target="_blank" rel="noopener noreferrer">These Genetically Engineered Mosquitoes Could Wipe Out Malaria</a>
                 <span class="source">(SingularityHub)</span>
                 
@@ -331,19 +333,19 @@
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://www.analyticsvidhya.com/blog/2025/08/canva-ai-features/" target="_blank" rel="noopener noreferrer">5 Canva AI Features That Tech Professionals Must Know</a>
                 <span class="source">(Analytics)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="https://www.marktechpost.com/2025/08/01/falcon-llm-team-releases-falcon-h1-technical-report-a-hybrid-attention-ssm-model-that-rivals-70b-llms/" target="_blank" rel="noopener noreferrer">Falcon LLM Team Releases Falcon-H1 Technical Report: A Hybrid Attention–SSM Model That Rivals 70B LLMs</a>
                 <span class="source">(MarkTechPost)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://www.marktechpost.com/2025/08/01/meet-smallthinker-a-family-of-efficient-large-language-models-llms-natively-trained-for-local-deployment/" target="_blank" rel="noopener noreferrer">Meet SmallThinker: A Family of Efficient Large Language Models LLMs Natively Trained for Local Deployment</a>
                 <span class="source">(MarkTechPost)</span>
                 
@@ -352,37 +354,37 @@
         </div>
         <div class="column">
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://www.marktechpost.com/2025/07/31/google-ai-introduces-the-test-time-diffusion-deep-researcher-ttd-dr-a-human-inspired-diffusion-framework-for-advanced-deep-research-agents/" target="_blank" rel="noopener noreferrer">Google AI Introduces the Test-Time Diffusion Deep Researcher (TTD-DR): A Human-Inspired Diffusion Framework for Advanced Deep Research Agents</a>
                 <span class="source">(MarkTechPost)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style1">
                 <a href="http://arxiv.org/abs/2507.23784v1" target="_blank" rel="noopener noreferrer">SUB: Benchmarking CBM Generalization via Synthetic Attribute Substitutions</a>
                 <span class="source">(arXiv)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="http://arxiv.org/abs/2507.23779v1" target="_blank" rel="noopener noreferrer">Phi-Ground Tech Report: Advancing Perception in GUI Grounding</a>
                 <span class="source">(arXiv)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="http://arxiv.org/abs/2507.23773v1" target="_blank" rel="noopener noreferrer">SimuRA: Towards General Goal-Oriented Agent via Simulative Reasoning Architecture with LLM-Based World Model</a>
                 <span class="source">(arXiv)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/" target="_blank" rel="noopener noreferrer">The Only Guide You Will Ever Need For Model Context Protocol (MCP)</a>
                 <span class="source">(Analytics)</span>
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style2">
                 <a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/" target="_blank" rel="noopener noreferrer">Mini Human Organs Just Got Much Closer to Matching the Real Thing</a>
                 <span class="source">(SingularityHub)</span>
                 
@@ -390,7 +392,7 @@
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/" target="_blank" rel="noopener noreferrer">AI Agents Are Here. This Is What They Can Do—and How They Can Go Wrong</a>
                 <span class="source">(SingularityHub)</span>
                 
@@ -398,7 +400,7 @@
                 
             </div>
             
-            <div class="headline">
+            <div class="headline style4">
                 <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/" target="_blank" rel="noopener noreferrer">Where Is AI on the Enshittification Curve?</a>
                 <span class="source">(AI)</span>
                 
