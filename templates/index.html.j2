@@ -51,6 +51,7 @@
             --headline-color: #e0e0e0; /* Light grey headlines */
             --summary-color: #b3b3b3; /* Slightly darker grey for summaries */
             --title-color: #eca213; /* Warm gold-orange for title */
+            --source-color: #999; /* Grey for source text */
         }
 
         /* Light mode override */
@@ -64,6 +65,7 @@
                 --headline-color: #333; /* Dark grey in light mode */
                 --summary-color: #666; /* Medium grey for summaries */
                 --title-color: #eca213; /* Keep title color consistent */
+                --source-color: #666; /* Medium grey for source in light mode */
             }
         }
 
@@ -96,7 +98,6 @@
         .main-headline {
             font-size: 52px; /* Larger to stand out */
             font-weight: bold;
-            font-family: 'Times New Roman', serif; /* Serif style */
             margin: 20px 0; /* Adjusted spacing */
             color: var(--headline-color);
             text-decoration: underline;
@@ -146,6 +147,11 @@
             text-decoration: underline;
             color: var(--hover-color);
         }
+        .source {
+            font-size: 0.8em; /* Smaller text for source */
+            color: var(--source-color);
+            margin-left: 5px;
+        }
         .summary {
             font-size: 16px;
             color: var(--summary-color);
@@ -156,22 +162,11 @@
             height: auto;
             margin: 10px 0;
         }
-        /* Varied text styles for differentiation */
-        .main-headline {
-            font-family: 'Times New Roman', serif; /* Serif for main */
-        }
-        .column:nth-child(1) .headline {
-            font-family: 'Georgia', serif; /* Serif with italic */
-            font-style: italic;
-        }
-        .column:nth-child(2) .headline {
-            font-family: 'Arial', sans-serif; /* Sans-serif */
-            font-weight: normal;
-        }
-        .column:nth-child(3) .headline {
-            font-family: 'Courier New', monospace; /* Monospace */
-            font-weight: bold;
-        }
+        /* Random text styles for differentiation */
+        .style1 { font-family: 'Times New Roman', serif; }
+        .style2 { font-family: 'Georgia', serif; font-style: italic; }
+        .style3 { font-family: 'Arial', sans-serif; font-weight: normal; }
+        .style4 { font-family: 'Courier New', monospace; font-weight: bold; }
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -201,7 +196,7 @@
             color: var(--hover-color);
         }
         /* Media queries */
-        @media (max-width: 768px) { 
+        @media (max-width: 768px) {
             .columns {
                 flex-direction: column;
             }
@@ -243,8 +238,9 @@
     <h1>Exhaustive AI</h1>
     
     {% if main_headline %}
-    <div class="main-headline">
+    <div class="main-headline {% if main_headline.style %} {{ main_headline.style }}{% endif %}">
         <a href="{{ main_headline.url }}" target="_blank" rel="noopener noreferrer">{{ main_headline.headline }}</a>
+        <span class="source">({{ main_headline.source }})</span>
         <p class="summary">{{ main_headline.summary }}</p>
     </div>
     {% if main_headline.image_url %}
@@ -255,8 +251,9 @@
     <div class="columns">
         <div class="column">
             {% for item in column1 %}
-            <div class="headline">
+            <div class="headline {% if item.style %} {{ item.style }}{% endif %}">
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
+                <span class="source">({{ item.source }})</span>
                 <p class="summary">{{ item.summary }}</p>
                 {% if item.image_url %}
                 <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
@@ -266,8 +263,9 @@
         </div>
         <div class="column">
             {% for item in column2 %}
-            <div class="headline">
+            <div class="headline {% if item.style %} {{ item.style }}{% endif %}">
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
+                <span class="source">({{ item.source }})</span>
                 <p class="summary">{{ item.summary }}</p>
                 {% if item.image_url %}
                 <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
@@ -277,8 +275,9 @@
         </div>
         <div class="column">
             {% for item in column3 %}
-            <div class="headline">
+            <div class="headline {% if item.style %} {{ item.style }}{% endif %}">
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
+                <span class="source">({{ item.source }})</span>
                 <p class="summary">{{ item.summary }}</p>
                 {% if item.image_url %}
                 <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}" loading="lazy" onerror="this.style.display='none';">
@@ -295,27 +294,27 @@
             <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
             <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
             <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
-            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
-            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
-            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
-            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
-            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
-            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
-            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+            <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat</a></li>
+            <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired</a></li>
+            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT</a></li>
+            <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AIMagazine</a></li>
+            <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">AnalyticsVidhya</a></li>
+            <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AITrends</a></li>
+            <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MITNews</a></li>
             <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
             <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
             <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
-            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
-            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
-            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
-            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
-            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
-            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
+            <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">AnalyticsInsight</a></li>
+            <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">InsideBigData</a></li>
+            <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">DataScienceCentral</a></li>
+            <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBMDeveloper</a></li>
+            <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">MIRI</a></li>
+            <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">PaperswithCode</a></li>
             <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
-            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
-            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
-            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
+            <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">StabilityAI</a></li>
+            <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">PerplexityAI</a></li>
+            <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">AINews</a></li>
         </ul>
     </footer>
 </body>
