@@ -39,7 +39,10 @@
       }
     }
     </script>
-    {% endif %}
+    {% endif>
+    
+    <!-- Load Roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -50,6 +53,7 @@
             --border-color: #333; /* Dark borders */
             --headline-color: #e0e0e0; /* Light grey headlines */
             --source-color: #999999; /* Grey for source text */
+            --title-color: #eca213; /* Warm gold-orange for title */
         }
 
         /* Light mode override */
@@ -62,6 +66,7 @@
                 --border-color: #ccc;
                 --headline-color: #333; /* Dark grey in light mode */
                 --source-color: #666666; /* Medium grey for source in light mode */
+                --title-color: #eca213; /* Keep title color consistent */
             }
         }
 
@@ -75,10 +80,19 @@
             line-height: 1.6;
         }
         h1 {
-            font-size: 60px;
+            font-size: 80px; /* Increased size for prominence */
             font-weight: bold;
+            font-family: 'Roboto', Arial, sans-serif; /* Formal yet contemporary font */
             margin: 0 0 40px;
-            color: var(--headline-color);
+            color: var(--title-color); /* #eca213 color */
+            text-decoration: underline; /* Underline the title */
+            pointer-events: none; /* Prevent it from being clickable like a link */
+            /* Thin black border effect using text-shadow */
+            text-shadow: 
+                -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000;
         }
         .headline-image {
             max-width: 600px;
@@ -91,7 +105,6 @@
         .main-headline {
             font-size: 52px; /* Larger to stand out */
             font-weight: bold;
-            font-family: 'Times New Roman', serif; /* Serif style */
             margin: 20px 0; /* Adjusted spacing */
             color: var(--headline-color);
             text-decoration: underline;
@@ -151,22 +164,11 @@
             height: auto;
             margin: 10px 0;
         }
-        /* Varied text styles for differentiation */
-        .main-headline {
-            font-family: 'Times New Roman', serif; /* Serif for main */
-        }
-        .column:nth-child(1) .headline {
-            font-family: 'Georgia', serif; /* Serif with italic */
-            font-style: italic;
-        }
-        .column:nth-child(2) .headline {
-            font-family: 'Arial', sans-serif; /* Sans-serif */
-            font-weight: normal;
-        }
-        .column:nth-child(3) .headline {
-            font-family: 'Courier New', monospace; /* Monospace */
-            font-weight: bold;
-        }
+        /* Random text styles for differentiation */
+        .style1 { font-family: 'Times New Roman', serif; font-weight: bold; }
+        .style2 { font-family: 'Georgia', serif; font-style: italic; }
+        .style3 { font-family: 'Arial', sans-serif; font-weight: normal; }
+        .style4 { font-family: 'Courier New', monospace; font-weight: bold; }
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -206,7 +208,7 @@
                 border-right: none;
             }
             h1 {
-                font-size: 36px;
+                font-size: 48px; /* Adjusted for mobile */
             }
             .main-headline {
                 font-size: 32px;
@@ -238,7 +240,7 @@
     <h1>Exhaustive AI</h1>
     
     {% if main_headline %}
-    <div class="main-headline">
+    <div class="main-headline {{ main_headline.style }}">
         <a href="{{ main_headline.url }}" target="_blank" rel="noopener noreferrer">{{ main_headline.headline }}</a>
         <span class="source">({{ main_headline.source }})</span>
     </div>
@@ -250,7 +252,7 @@
     <div class="columns">
         <div class="column">
             {% for item in column1 %}
-            <div class="headline">
+            <div class="headline {{ item.style }}">
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
                 <span class="source">({{ item.source }})</span>
                 {% if item.image_url %}
@@ -261,7 +263,7 @@
         </div>
         <div class="column">
             {% for item in column2 %}
-            <div class="headline">
+            <div class="headline {{ item.style }}">
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
                 <span class="source">({{ item.source }})</span>
                 {% if item.image_url %}
@@ -272,7 +274,7 @@
         </div>
         <div class="column">
             {% for item in column3 %}
-            <div class="headline">
+            <div class="headline {{ item.style }}">
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}</a>
                 <span class="source">({{ item.source }})</span>
                 {% if item.image_url %}
