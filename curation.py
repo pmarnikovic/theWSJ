@@ -5,6 +5,8 @@ import arxiv
 import google.generativeai as genai
 import time
 from datetime import datetime, timezone
+import requests
+from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
 
@@ -64,11 +66,17 @@ def get_articles_from_rss():
                                 image_url = enc.get('href')
                                 break
                     article['image_url'] = image_url
+                    if 'summary' in entry:
+                        article['summary'] = entry.summary
+                    else:
+                        article['summary'] = "No summary available."
                     if 'published_parsed' in entry and entry.published_parsed:
                         dt = datetime.fromtimestamp(time.mktime(entry.published_parsed))
                         article['published'] = dt.replace(tzinfo=timezone.utc)
                     else:
-                        article['published'] = datetime.min.replace(tzinfo=timezone.utc)  # Use min to sort last if missing
+                        article['published'] = datetime.min.replace(tzinfo=timezone.utc)
+                    # Extract source from URL
+                    article['source'] = feed.feed.get('title', 'Unknown Source')
                     articles.append(article)
         except Exception as e:
             print(f"Error fetching RSS feed {feed_url}: {e}")
@@ -85,12 +93,13 @@ def get_articles_from_arxiv():
         )
         client = arxiv.Client()
         for result in client.results(search):
-            # For arXiv, no direct image; use a placeholder or None
             articles.append({
                 'title': result.title,
                 'url': result.entry_id,
                 'published': result.published,
-                'image_url': None  # Or a default image URL if desired
+                'image_url': None,
+                'summary': result.summary if result.summary else "No summary available.",
+                'source': 'arXiv'
             })
     except Exception as e:
         print(f"Error fetching from arXiv: {e}")
@@ -115,11 +124,18 @@ def get_headline_and_score(title):
             headline = parts[1].strip().replace('*', '')
             return headline, score
         else:
-            # If the model doesn't respond in the correct format, fallback
             return fallback_headline, 5
     except Exception as e:
         print(f"Error processing title '{title}': {e}")
         return fallback_headline, 5
+
+def get_related_image_url(headline):
+    """Generate or fetch a related image URL based on the headline (placeholder logic)."""
+    # Placeholder: Use Unsplash API or a static AI-themed image based on keywords
+    keywords = headline.lower().split()
+    if any(kw in ['ai', 'artificial', 'intelligence', 'machine', 'learning'] for kw in keywords):
+        return f"https://source.unsplash.com/600x300/?ai,technology"  # Generic AI image
+    return "https://via.placeholder.com/600x300?text=AI+Headline+Image"  # Fallback
 
 # --- MAIN EXECUTION ---
 
@@ -137,10 +153,10 @@ if __name__ == "__main__":
 
     # 2. Sort by date and take the most recent
     unique_articles.sort(key=lambda x: x['published'], reverse=True)
-    articles_to_process = unique_articles[:MAX_TOTAL_ARTICLES]  # Limit before processing
+    articles_to_process = unique_articles[:MAX_TOTAL_ARTICLES]
     print(f"Selected the top {len(articles_to_process)} most recent articles.")
 
-    # 3. Generate headlines and scores for each article
+    # 3. Generate headlines, scores, and related images for each article
     processed_articles = []
     for article in articles_to_process:
         print(f"Processing: {article['title']}")
@@ -148,14 +164,18 @@ if __name__ == "__main__":
         pub_date = article['published']
         if pub_date == datetime.min.replace(tzinfo=timezone.utc):
             pub_date = datetime.now(timezone.utc)
+        related_image_url = get_related_image_url(headline)  # Add related image
         processed_articles.append({
             'headline': headline,
             'url': article['url'],
             'score': score,
             'image_url': article.get('image_url'),
-            'published': pub_date.isoformat()  # Convert to ISO string for template
+            'related_image_url': related_image_url,  # New field for headline-related image
+            'summary': article.get('summary', "No summary available."),
+            'source': article.get('source', 'Unknown Source'),
+            'published': pub_date.isoformat()
         })
-        print(f"  -> Score: {score}, Headline: {headline}")
+        print(f"  -> Score: {score}, Headline: {headline}, Related Image: {related_image_url}")
 
     # 4. Sort by score to find the main headline
     processed_articles.sort(key=lambda x: x['score'], reverse=True)
@@ -165,7 +185,7 @@ if __name__ == "__main__":
     other_headlines = processed_articles[1:]
 
     # 6. Split the rest into three columns for the template
-    col_size = (len(other_headlines) + 2) // 3  # Distribute items evenly
+    col_size = (len(other_headlines) + 2) // 3
     column1 = other_headlines[0:col_size]
     column2 = other_headlines[col_size:col_size*2]
     column3 = other_headlines[col_size*2:]
