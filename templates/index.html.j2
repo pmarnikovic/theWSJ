@@ -50,6 +50,7 @@
             --border-color: #333; /* Dark borders */
             --headline-color: #e0e0e0; /* Light grey headlines */
             --summary-color: #b3b3b3; /* Slightly darker grey for summaries */
+            --title-color: #eca213; /* Warm gold-orange for title */
         }
 
         /* Light mode override */
@@ -62,6 +63,7 @@
                 --border-color: #ccc;
                 --headline-color: #333; /* Dark grey in light mode */
                 --summary-color: #666; /* Medium grey for summaries */
+                --title-color: #eca213; /* Keep title color consistent */
             }
         }
 
@@ -75,10 +77,13 @@
             line-height: 1.6;
         }
         h1 {
-            font-size: 60px;
+            font-size: 80px; /* Increased size for prominence */
             font-weight: bold;
+            font-family: 'Georgia', serif; /* Elegant serif style for title */
             margin: 0 0 40px;
-            color: var(--headline-color);
+            color: var(--title-color); /* #eca213 color */
+            text-decoration: underline; /* Underline the title */
+            pointer-events: none; /* Prevent it from being clickable like a link */
         }
         .headline-image {
             max-width: 600px;
@@ -196,7 +201,7 @@
             color: var(--hover-color);
         }
         /* Media queries */
-        @media (max-width: 768px) {
+        @media (max-width: 768px) { 
             .columns {
                 flex-direction: column;
             }
@@ -206,7 +211,7 @@
                 border-right: none;
             }
             h1 {
-                font-size: 36px;
+                font-size: 48px; /* Adjusted for mobile */
             }
             .main-headline {
                 font-size: 32px;
