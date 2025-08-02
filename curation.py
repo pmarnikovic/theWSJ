@@ -5,7 +5,7 @@ import arxiv
 import google.generativeai as genai
 import time
 from datetime import datetime, timezone
-import random  # Added for random styles
+import random  # Added for random headline styles
 
 # --- CONFIGURATION ---
 
@@ -66,6 +66,10 @@ def get_articles_from_rss():
                                 image_url = enc.get('href')
                                 break
                     article['image_url'] = image_url
+                    if 'summary' in entry:
+                        article['summary'] = entry.summary
+                    else:
+                        article['summary'] = "No summary available."
                     if 'published_parsed' in entry and entry.published_parsed:
                         dt = datetime.fromtimestamp(time.mktime(entry.published_parsed))
                         article['published'] = dt.replace(tzinfo=timezone.utc)
@@ -93,6 +97,7 @@ def get_articles_from_arxiv():
                 'url': result.entry_id,
                 'published': result.published,
                 'image_url': None,
+                'summary': result.summary if result.summary else "No summary available.",
                 'source': 'arXiv'  # Add short source
             })
     except Exception as e:
@@ -123,6 +128,13 @@ def get_headline_and_score(title):
         print(f"Error processing title '{title}': {e}")
         return fallback_headline, 5
 
+def get_related_image_url(headline):
+    """Generate or fetch a related image URL based on the headline (placeholder logic)."""
+    keywords = headline.lower().split()
+    if any(kw in ['ai', 'artificial', 'intelligence', 'machine', 'learning'] for kw in keywords):
+        return f"https://source.unsplash.com/600x300/?ai,technology"  # Generic AI image
+    return "https://via.placeholder.com/600x300?text=AI+Headline+Image"  # Fallback
+
 # --- MAIN EXECUTION ---
 
 if __name__ == "__main__":
@@ -150,14 +162,18 @@ if __name__ == "__main__":
         pub_date = article['published']
         if pub_date == datetime.min.replace(tzinfo=timezone.utc):
             pub_date = datetime.now(timezone.utc)
+        related_image_url = get_related_image_url(headline)  # Add related image
         processed_articles.append({
             'headline': headline,
             'url': article['url'],
             'score': score,
             'image_url': article.get('image_url'),
-            'published': pub_date.isoformat()  # Convert to ISO string for template
+            'related_image_url': related_image_url,
+            'summary': article.get('summary', "No summary available."),
+            'source': article.get('source', 'Unknown Source'),
+            'published': pub_date.isoformat()
         })
-        print(f"  -> Score: {score}, Headline: {headline}")
+        print(f"  -> Score: {score}, Headline: {headline}, Related Image: {related_image_url}")
 
     # 4. Sort by score to find the main headline
     processed_articles.sort(key=lambda x: x['score'], reverse=True)
