@@ -5,13 +5,16 @@ import arxiv
 import google.generativeai as genai
 import time
 from datetime import datetime, timezone
-import random  # Added for random styles
-import tldextract  # Added for better source parsing
-from bs4 import BeautifulSoup  # Added for parsing embedded images in summaries
+import random
+import tldextract
+from bs4 import BeautifulSoup
+import concurrent.futures  # For parallel feed fetching
+import requests  # For timeouts
+import pickle  # For caching
+import asyncio  # For async Gemini calls
 
 # --- CONFIGURATION ---
 
-# Configure the Gemini API client
 try:
     gemini_api_key = os.getenv('GEMINI_API_KEY')
     if not gemini_api_key:
@@ -22,7 +25,7 @@ except KeyError as e:
     print(f"ERROR: {e}")
     exit(1)
 
-# List of RSS feeds to parse for AI news (enhanced with more business/M&A focused sources)
+# Trimmed/optimized RSS feeds (removed slow/general ones, kept ~22 focused on AI/business/M&A)
 RSS_FEEDS = [
     "http://www.theverge.com/rss/group/ai-artificial-intelligence/index.xml",
     "https://techcrunch.com/category/artificial-intelligence/feed/",
@@ -32,32 +35,29 @@ RSS_FEEDS = [
     "https://www.marktechpost.com/feed/",
     "https://www.unite.ai/feed/",
     "https://venturebeat.com/category/ai/feed/",
-    "https://futurism.com/feed",
-    "https://singularityhub.com/feed/",
     "https://openai.com/blog/rss/",
     "https://www.deepmind.com/blog/rss",
     "https://www.analyticsvidhya.com/feed/",
     "https://www.oreilly.com/radar/topics/ai-ml/feed/index.xml",
     "https://dailyai.com/feed/",
-    "https://news.microsoft.com/source/topics/ai/feed/",  # Microsoft AI: Business innovations, enterprise stories
-    "https://www.fastcompany.com/section/artificial-intelligence/rss",  # Fast Company AI: Strategic business impacts
-    "https://aibusiness.com/rss.xml",  # AI Business: Enterprise AI adoption and strategies
-    "https://www.eweek.com/artificial-intelligence/feed/",  # eWeek AI: Enterprise tech reviews, large-company focus
-    "https://www.infoworld.com/artificial-intelligence/feed/",  # InfoWorld AI: Business AI tools and strategies
-    "https://news.crunchbase.com/sections/ai/feed/",  # Crunchbase AI: Funding, business deals in AI
-    "https://aws.amazon.com/blogs/aws/category/artificial-intelligence/feed/",  # AWS AI: Enterprise cloud AI strategies
-    "https://emerj.com/feed/",  # Emerj: AI for Global 2000/enterprise leaders
-    "https://stratechery.com/feed/",  # Stratechery: Tech/AI business strategy analysis
-    "https://www.enterpriseai.news/feed/",  # EnterpriseAI: AI adoption in large companies
-    # Added for M&A and business focus
-    "https://www.crunchbase.com/text/rss/search/funding_rounds",  # General funding/M&A; will filter for AI
-    "https://www.businesswire.com/rss/topic/Artificial+Intelligence",  # BusinessWire AI press releases (M&A, hires)
-    "https://www.prnewswire.com/rss/artificial-intelligence-news.rss",  # PR Newswire AI (business announcements)
+    "https://news.microsoft.com/source/topics/ai/feed/",
+    "https://www.fastcompany.com/section/artificial-intelligence/rss",
+    "https://aibusiness.com/rss.xml",
+    "https://www.eweek.com/artificial-intelligence/feed/",
+    "https://www.infoworld.com/artificial-intelligence/feed/",
+    "https://news.crunchbase.com/sections/ai/feed/",
+    "https://aws.amazon.com/blogs/aws/category/artificial-intelligence/feed/",
+    "https://emerj.com/feed/",
+    "https://www.enterpriseai.news/feed/",
+    "https://www.businesswire.com/rss/topic/Artificial+Intelligence",  # Kept but monitor
+    "https://www.prnewswire.com/rss/artificial-intelligence-news.rss"  # Kept but monitor
 ]
 
-MAX_ARTICLES_PER_SOURCE = 3
+MAX_ARTICLES_PER_SOURCE = 2  # Reduced from 3 to speed up
 MAX_TOTAL_ARTICLES = 25
 MAX_TECHNICAL_ARTICLES = 3
+CACHE_FILE = 'rss_cache.pkl'  # File for caching parsed feeds
+CACHE_TTL = 1800  # Cache time-to-live in seconds (30 minutes)
 
 # Style options for random assignment
 STYLE_CLASSES = ['style1', 'style2', 'style3', 'style4']
@@ -150,13 +150,42 @@ popular_ai_companies = [
 
 # --- FUNCTIONS ---
 
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, 'rb') as f:
+            cache = pickle.load(f)
+        if time.time() - cache.get('timestamp', 0) < CACHE_TTL:
+            return cache.get('articles', [])
+    return None
+
+def save_cache(articles):
+    with open(CACHE_FILE, 'wb') as f:
+        pickle.dump({'timestamp': time.time(), 'articles': articles}, f)
+
+def fetch_feed(feed_url):
+    """Fetch a single feed with timeout."""
+    try:
+        response = requests.get(feed_url, timeout=10)  # 10s timeout
+        response.raise_for_status()
+        feed = feedparser.parse(response.content)
+    except Exception as e:
+        print(f"Error fetching {feed_url}: {e}")
+        feed = {'entries': []}
+    return feed, feed_url
+
 def get_articles_from_rss():
-    """Fetches and parses articles from the list of RSS feeds."""
+    """Fetches RSS feeds in parallel, with caching."""
+    start_time = time.time()
+    cached_articles = load_cache()
+    if cached_articles:
+        print("Using cached RSS articles")
+        return cached_articles
+
     articles = []
-    for feed_url in RSS_FEEDS:
-        try:
-            feed = feedparser.parse(feed_url)
-            # Extract source from URL using tldextract
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_url = {executor.submit(fetch_feed, url): url for url in RSS_FEEDS}
+        for future in concurrent.futures.as_completed(future_to_url):
+            feed, feed_url = future.result()
             extracted = tldextract.extract(feed_url)
             domain = extracted.domain.lower()
             source_name = SOURCE_MAP.get(domain, extracted.domain.capitalize())
@@ -195,8 +224,8 @@ def get_articles_from_rss():
                     article['published'] = dt.replace(tzinfo=timezone.utc)
                     article['source'] = source_name  # Add mapped source
                     articles.append(article)
-        except Exception as e:
-            print(f"Error fetching RSS feed {feed_url}: {e}")
+    save_cache(articles)
+    print(f"RSS fetching took {time.time() - start_time:.2f} seconds")
     return articles
 
 def get_articles_from_arxiv():
@@ -227,8 +256,8 @@ def is_ai_related(title, summary):
     text = (title + " " + summary).lower()
     return any(kw in text for kw in AI_KEYWORDS)
 
-def get_headline_and_score(title, summary):
-    """Uses a single Gemini API call to get both a headline and a sensationalism score. Enhanced for sensationalism and business names."""
+async def async_get_headline_and_score(title, summary):
+    """Async wrapper for Gemini API call."""
     fallback_headline = title.strip()
     prompt = f"""
     Analyze the following article title and summary.
@@ -242,7 +271,7 @@ def get_headline_and_score(title, summary):
     Article Summary: "{summary[:500]}"  # Limit summary length for prompt
     """
     try:
-        response = gemini_model.generate_content(prompt)
+        response = await gemini_model.generate_content_async(prompt)
         parts = response.text.strip().split('|', 2)
         if len(parts) == 3:
             score = int(parts[0].strip())
@@ -253,7 +282,7 @@ def get_headline_and_score(title, summary):
             return fallback_headline, 5, 0
     except Exception as e:
         print(f"Error processing title '{title}': {e}")
-        time.sleep(2)  # Backoff on error
+        await asyncio.sleep(2)  # Async backoff
         return fallback_headline, 5, 0
 
 def get_related_image_url(headline):
@@ -314,22 +343,25 @@ def get_boost(title, summary, source):
 # --- MAIN EXECUTION ---
 
 if __name__ == "__main__":
+    overall_start = time.time()
     print("Starting content generation for Exhaustive AI...")
 
-    # 1. Fetch and deduplicate articles
+    # Fetch articles with timing
+    fetch_start = time.time()
     all_articles = get_articles_from_rss() + get_articles_from_arxiv()
+    print(f"Article fetching took {time.time() - fetch_start:.2f} seconds")
+
+    # Deduplication and filtering with timing
+    filter_start = time.time()
     seen_urls = set()
     unique_articles = []
     for article in all_articles:
         if article.get('url') and article['url'] not in seen_urls:
-            # AI relevance filter
             if is_ai_related(article['title'], article['summary']):
                 unique_articles.append(article)
                 seen_urls.add(article['url'])
             else:
                 print(f"Discarded non-AI article: {article['title']}")
-
-    # New: Limit technical articles
     technical_sources = ['arXiv', 'MIT News', "O'Reilly"]  # Add any others
     technical_articles = [a for a in unique_articles if a['source'] in technical_sources]
     non_technical_articles = [a for a in unique_articles if a['source'] not in technical_sources]
@@ -341,35 +373,42 @@ if __name__ == "__main__":
     # Recombine and sort by date
     unique_articles = non_technical_articles + technical_articles
     unique_articles.sort(key=lambda x: x['published'], reverse=True)
-    articles_to_process = unique_articles[:MAX_TOTAL_ARTICLES]  # Limit before processing
-    print(f"Selected the top {len(articles_to_process)} most recent AI-related articles.")
+    articles_to_process = unique_articles[:MAX_TOTAL_ARTICLES]
+    print(f"Filtering took {time.time() - filter_start:.2f} seconds")
+    print(f"Selected {len(articles_to_process)} articles.")
 
-    # 3. Generate headlines, scores, and random styles for each article
+    # Async processing for Gemini calls
+    process_start = time.time()
+    async def process_articles_async():
+        tasks = [async_get_headline_and_score(article['title'], article['summary']) for article in articles_to_process]
+        return await asyncio.gather(*tasks)
+
+    loop = asyncio.get_event_loop()
+    headline_results = loop.run_until_complete(process_articles_async())
+    
     processed_articles = []
-    for article in articles_to_process:
-        print(f"Processing: {article['title']}")
-        headline, sens_score, tech_importance = get_headline_and_score(article['title'], article['summary'])
+    for article, (headline, sens_score, tech_importance) in zip(articles_to_process, headline_results):
         pub_date = article['published']
         if pub_date == datetime.min.replace(tzinfo=timezone.utc):
             pub_date = datetime.now(timezone.utc)
-        related_image_url = get_related_image_url(headline)  # Add related image
-        style = random.choice(['style1', 'style2', 'style3', 'style4'])  # Random style per headline
-        # New: Calculate boost
+        related_image_url = get_related_image_url(headline)
+        style = random.choice(['style1', 'style2', 'style3', 'style4'])
         boost = get_boost(article['title'], article['summary'], article.get('source', ''))
         final_score = sens_score + boost + tech_importance
         processed_articles.append({
             'headline': headline,
             'url': article['url'],
-            'score': final_score,  # Use final_score for sorting
+            'score': final_score,
             'image_url': article.get('image_url'),
             'related_image_url': related_image_url,
             'summary': article.get('summary', "No summary available."),
             'source': article.get('source', 'Unknown Source'),
             'published': pub_date.isoformat(),
-            'style': style  # Add random style class
+            'style': style
         })
         print(f"  -> Sens Score: {sens_score}, Boost: {boost}, Tech Imp: {tech_importance}, Final Score: {final_score}, Headline: {headline}, Related Image: {related_image_url}, Style: {style}")
-        time.sleep(1)  # Delay between API calls to respect rate limits
+
+    print(f"Article processing (API calls) took {time.time() - process_start:.2f} seconds")
 
     # 4. Sort by final score to find the main headline
     processed_articles.sort(key=lambda x: x['score'], reverse=True)
@@ -401,3 +440,4 @@ if __name__ == "__main__":
         f.write(output_html)
 
     print(f"Successfully generated new index.html with Drudge-style layout.")
+    print(f"Total runtime: {time.time() - overall_start:.2f} seconds")
