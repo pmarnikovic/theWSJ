@@ -4,3 +4,4 @@ feedparser
 google-generativeai
 jinja2
 tldextract
+bs4
