@@ -200,6 +200,46 @@
     .style4 {
         color: var(--headline-color); /* Same light grey */
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .columns {
+            flex-direction: column; /* Stack columns vertically on mobile */
+        }
+        
+        .column {
+            width: 100%; /* Full width on mobile */
+            border-right: none; /* Remove borders */
+            border-bottom: 1px solid var(--border-color); /* Optional separator */
+            padding: 10px 0;
+        }
+        
+        .column:last-child {
+            border-bottom: none;
+        }
+        
+        h1 {
+            font-size: 3em; /* Slightly smaller title on mobile for fit */
+        }
+        
+        .main-headline {
+            font-size: 2.5em; /* Adjust main headline for mobile */
+        }
+        
+        .headline {
+            font-size: 1.1em; /* Smaller headlines on mobile */
+        }
+        
+        footer ul {
+            flex-direction: column; /* Stack footer list on mobile */
+            gap: 10px;
+        }
+        
+        footer li {
+            flex-basis: auto;
+            min-width: auto;
+        }
+    }
 </style></head>
 <body>
     <header>
@@ -255,7 +295,7 @@
 </div>
 
 <footer>
-    &copy; {{ current_year }} Exhaustive AI. All rights reserved.
+    &copy; {{ current_year }} Exhaustive AI. All rights reserved. <a href="mailto:ExhaustiveAI@gmail.com">Contact Us</a>
     <h2>Top 25 AI Websites</h2>
     <ul>
         <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
