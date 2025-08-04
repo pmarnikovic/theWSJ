@@ -250,7 +250,7 @@
     
 {% if main_headline %}
 <section class="main-article">
-    <a href="{{ main_headline.url }}" class="main-headline {{ main_headline.style }}">{{ main_headline.headline }}{% if main_headline.score > 15 %} {% endif %}</a>
+    <a href="{{ main_headline.url }}" class="main-headline {{ main_headline.style }}" target="_blank" rel="noopener noreferrer">{{ main_headline.headline }}{% if main_headline.score > 15 %} {% endif %}</a>
     <span class="source">({{ main_headline.source }})</span>
     {% if main_headline.image_url %}
     <img src="{{ main_headline.image_url }}" alt="Main article image for {{ main_headline.headline }}">
@@ -262,7 +262,7 @@
     <div class="column">
         {% for item in column1 %}
         <div class="article-item">
-            <a href="{{ item.url }}" class="headline {{ item.style }}">{{ item.headline }}{% if item.score > 15 %} {% endif %}</a>
+            <a href="{{ item.url }}" class="headline {{ item.style }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}{% if item.score > 15 %} {% endif %}</a>
             <span class="source">({{ item.source }})</span>
             {% if item.image_url %}
             <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
@@ -274,7 +274,7 @@
     <div class="column">
         {% for item in column2 %}
         <div class="article-item">
-            <a href="{{ item.url }}" class="headline {{ item.style }}">{{ item.headline }}{% if item.score > 15 %} {% endif %}</a>
+            <a href="{{ item.url }}" class="headline {{ item.style }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}{% if item.score > 15 %} {% endif %}</a>
             <span class="source">({{ item.source }})</span>
             {% if item.image_url %}
             <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
@@ -286,7 +286,7 @@
     <div class="column">
         {% for item in column3 %}
         <div class="article-item">
-            <a href="{{ item.url }}" class="headline {{ item.style }}">{{ item.headline }}{% if item.score > 15 %} {% endif %}</a>
+            <a href="{{ item.url }}" class="headline {{ item.style }}" target="_blank" rel="noopener noreferrer">{{ item.headline }}{% if item.score > 15 %} {% endif %}</a>
             <span class="source">({{ item.source }})</span>
             {% if item.image_url %}
             <img src="{{ item.image_url }}" alt="Article image for {{ item.headline }}">
