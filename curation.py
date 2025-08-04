@@ -189,7 +189,7 @@ def get_articles_from_rss():
             extracted = tldextract.extract(feed_url)
             domain = extracted.domain.lower()
             source_name = SOURCE_MAP.get(domain, extracted.domain.capitalize())
-            for entry in feed.entries[:MAX_ARTICLES_PER_SOURCE]:
+            for entry in feed.get('entries', [])[:MAX_ARTICLES_PER_SOURCE]:
                 if entry.get('title') and entry.get('link'):
                     article = {'title': entry.title, 'url': entry.link}
                     # Extract image URL if available
@@ -330,11 +330,11 @@ def get_boost(title, summary, source):
         boost += 30  # High for game-changers
 
     # Small boost for technical articles (smaller mixture)
-    if source == 'arXiv':
+    technical_sources = ['arXiv', 'MIT News', "O'Reilly"]
+    if source in technical_sources:
         boost += 5
 
     # Penalty for overly technical without company mentions or excitement
-    technical_sources = ['arXiv', 'MIT News', "O'Reilly"]
     if source in technical_sources and boost < 10:
         boost -= 5
 
@@ -392,7 +392,7 @@ if __name__ == "__main__":
         if pub_date == datetime.min.replace(tzinfo=timezone.utc):
             pub_date = datetime.now(timezone.utc)
         related_image_url = get_related_image_url(headline)
-        style = random.choice(['style1', 'style2', 'style3', 'style4'])
+        style = random.choice(STYLE_CLASSES)
         boost = get_boost(article['title'], article['summary'], article.get('source', ''))
         final_score = sens_score + boost + tech_importance
         processed_articles.append({
