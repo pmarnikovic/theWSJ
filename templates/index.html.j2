@@ -9,22 +9,62 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <!-- Fixed logo path -->
             <img src="static/assets/theWSJ%20Logo%20BWNewsHub.PNG" alt="BWNewsHub logo" class="site-logo">
             <h1>BWNewsHub</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#wall-street">Wall Street</a></li>
+                    <li><a href="#main-street">Main Street</a></li>
+                    <li><a href="#meme-street">Meme Street</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <main class="content">
-        <section class="articles">
-            {% for article in articles %}
+        <!-- Wall Street Section -->
+        <section id="wall-street" class="news-category">
+            <h2>Wall Street</h2>
+            <div class="articles">
+                {% for article in articles if article.category == 'wall' %}
                 <article class="article-card {{ article.style }}">
                     <img src="{{ article.image_url }}" alt="Article Image">
-                    <h2>{{ article.title }}</h2>
+                    <h3>{{ article.title }}</h3>
                     <p>{{ article.summary }}</p>
                     <a href="{{ article.url }}" target="_blank">Read more</a>
                 </article>
-            {% endfor %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Main Street Section -->
+        <section id="main-street" class="news-category">
+            <h2>Main Street</h2>
+            <div class="articles">
+                {% for article in articles if article.category == 'main' %}
+                <article class="article-card {{ article.style }}">
+                    <img src="{{ article.image_url }}" alt="Article Image">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.summary }}</p>
+                    <a href="{{ article.url }}" target="_blank">Read more</a>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Meme Street Section -->
+        <section id="meme-street" class="news-category">
+            <h2>Meme Street</h2>
+            <div class="articles">
+                {% for article in articles if article.category == 'meme' %}
+                <article class="article-card {{ article.style }}">
+                    <img src="{{ article.image_url }}" alt="Article Image">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.summary }}</p>
+                    <a href="{{ article.url }}" target="_blank">Read more</a>
+                </article>
+                {% endfor %}
+            </div>
         </section>
     </main>
 
