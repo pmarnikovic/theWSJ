@@ -1,129 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BWNewsHub – Financial News</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-    }
-
-    .site-header {
-      background-color: #ffffff;
-      padding: 10px 20px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .logo-container {
-      text-align: center;
-    }
-
-    .site-logo {
-      height: 60px;
-    }
-
-    .main-nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      margin: 0;
-      background-color: #f8f8f8;
-    }
-
-    .main-nav li {
-      margin: 0 15px;
-    }
-
-    .main-nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .main-content {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .featured-article {
-      margin-bottom: 40px;
-    }
-
-    .read-more {
-      display: inline-block;
-      margin-top: 10px;
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    .article-list article {
-      margin-bottom: 30px;
-    }
-
-    .site-footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f1f1f1;
-      font-size: 14px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>BWNewsHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
+    <header class="site-header">
+        <div class="container">
+            <!-- Fixed logo path -->
+            <img src="static/assets/theWSJ%20Logo%20BWNewsHub.PNG" alt="BWNewsHub logo" class="site-logo">
+            <h1>BWNewsHub</h1>
+        </div>
+    </header>
 
-  <!-- Header with Logo -->
-  <header class="site-header">
-    <div class="logo-container">
-      <img src="{{ url_for('static', filename='assets/theWSJ Logo BWNewsHub.PNG') }}" alt="BWNewsHub logo" class="site-logo">
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#">Markets</a></li>
-        <li><a href="#">Economy</a></li>
-        <li><a href="#">Investing</a></li>
-        <li><a href="#">Crypto</a></li>
-        <li><a href="#">Tech</a></li>
-        <li><a href="#">More</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main class="content">
+        <section class="articles">
+            {% for article in articles %}
+                <article class="article-card {{ article.style }}">
+                    <img src="{{ article.image_url }}" alt="Article Image">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.summary }}</p>
+                    <a href="{{ article.url }}" target="_blank">Read more</a>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <section class="featured-article">
-      <h1>Breaking: Fed Holds Interest Rates Steady Amid Market Uncertainty</h1>
-      <p>The Federal Reserve held its key interest rate steady, signaling caution amid persistent inflation concerns and softening job growth...</p>
-      <a href="#" class="read-more">Read more</a>
-    </section>
-
-    <section class="article-list">
-      <article>
-        <h2>Dow Jumps 300 Points on Strong Earnings Reports</h2>
-        <p>Investors responded positively to stronger-than-expected earnings from major financial institutions...</p>
-      </article>
-
-      <article>
-        <h2>Bitcoin Slips Below $58K as Volatility Spikes</h2>
-        <p>Crypto markets fell early Monday as Bitcoin declined more than 3% amid regulatory chatter...</p>
-      </article>
-
-      <article>
-        <h2>Global Oil Prices Rise Ahead of OPEC Meeting</h2>
-        <p>Oil futures edged higher as investors awaited guidance from OPEC+ on future supply cuts...</p>
-      </article>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 BWNewsHub. All rights reserved.</p>
-  </footer>
-
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 BWNewsHub. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
