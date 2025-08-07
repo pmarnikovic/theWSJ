@@ -1,427 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Daily AI news aggregated from top sources, featuring sensational headlines and breakthroughs in artificial intelligence.">
-    <meta name="keywords" content="AI news, artificial intelligence, AI report, machine learning, tech news">
-    <title>The Wall Street Junction</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QVFJX51QK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5QVFJX51QK');
-</script>
-
-<!-- Add JSON-LD schema here -->
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  "headline": "Stop Vibe Coding: 9 Habits Killing Your Productivity!",
-  "image": "https://via.placeholder.com/600x300?text=AI+Headline+Image",
-  "datePublished": "2025-08-04T09:00:00+00:00",
-  "author": {
-    "@type": "Organization",
-    "name": "Exhaustive AI"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Exhaustive AI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://raw.githubusercontent.com/Rut304/Operation_AI_News/d058fd91cc84d63a2c40991bb05955b960c23818/image%20(4).jpg"
-    }
-  }
-}
-</script>
-
-
-<!-- Load Roboto font -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-    :root {
-        --bg-color: #000000; /* Dark gray background default */
-        --text-color: #e0e0e0; /* Light gray text */
-        --link-color: #e0e0e0; /* Light grey links */
-        --hover-color: #ffffff; /* White on hover */
-        --border-color: #333; /* Dark borders */
-        --headline-color: #e0e0e0; /* Light grey headlines */
-        --source-color: #999999; /* Grey for source text */
-        --title-color: #eca213; /* Warm gold-orange for title */
-    }
-    
-    /* Light mode override */
-    @media (prefers-color-scheme: light) {
-        :root {
-            --bg-color: #fff;
-            --text-color: #000;
-            --link-color: #000;
-            --hover-color: #0000ff;
-            --border-color: #ccc;
-            --headline-color: #333; /* Dark grey in light mode */
-            --source-color: #666; /* Darker grey for sources in light mode */
-            --title-color: #eca213; /* Keep warm gold-orange */
-        }
-    }
-    
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        margin: 0;
-        padding: 20px;
-        line-height: 1.6;
-    }
-    
-    header {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    .logo {
-        max-width: 200px;
-        height: auto;
-    }
-    
-    h1 {
-        color: var(--title-color);
-        font-size: 5em; /* Even larger for title */
-        text-align: center; /* Ensure centered */
-    }
-    
-    .main-article {
-        text-align: center; /* Center the top headline section */
-        margin-bottom: 60px; /* Increased space between main headline and columns */
-    }
-    
-    .main-headline {
-        font-size: 4em; /* Even larger for top headline */
-        color: var(--headline-color);
-        text-decoration: underline;
-        margin-bottom: 10px;
-    }
-    
-    .headline {
-        font-size: 1.4em;
-        color: var(--headline-color);
-        text-decoration: underline;
-        margin-bottom: 10px; /* Increased for better spacing */
-        display: block; /* Ensures full line */
-    }
-    
-    .source {
-        font-style: italic;
-        font-size: 0.9em;
-        color: var(--source-color);
-        margin-bottom: 15px; /* Added for separation */
-        display: block;
-    }
-    
-    a {
-        color: var(--link-color);
-        text-decoration: none;
-    }
-    
-    a:hover {
-        color: var(--hover-color);
-    }
-    
-    .columns {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .column {
-        width: 30%;
-        padding: 10px;
-        border-right: 1px solid var(--border-color);
-    }
-    
-    .column:last-child {
-        border-right: none;
-    }
-    
-    img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 15px; /* Increased */
-    }
-    
-    .article-item {
-        margin-bottom: 20px; /* Wrapper for each article to prevent scrunching */
-    }
-    
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 0.8em;
-        color: var(--source-color);
-    }
-    
-    footer ul {
-        list-style-type: none; /* Remove bullets for clean look */
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px; /* Space between items */
-    }
-    
-    footer li {
-        flex-basis: 20%; /* Approximate for 5 columns on wide screens */
-        min-width: 150px; /* Prevent too narrow */
-    }
-    
-    footer a {
-        color: var(--link-color);
-        text-decoration: underline;
-    }
-    
-    /* New: Define random styles for variety (Drudge-like flair) */
-    .style1 {
-        font-weight: bold;
-        text-transform: none; /* No uppercase */
-        color: var(--headline-color); /* Same light grey */
-    }
-    .style2 {
-        font-style: italic;
-        color: var(--headline-color); /* Same light grey */
-    }
-    .style3 {
-        font-weight: bold;
-        font-size: 1.5em; /* Slightly larger */
-        color: var(--headline-color); /* Same light grey */
-    }
-    .style4 {
-        color: var(--headline-color); /* Same light grey */
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-        .columns {
-            flex-direction: column; /* Stack columns vertically on mobile */
-        }
-        
-        .column {
-            width: 100%; /* Full width on mobile */
-            border-right: none; /* Remove borders */
-            border-bottom: 1px solid var(--border-color); /* Optional separator */
-            padding: 10px 0;
-        }
-        
-        .column:last-child {
-            border-bottom: none;
-        }
-        
-        h1 {
-            font-size: 2.5em; /* Reduced title on mobile */
-        }
-        
-        .main-headline {
-            font-size: 2em; /* Reduced main headline on mobile, but larger than column headlines */
-        }
-        
-        .headline {
-            font-size: 1.1em; /* Smaller headlines on mobile */
-        }
-        
-        footer ul {
-            flex-direction: column; /* Stack footer list on mobile */
-            gap: 10px;
-        }
-        
-        footer li {
-            flex-basis: auto;
-            min-width: auto;
-        }
-    }
-</style></head>
+    <title>Exhaustive AI</title>
+    <style>
+        body { font-family: monospace; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; }
+      .container { max-width: 960px; margin: 0 auto; padding: 10px; }
+        a { text-decoration: none; color: #0000ff; }
+        a:hover { text-decoration: underline; }
+        ul { list-style-type: none; padding: 0; margin: 0; }
+        li { margin-bottom: 12px; }
+      .main-headline-container { text-align: center; margin-bottom: 20px; }
+      .main-headline-container h1 { font-size: 2em; margin: 0; }
+      .columns-container { display: flex; justify-content: space-between; }
+      .column { width: 32%; }
+    </style>
+</head>
 <body>
-    <header>
-        <img src="images/Logo01.PNG" alt="The Wall Street Junction" class="site-logo">
-    </header>
-    
+    <div class="container">
+        
+        <div class="main-headline-container">
+            <a href="https://venturebeat.com/ai/openai-removes-chatgpt-feature-after-private-conversations-leak-to-google-search/">
+                <h1>CHATGPT NIGHTMARE! PRIVATE CONVERSATIONS LEAK TO GOOGLE... OPENAI IN DAMAGE CONTROL!</h1>
+            </a>
+        </div>
+        
 
-<section class="main-article">
-    <a href="https://www.infoworld.com/article/4029093/9-habits-of-the-highly-ineffective-vibe-coder.html" class="main-headline style3" target="_blank" rel="noopener noreferrer">Stop Vibe Coding: 9 Habits Killing Your Productivity! </a>
-    <span class="source">(Infoworld)</span>
-    
-    <img src="https://www.infoworld.com/wp-content/uploads/2025/08/4029093-0-08596200-1754298132-shutterstock_1023054730.jpg?quality=50&strip=all" alt="Main article image for Stop Vibe Coding: 9 Habits Killing Your Productivity!">
-    
-</section>
-
-
-<div class="columns">
-    <div class="column">
-        
-        <div class="article-item">
-            <a href="https://dailyai.com/2025/05/pope-leo-xiv-declares-ai-a-threat-to-human-dignity-and-workers-rights/" class="headline style4" target="_blank" rel="noopener noreferrer">Pope Leo XIV: AI Threatens Humanity! </a>
-            <span class="source">(DailyAI)</span>
-            
+        <div class="columns-container">
+            <div class="column">
+                <ul>
+                    
+                    <li><a href="https://techcrunch.com/2025/07/31/female-founded-semiconductor-ai-startup-sixsense-raises-funding/">FEMALE-FOUNDED SEMICONDUCTOR AI STARTUP SIXSENSE RAISES $8.5M...</a></li>
+                    
+                    <li><a href="https://techcrunch.com/2025/07/31/amazon-ceo-wants-to-put-ads-in-your-alexa-conversations/">AMAZON CEO WANTS TO PUT ADS IN YOUR ALEXA+ CONVERSATIONS...</a></li>
+                    
+                    <li><a href="https://techcrunch.com/podcast/who-really-benefits-from-the-ai-boom/">WHAT’S THE REAL COST OF CHASING AGI? POWER CONSOLIDATION IS JUST THE START, SAYS THE AI NOW INSTITUTE....</a></li>
+                    
+                    <li><a href="https://www.marktechpost.com/2025/07/31/a-coding-guide-to-build-an-intelligent-conversational-ai-agent-with-agent-memory-using-cognee-and-free-hugging-face-models/">A CODING GUIDE TO BUILD AN INTELLIGENT CONVERSATIONAL AI AGENT WITH AGENT MEMORY USING COGNEE AND FREE HUGGING FACE MODELS...</a></li>
+                    
+                    <li><a href="https://venturebeat.com/ai/deep-cogito-goes-big-releasing-4-new-open-source-hybrid-reasoning-models-with-self-improving-intuition/">DEEP COGITO GOES BIG, RELEASING 4 NEW OPEN SOURCE HYBRID REASONING MODELS WITH SELF-IMPROVING ‘INTUITION’...</a></li>
+                    
+                    <li><a href="https://venturebeat.com/ai/hard-won-vibe-coding-insights-mailchimps-40-speed-gain-came-with-governance-price/">HARD-WON VIBE CODING INSIGHTS: MAILCHIMP’S 40% SPEED GAIN CAME WITH GOVERNANCE PRICE...</a></li>
+                    
+                    <li><a href="https://www.theverge.com/news/716790/apple-earnings-q3-2025-ai-tim-cook">TIM COOK SAYS APPLE IS ‘OPEN TO’ AI ACQUISITIONS...</a></li>
+                    
+                    <li><a href="https://www.marktechpost.com/2025/07/31/agentsociety-an-open-source-ai-framework-for-simulating-large-scale-societal-interactions-with-llm-agents/">AGENTSOCIETY: AN OPEN SOURCE AI FRAMEWORK FOR SIMULATING LARGE-SCALE SOCIETAL INTERACTIONS WITH LLM AGENTS...</a></li>
+                    
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    
+                    <li><a href="https://futurism.com/judge-accused-ai-ruling">JUDGE ACCUSED OF USING AI TO ISSUE GARBLED RULING...</a></li>
+                    
+                    <li><a href="https://futurism.com/nasa-searching-workers">NASA ANNOUNCES IT WILL BE RANDOMLY SEARCHING EMPLOYEES...</a></li>
+                    
+                    <li><a href="https://futurism.com/basic-flaw-mark-zuckerberg-plan-superintelligent-ai">THERE'S A VERY BASIC FLAW IN MARK ZUCKERBERG'S PLAN FOR SUPERINTELLIGENT AI...</a></li>
+                    
+                    <li><a href="https://www.theverge.com/news/716783/microsoft-4-trillion-market-cap-valuation">MICROSOFT BECOMES THE SECOND $4 TRILLION COMPANY...</a></li>
+                    
+                    <li><a href="https://www.analyticsvidhya.com/blog/2025/07/model-context-protocol-mcp-guide/">THE ONLY GUIDE YOU WILL EVER NEED FOR MODEL CONTEXT PROTOCOL (MCP)...</a></li>
+                    
+                    <li><a href="https://www.analyticsvidhya.com/blog/2025/07/what-is-claude-code/">CLAUDE CODE: MASTER IT IN 20 MINUTES FOR 10X FASTER CODING...</a></li>
+                    
+                    <li><a href="https://www.theverge.com/decoder-podcast-with-nilay-patel/716633/ai-talent-war-meta-mark-zuckerberg-openai-nba-all-stars">WHY AI RESEARCHERS ARE GETTING PAID LIKE NBA ALL-STARS...</a></li>
+                    
+                    <li><a href="https://singularityhub.com/2025/07/31/mini-human-organs-just-got-much-closer-to-the-real-thing/">MINI HUMAN ORGANS JUST GOT MUCH CLOSER TO MATCHING THE REAL THING...</a></li>
+                    
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    
+                    <li><a href="https://www.marktechpost.com/2025/07/31/the-ultimate-2025-guide-to-coding-llm-benchmarks-and-performance-metrics/">THE ULTIMATE 2025 GUIDE TO CODING LLM BENCHMARKS AND PERFORMANCE METRICS...</a></li>
+                    
+                    <li><a href="http://arxiv.org/abs/2507.22887v1">WHERE TO SHOW DEMOS IN YOUR PROMPT: A POSITIONAL BIAS OF IN-CONTEXT LEARNING...</a></li>
+                    
+                    <li><a href="http://arxiv.org/abs/2507.22876v1">AUTOMATICALLY DISCOVERING HEURISTICS IN A COMPLEX SAT SOLVER WITH LARGE LANGUAGE MODELS...</a></li>
+                    
+                    <li><a href="http://arxiv.org/abs/2507.22854v1">A BIT OF FREEDOM GOES A LONG WAY: CLASSICAL AND QUANTUM ALGORITHMS FOR REINFORCEMENT LEARNING UNDER A GENERATIVE MODEL...</a></li>
+                    
+                    <li><a href="https://www.analyticsvidhya.com/blog/2025/07/manus-vs-chatgpt-agent/">MANUS VS CHATGPT AGENT: WHICH IS BETTER?...</a></li>
+                    
+                    <li><a href="https://singularityhub.com/2025/07/29/ai-agents-are-here-heres-what-to-know-about-what-they-can-do-and-how-they-can-go-wrong/">AI AGENTS ARE HERE. THIS IS WHAT THEY CAN DO—AND HOW THEY CAN GO WRONG...</a></li>
+                    
+                    <li><a href="https://singularityhub.com/2025/07/28/anthropic-says-ai-needs-a-whole-lot-more-power-stat/">ANTHROPIC SAYS AI NEEDS A WHOLE LOT MORE POWER—STAT...</a></li>
+                    
+                    <li><a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/">WHERE IS AI ON THE ENSHITTIFICATION CURVE?...</a></li>
+                    
+                </ul>
+            </div>
         </div>
-        
-        <div class="article-item">
-            <a href="https://www.marktechpost.com/2025/08/04/nasa-releases-galileo-the-open-source-multimodal-model-advancing-earth-observation-and-remote-sensing/" class="headline style3" target="_blank" rel="noopener noreferrer">NASA Releases Galileo: The Open-Source Multimodal Model Advancing Earth Observation and Remote Sensing </a>
-            <span class="source">(MarkTechPost)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://aibusiness.com/language-models/elsevier-launches-ai-powered-chemistry-search-tool-for-faster-research" class="headline style4" target="_blank" rel="noopener noreferrer">Elsevier Launches AI-Powered Chemistry Search Tool for Faster Research </a>
-            <span class="source">(Aibusiness)</span>
-            
-            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt0431e0d0a23e4d9d/6890d048805d49f84394be29/Chemistry_test_tubes_science_GettyImages-2167417147.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for Elsevier Launches AI-Powered Chemistry Search Tool for Faster Research">
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://www.marktechpost.com/2025/08/04/now-its-claudes-world-how-anthropic-overtook-openai-in-the-enterprise-ai-race/" class="headline style3" target="_blank" rel="noopener noreferrer">Now It’s Claude’s World: How Anthropic Overtook OpenAI in the Enterprise AI Race </a>
-            <span class="source">(MarkTechPost)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="http://arxiv.org/abs/2508.00784v1" class="headline style3" target="_blank" rel="noopener noreferrer">Unraveling Hidden Representations: A Multi-Modal Layer Analysis for Better Synthetic Content Forensics </a>
-            <span class="source">(arXiv)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://www.oreilly.com/radar/where-is-ai-on-the-enshittification-curve/" class="headline style3" target="_blank" rel="noopener noreferrer">Where Is AI on the Enshittification Curve? </a>
-            <span class="source">(O'Reilly)</span>
-            
-            <img src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/06/curves-1871896_1920_crop-3328b5c27960965cbdfdd5f1aada31cf.jpg" alt="Article image for Where Is AI on the Enshittification Curve?">
-            
-        </div>
-        
     </div>
-    
-    <div class="column">
-        
-        <div class="article-item">
-            <a href="https://www.infoworld.com/article/4028282/microsegmentation-for-developers.html" class="headline style3" target="_blank" rel="noopener noreferrer">Microsegmentation for developers </a>
-            <span class="source">(Infoworld)</span>
-            
-            <img src="https://www.infoworld.com/wp-content/uploads/2025/08/4028282-0-76015100-1754298131-shutterstock_2298039837-100946835-orig.jpg?quality=50&strip=all" alt="Article image for Microsegmentation for developers">
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://venturebeat.com/ai/chatgpt-rockets-to-700m-weekly-users-ahead-of-gpt-5-launch-with-reasoning-superpowers/" class="headline style2" target="_blank" rel="noopener noreferrer">ChatGPT rockets to 700M weekly users ahead of GPT-5 launch with reasoning superpowers</a>
-            <span class="source">(VentureBeat)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://www.analyticsvidhya.com/blog/2025/08/qwen-image/" class="headline style1" target="_blank" rel="noopener noreferrer">Qwen-Image: The latest Image Generation Model by Alibaba is Available for FREE!</a>
-            <span class="source">(Analytics Vidhya)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://dailyai.com/2025/05/chatgpt-is-making-people-think-theyre-gods-and-their-families-are-terrified/" class="headline style1" target="_blank" rel="noopener noreferrer">ChatGPT Is Making People Think They’re Gods and Their Families Are Terrified</a>
-            <span class="source">(DailyAI)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://www.fastcompany.com/91379868/this-mom-went-viral-for-co-parenting-with-chatgpt-thousands-are-following-her-lead?utm_source=postup&utm_medium=email&utm_campaign=artificial-intelligence&position=1&partner=newsletter&campaign_date=08042025" class="headline style3" target="_blank" rel="noopener noreferrer">This mom went viral for co-parenting with ChatGPT. Thousands are following her lead</a>
-            <span class="source">(Fastcompany)</span>
-            
-            <img src="https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2025/08/p-1-91379868-this-mom-went-viral-for-co-parenting-with-chatgpt-thousands-are-following-her-lead.jpg" alt="Article image for This mom went viral for co-parenting with ChatGPT. Thousands are following her lead">
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://venturebeat.com/ai/qwen-image-is-a-powerful-open-source-new-ai-image-generator-with-support-for-embedded-text-in-english-chinese/" class="headline style4" target="_blank" rel="noopener noreferrer">Qwen-Image is a powerful, open source new AI image generator with support for embedded text in English & Chinese</a>
-            <span class="source">(VentureBeat)</span>
-            
-        </div>
-        
-    </div>
-    
-    <div class="column">
-        
-        <div class="article-item">
-            <a href="https://aibusiness.com/cybersecurity/the-pros-and-cons-of-ai-for-cybersecurity" class="headline style2" target="_blank" rel="noopener noreferrer">The Pros and Cons of AI for Cybersecurity</a>
-            <span class="source">(Aibusiness)</span>
-            
-            <img src="https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt3b78ea77352a9040/66a7c6fa739577030e19f8e3/Cybersecurity_Resized_GettyImages-1363467852.jpg?width=1280&auto=webp&quality=80&disable=upscale" alt="Article image for The Pros and Cons of AI for Cybersecurity">
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://techcrunch.com/2025/08/04/perplexity-accused-of-scraping-websites-that-explicitly-blocked-ai-scraping/" class="headline style1" target="_blank" rel="noopener noreferrer">Perplexity accused of scraping websites that explicitly blocked AI scraping</a>
-            <span class="source">(TechCrunch)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://www.fastcompany.com/91379336/using-chatgpt-or-other-ai-tools-heres-who-can-see-your-chat-history?utm_source=postup&utm_medium=email&utm_campaign=artificial-intelligence&position=2&partner=newsletter&campaign_date=08042025" class="headline style1" target="_blank" rel="noopener noreferrer">Using ChatGPT or other AI tools? Here’s who can see your chat history</a>
-            <span class="source">(Fastcompany)</span>
-            
-            <img src="https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2025/08/p-1-91379336-Tech-Using-ChatGPT-or-other-AI-tools-Heres-who-can-see-your-chat-history.jpg" alt="Article image for Using ChatGPT or other AI tools? Here’s who can see your chat history">
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://www.analyticsvidhya.com/blog/2025/08/smoldocling-guide/" class="headline style1" target="_blank" rel="noopener noreferrer">Your Guide to SmolDocling and Digitised Documents</a>
-            <span class="source">(Analytics Vidhya)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="http://arxiv.org/abs/2508.00788v1" class="headline style4" target="_blank" rel="noopener noreferrer">Do They Understand Them? An Updated Evaluation on Nonbinary Pronoun Handling in Large Language Models</a>
-            <span class="source">(arXiv)</span>
-            
-        </div>
-        
-        <div class="article-item">
-            <a href="https://aws.amazon.com/blogs/aws/aws-ai-league-learn-innovate-and-compete-in-our-new-ultimate-ai-showdown/" class="headline style2" target="_blank" rel="noopener noreferrer">AWS AI League: Learn, innovate, and compete in our new ultimate AI showdown</a>
-            <span class="source">(Amazon)</span>
-            
-        </div>
-        
-    </div>
-</div>
-
-<footer>
-    &copy; 2025 Exhaustive AI. All rights reserved. <a href="mailto:ExhaustiveAI@gmail.com">Contact Us</a>
-    <h2>Top 25 AI Websites</h2>
-    <ul>
-        <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a></li>
-        <li><a href="https://ai.google" target="_blank" rel="noopener noreferrer">Google AI</a></li>
-        <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" rel="noopener noreferrer">Microsoft AI</a></li>
-        <li><a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-        <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI</a></li>
-        <li><a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener noreferrer">VentureBeat AI</a></li>
-        <li><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Wired AI</a></li>
-        <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a></li>
-        <li><a href="https://aimagazine.com" target="_blank" rel="noopener noreferrer">AI Magazine</a></li>
-        <li><a href="https://www.analyticsvidhya.com" target="_blank" rel="noopener noreferrer">Analytics Vidhya</a></li>
-        <li><a href="https://www.aitrends.com" target="_blank" rel="noopener noreferrer">AI Trends</a></li>
-        <li><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank" rel="noopener noreferrer">MIT News AI</a></li>
-        <li><a href="https://www.dataversity.net" target="_blank" rel="noopener noreferrer">Dataversity</a></li>
-        <li><a href="https://emerj.com" target="_blank" rel="noopener noreferrer">Emerj</a></li>
-        <li><a href="https://www.kdnuggets.com" target="_blank" rel="noopener noreferrer">KDnuggets</a></li>
-        <li><a href="https://www.analyticsinsight.net" target="_blank" rel="noopener noreferrer">Analytics Insight</a></li>
-        <li><a href="https://insidebigdata.com" target="_blank" rel="noopener noreferrer">Inside Big Data</a></li>
-        <li><a href="https://www.datasciencecentral.com" target="_blank" rel="noopener noreferrer">Data Science Central</a></li>
-        <li><a href="https://developer.ibm.com" target="_blank" rel="noopener noreferrer">IBM Developer</a></li>
-        <li><a href="https://intelligence.org" target="_blank" rel="noopener noreferrer">Machine Intelligence Research Institute</a></li>
-        <li><a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a></li>
-        <li><a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic</a></li>
-        <li><a href="https://stability.ai" target="_blank" rel="noopener noreferrer">Stability AI</a></li>
-        <li><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">Perplexity AI</a></li>
-        <li><a href="https://www.artificialintelligence-news.com" target="_blank" rel="noopener noreferrer">Artificial Intelligence News</a></li>
-    </ul>
-</footer></body>
+</body>
 </html>
