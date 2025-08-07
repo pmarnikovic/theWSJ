@@ -116,3 +116,38 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+
+
+
+
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+import os
+
+# Prepare articles: must be a list of dictionaries with keys:
+# title, summary, url, image_url, category, style
+# Example:
+# articles = [
+#     {'title': '...', 'summary': '...', 'url': '...', 'image_url': '...', 'category': 'wall', 'style': 'highlight'},
+#     ...
+# ]
+
+# Set up the Jinja2 environment to load the template from the current directory
+env = Environment(
+    loader=FileSystemLoader(searchpath='.'),
+    autoescape=select_autoescape(['html', 'xml'])
+)
+
+# Load the template
+template = env.get_template('index.html.j2')
+
+# Render the template with articles data
+rendered_html = template.render(articles=articles)
+
+# Write the rendered HTML to index.html
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(rendered_html)
+
+print("✅ index.html successfully generated from index.html.j2")
+
