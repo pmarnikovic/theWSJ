@@ -60,6 +60,14 @@
 
       /* Optional: sections transparent over black */
       .news-category { background: transparent; }
+
+      /* Place the three sections side-by-side */
+      .content {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        align-items: start;
+      }
     </style>
 </head>
 <body>
