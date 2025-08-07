@@ -1,83 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>The Wall Street Junction</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QVFJX51QK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-5QVFJX51QK');
-    </script>
-
-    <!-- Dark theme overrides -->
-    <style>
-      :root { color-scheme: dark; }
-
-      html, body {
-        background: #000 !important;
-        color: #e6e6e6;
-      }
-
-      h1, h2, h3 { color: #ffffff; }
-
-      /* Ensure header/footer blend with dark background */
-      .site-header, .site-footer {
-        background: #000;
-        color: #e6e6e6;
-      }
-
-      /* Navigation links */
-      .site-nav a {
-        color: #e6e6e6;
-        text-decoration: none;
-      }
-      .site-nav a:hover { color: #ffffff; }
-
-      /* Article cards on dark */
-      .article-card {
-        background: #111;
-        color: #e6e6e6;
-        border: 1px solid #222;
-        box-shadow: none;
-      }
-
-      /* Images should not invert; keep default */
-      .article-card img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-
-      /* Links inside content */
-      a { color: #7ab6ff; }
-      a:hover { color: #a8cfff; }
-
-      /* Optional: sections transparent over black */
-      .news-category { background: transparent; }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="container">
-            <img src="images/Logo02.png" alt="The Wall Street Junction" class="site-logo">
-            <h1>The Wall Street Junction</h1>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="#wall-street">Wall Street</a></li>
-                    <li><a href="#main-street">Main Street</a></li>
-                    <li><a href="#meme-street">Meme Street</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="content">
+<main class="content">
+    <div class="category-columns">
         <section id="wall-street" class="news-category">
             <h2>Wall Street</h2>
             <div class="articles">
@@ -119,12 +41,5 @@
                 {% endfor %}
             </div>
         </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 BWNewsHub. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+    </div>
+</main>
