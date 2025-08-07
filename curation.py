@@ -25,19 +25,19 @@ def fetch_finance_articles():
 # Fetch finance articles dynamically
 articles = fetch_finance_articles()
 
-# Set up Jinja2 environment to load templates from current directory
+# Set up Jinja2 environment to load templates from the 'templates' folder
 env = Environment(
-    loader=FileSystemLoader(searchpath='.'),
+    loader=FileSystemLoader(searchpath='templates'),
     autoescape=select_autoescape(['html', 'xml'])
 )
 
-# Load your template file
+# Load your template file from templates/index.html.j2
 template = env.get_template('index.html.j2')
 
 # Render template with articles
 rendered_html = template.render(articles=articles)
 
-# Write rendered HTML to index.html
+# Write rendered HTML to index.html in the root directory
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(rendered_html)
 
