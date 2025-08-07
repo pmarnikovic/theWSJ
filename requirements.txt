@@ -1,9 +1,8 @@
-aiohttp
 arxiv
 beautifulsoup4
-bs4
 feedparser
 google-generativeai
 jinja2
-requests  # New for timeouts
 tldextract
+bs4
+requests  # New for timeouts
