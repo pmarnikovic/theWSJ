@@ -238,6 +238,11 @@ ul li a {
             <h2>Wall Street</h2>
             <div class="articles">
                 
+                <a href="https://www.marketwatch.com/story/investors-are-now-less-concerned-about-tariffs-than-the-economy-says-bofa-survey-why-that-could-be-a-mistake-8798a2ac?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
+                    <img src="https://images.mktw.net/im-29807246" alt="Article Image">
+                    <h3>Investors are now less concerned about tariffs than the economy, says BofA survey. Why that could be a mistake.</h3>
+                </article></a>
+                
                 <a href="https://www.marketwatch.com/story/trumps-clash-with-intels-ceo-isnt-just-politics-its-a-crucial-test-for-u-s-chip-making-586629fa?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
                     <img src="https://images.mktw.net/im-93483544" alt="Article Image">
                     <h3>Trump’s clash with Intel’s CEO isn’t just politics — it’s a crucial test for U.S. chip making</h3>
@@ -281,11 +286,6 @@ ul li a {
                 <a href="https://www.marketwatch.com/story/sweetgreens-customers-are-cutting-back-on-pricey-salads-will-extra-chicken-help-ccd79c31?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
                     <img src="https://images.mktw.net/im-33520515" alt="Article Image">
                     <h3>Sweetgreen’s customers are cutting back on pricey salads. Will extra chicken help?</h3>
-                </article></a>
-                
-                <a href="https://www.marketwatch.com/story/is-gen-z-really-drinking-less-alcohol-or-just-being-choosier-about-when-they-indulge-i-love-a-good-mojito-388ae920?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
-                    <img src="https://images.mktw.net/im-21856447" alt="Article Image">
-                    <h3>Is booze making a comeback? The sober craze may have run its course.</h3>
                 </article></a>
                 
             </div>
@@ -807,17 +807,17 @@ ul li a {
   const elMessages = document.getElementById('chatbot-messages');
 
   function setOpen(isOpen) {
-    if (isOpen) {
-      elWidget.hidden = false;
-      elToggle.setAttribute('aria-expanded', 'false');
-      // Focus input after paint
-      setTimeout(() => elInput.focus(), 0);
-    } else {
-      elWidget.hidden = true;
-      elToggle.setAttribute('aria-expanded', 'false');
-      elToggle.focus();
-    }
+  if (isOpen) {
+    elWidget.style.display = 'flex'; // or 'block', depending on your layout
+    elToggle.setAttribute('aria-expanded', 'true');
+    setTimeout(() => elInput.focus(), 0);
+  } else {
+    elWidget.style.display = 'none';
+    elToggle.setAttribute('aria-expanded', 'false');
+    elToggle.focus();
   }
+}
+
 
   function appendMessage(text, role = 'bot') {
     const div = document.createElement('div');
