@@ -143,24 +143,6 @@ ul li a {
 </style>
 
 
-<script>
-  // Prevent the browser from restoring scroll position
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  // Always jump to top on load
-  window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;            // Safari
-    document.documentElement.scrollTop = 0; // Chrome, Firefox, Edge
-  });
-
-  // Optional: if the URL has a hash (e.g., #meme-street), remove it so it won't auto-jump
-  // history.replaceState(null, '', window.location.pathname + window.location.search);
-</script>
-
-
 </head>
 <body>  
     
@@ -199,7 +181,7 @@ ul li a {
     });
   }
 
-  // Show the tab after user scrolls ~400px
+  // Show the tab after user scrolls ~600px
   window.addEventListener('scroll', () => {
     const scrollTab = document.getElementById('scroll-tab');
     if (window.scrollY > 600) {
