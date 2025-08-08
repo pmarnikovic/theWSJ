@@ -265,6 +265,232 @@ ul li a {
   -->  
     </main>
 
+
+<!-- Chatbot trigger button -->
+<button id="chatbot-toggle"
+        aria-haspopup="dialog"
+        aria-controls="chatbot-widget"
+        aria-expanded="false"
+        title="Open chat">
+  💬
+</button>
+
+<!-- Chatbot widget -->
+<div id="chatbot-widget" role="dialog" aria-label="Chat with us" aria-modal="false" hidden>
+  <header class="cb-header">
+    <strong>Chat</strong>
+    <button class="cb-close" aria-label="Close chat">×</button>
+  </header>
+
+  <div id="chatbot-messages" class="cb-messages" aria-live="polite"></div>
+
+  <form id="chatbot-form" class="cb-form" autocomplete="off">
+    <input id="chatbot-input"
+           type="text"
+           name="message"
+           placeholder="Type a message..."
+           aria-label="Type your message"
+           required />
+    <button type="submit" class="cb-send">Send</button>
+  </form>
+</div>
+
+<style>
+  :root {
+    --cb-bg: #111;          /* widget background */
+    --cb-fg: #fff;          /* text color */
+    --cb-accent: #ffffff;   /* borders/icons */
+    --cb-shadow: rgba(0,0,0,0.35);
+  }
+
+  /* Floating toggle button */
+  #chatbot-toggle {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 6px 16px var(--cb-shadow);
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 22px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    transition: transform .15s ease, background-color .2s ease;
+  }
+  #chatbot-toggle:hover { background: #222; transform: translateY(-1px); }
+  #chatbot-toggle:active { transform: translateY(0); }
+
+  /* Widget container */
+  #chatbot-widget {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 60px);
+    width: min(360px, 92vw);
+    max-height: min(70vh, 560px);
+    display: flex;
+    flex-direction: column;
+    background: var(--cb-bg);
+    color: var(--cb-fg);
+    border: 2px solid var(--cb-accent);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px var(--cb-shadow);
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  .cb-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--cb-accent);
+    background: #000;
+  }
+  .cb-close {
+    background: transparent;
+    color: var(--cb-fg);
+    border: 1px solid var(--cb-accent);
+    border-radius: 6px;
+    width: 28px; height: 28px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+
+  .cb-messages {
+    padding: 12px;
+    overflow-y: auto;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cb-msg {
+    max-width: 85%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .cb-msg.user   { align-self: flex-end; background: #1f2937; }
+  .cb-msg.bot    { align-self: flex-start; background: #0b0b0b; }
+  .cb-msg.system { align-self: center; font-size: 12px; opacity: .8; background: transparent; border: none; }
+
+  .cb-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 10px 12px;
+    border-top: 1px solid var(--cb-accent);
+    background: #000;
+  }
+  #chatbot-input {
+    background: #0d0d0d;
+    color: var(--cb-fg);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 12px;
+    outline: none;
+  }
+  #chatbot-input:focus { border-color: #666; }
+  .cb-send {
+    background: #000;
+    color: var(--cb-fg);
+    border: 2px solid var(--cb-accent);
+    border-radius: 8px;
+    padding: 0 14px;
+    cursor: pointer;
+  }
+  .cb-send:hover { background: #111; }
+</style>
+
+<script>
+  const elToggle   = document.getElementById('chatbot-toggle');
+  const elWidget   = document.getElementById('chatbot-widget');
+  const elClose    = elWidget.querySelector('.cb-close');
+  const elForm     = document.getElementById('chatbot-form');
+  const elInput    = document.getElementById('chatbot-input');
+  const elMessages = document.getElementById('chatbot-messages');
+
+  function setOpen(isOpen) {
+    if (isOpen) {
+      elWidget.hidden = false;
+      elToggle.setAttribute('aria-expanded', 'true');
+      // Focus input after paint
+      setTimeout(() => elInput.focus(), 0);
+    } else {
+      elWidget.hidden = true;
+      elToggle.setAttribute('aria-expanded', 'false');
+      elToggle.focus();
+    }
+  }
+
+  function appendMessage(text, role = 'bot') {
+    const div = document.createElement('div');
+    div.className = `cb-msg ${role}`;
+    div.textContent = text;
+    elMessages.appendChild(div);
+    elMessages.scrollTop = elMessages.scrollHeight;
+  }
+
+  // Demo system greeting
+  appendMessage('How can I help?', 'system');
+
+  elToggle.addEventListener('click', () => setOpen(elWidget.hidden));
+  elClose.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if (!elWidget.hidden && e.key === 'Escape') setOpen(false);
+  });
+
+  elForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = elInput.value.trim();
+    if (!msg) return;
+    appendMessage(msg, 'user');
+    elInput.value = '';
+
+    // Show typing indicator
+    const typing = document.createElement('div');
+    typing.className = 'cb-msg system';
+    typing.textContent = '…';
+    elMessages.appendChild(typing);
+    elMessages.scrollTop = elMessages.scrollHeight;
+
+    try {
+      // TODO: replace with your API endpoint
+      // Example expects POST /api/chat { message } -> { reply }
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ message: msg })
+      });
+
+      let reply;
+      if (res.ok) {
+        const data = await res.json();
+        reply = data.reply || 'OK.';
+      } else {
+        reply = 'Sorry, there was an issue responding.';
+      }
+
+      typing.remove();
+      appendMessage(reply, 'bot');
+    } catch (err) {
+      typing.remove();
+      appendMessage('Network error. Please try again.', 'bot');
+    }
+  });
+</script>
+
+
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 The Wall Street Junction. All rights reserved. <a href="@theWSJ.ai">Contact Us</a>
