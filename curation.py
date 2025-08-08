@@ -13,8 +13,7 @@ def get_article_content(entry):
     image_url = ""
     if hasattr(entry, 'media_content') and entry.media_content:
         image_url = entry.media_content[0].get('url', '')
-    else hasattr(entry, 'media_thumbnail') and entry.media_thumbnail:
-        image_url = entry.media_thumbnail[0].get('url', '')
+    else ""
     
     return {
         "title": title,
