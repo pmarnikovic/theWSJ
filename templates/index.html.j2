@@ -155,9 +155,7 @@ ul li a {
             <nav class="site-nav">
                 <ul>
                     <li><a href="#wall-street">Wall Street</a></li>
-                    _
                     <li><a href="#main-street">Main Street</a></li>
-                    _
                     <li><a href="#meme-street">Meme Street</a></li>
                 </ul>
             </nav>
@@ -165,11 +163,12 @@ ul li a {
     </header>
 
 
-    <!-- Scroll To Top Tab -->
+   <!-- Scroll To Top Tab -->
 <div id="scroll-tab" onclick="scrollToTop()">Scroll To Top</div>
 
 <style>
   #scroll-tab {
+    display: none; /* Hidden by default */
     position: fixed;
     top: 10px;
     left: 50%;
@@ -191,7 +190,6 @@ ul li a {
   }
 </style>
 
-
 <script>
   function scrollToTop() {
     window.scrollTo({
@@ -199,7 +197,18 @@ ul li a {
       behavior: 'smooth'
     });
   }
+
+  // Show the tab after user scrolls ~400px
+  window.addEventListener('scroll', () => {
+    const scrollTab = document.getElementById('scroll-tab');
+    if (window.scrollY > 400) {
+      scrollTab.style.display = 'block';
+    } else {
+      scrollTab.style.display = 'none';
+    }
+  });
 </script>
+
 
 
     <main class="content">
