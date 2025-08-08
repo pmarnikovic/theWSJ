@@ -18,7 +18,7 @@ def get_article_content(entry):
         "title": title,
         "summary": summary,
         "url": url,
-        "image_url": image_pool[0],
+        "image_url": image_pool[1],
         "style": "normal"
     }
 
