@@ -792,6 +792,7 @@ ul li a {
     color: var(--cb-fg);
     border: 2px solid var(--cb-accent);
     border-radius: 8px;
+    font-size: 16px;
     padding: 0 14px;
     cursor: pointer;
   }
@@ -807,16 +808,17 @@ ul li a {
   const elMessages = document.getElementById('chatbot-messages');
 
   function setOpen(isOpen) {
-  if (isOpen) {
-    elWidget.hidden = false;
-    elToggle.setAttribute('aria-expanded', 'true');
-    // Removed focus behavior
-  } else {
-    elWidget.hidden = true;
-    elToggle.setAttribute('aria-expanded', 'false');
-    elToggle.focus();
+    if (isOpen) {
+      elWidget.hidden = false;
+      elToggle.setAttribute('aria-expanded', 'true');
+      // Focus input after paint
+      setTimeout(() => elInput.focus(), 0);
+    } else {
+      elWidget.hidden = true;
+      elToggle.setAttribute('aria-expanded', 'false');
+      elToggle.focus();
+    }
   }
-}
 
 
   function appendMessage(text, role = 'bot') {
