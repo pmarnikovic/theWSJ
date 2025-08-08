@@ -121,7 +121,7 @@
     {% for article in articles if article.category == 'wall' %}
     <article class="article-card {{ article.style }}">
         {% if article.image_url %}
-        <img src="{{ article.image_url }}" alt="{{ article.title | escape }}" style="max-width:100%; height:auto;">
+        <img src="{{ url_for('static', filename=article.image_url) }}" alt="{{ article.title | escape }}" style="max-width:100%; height:auto;">
         {% else %}
         <div style="width:100%; height:200px; background:#ccc; display:flex; align-items:center; justify-content:center;">
             <span>No Image Available</span>
