@@ -120,6 +120,7 @@
             <div class="articles">
     {% for article in articles if article.category == 'wall' %}
     <article class="article-card {{ article.style }}">
+        <p>Image path: {{ article.image_url }}</p>
         {% if article.image_url %}
         <img src="{{ article.image_url | safe }}" alt="{{ article.title | escape }}" style="max-width:100%; height:auto;">
         {% else %}
