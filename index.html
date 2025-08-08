@@ -238,6 +238,11 @@ ul li a {
             <h2>Wall Street</h2>
             <div class="articles">
                 
+                <a href="https://www.marketwatch.com/story/trumps-clash-with-intels-ceo-isnt-just-politics-its-a-crucial-test-for-u-s-chip-making-586629fa?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
+                    <img src="https://images.mktw.net/im-93483544" alt="Article Image">
+                    <h3>Trump’s clash with Intel’s CEO isn’t just politics — it’s a crucial test for U.S. chip making</h3>
+                </article></a>
+                
                 <a href="https://www.marketwatch.com/story/why-a-proposal-to-save-social-security-by-investing-1-5-trillion-in-the-stock-market-wont-work-14e137c5?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
                     <img src="https://images.mktw.net/im-282644" alt="Article Image">
                     <h3>Why a proposal to ‘save’ Social Security by investing $1.5 trillion in the stock market won’t work</h3>
@@ -245,7 +250,7 @@ ul li a {
                 
                 <a href="https://www.marketwatch.com/story/is-apple-making-the-same-mistakes-as-blackberry-heres-how-it-can-change-course-062cc4a5?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
                     <img src="https://images.mktw.net/im-42750305" alt="Article Image">
-                    <h3>Is Apple making the same mistakes as Blackberry? Here’s how it can change course.</h3>
+                    <h3>Is Apple making the same mistakes BlackBerry did? Here’s how it can change course.</h3>
                 </article></a>
                 
                 <a href="https://www.marketwatch.com/story/are-you-getting-a-600-tariff-rebate-check-what-to-know-as-trump-senator-float-the-idea-15235df2?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
@@ -281,11 +286,6 @@ ul li a {
                 <a href="https://www.marketwatch.com/story/is-gen-z-really-drinking-less-alcohol-or-just-being-choosier-about-when-they-indulge-i-love-a-good-mojito-388ae920?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
                     <img src="https://images.mktw.net/im-21856447" alt="Article Image">
                     <h3>Is booze making a comeback? The sober craze may have run its course.</h3>
-                </article></a>
-                
-                <a href="https://www.marketwatch.com/story/the-viral-way-to-teach-kids-to-build-a-nest-egg-and-invest-it-wisely-f5df9d5d?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
-                    <img src="https://images.mktw.net/im-01524965" alt="Article Image">
-                    <h3>The viral way to teach kids to build a nest egg and invest it wisely</h3>
                 </article></a>
                 
             </div>
@@ -758,7 +758,7 @@ ul li a {
   }
 
   .cb-msg {
-    max-width: 60%;
+    max-width: 85%;
     padding: 8px 10px;
     border-radius: 10px;
     line-height: 1.3;
@@ -809,7 +809,7 @@ ul li a {
   function setOpen(isOpen) {
     if (isOpen) {
       elWidget.hidden = false;
-      elToggle.setAttribute('aria-expanded', 'true');
+      elToggle.setAttribute('aria-expanded', 'false');
       // Focus input after paint
       setTimeout(() => elInput.focus(), 0);
     } else {
