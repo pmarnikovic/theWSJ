@@ -2,25 +2,32 @@ import feedparser
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 def get_article_content(entry):
-    """
-    Safely retrieves article content, checking for common field names.
-    """
     title = getattr(entry, 'title', 'No Title Provided')
     
-    # Check for summary or description
-    summary = getattr(entry, 'summary', '')
-    if not summary:
-        summary = getattr(entry, 'description', 'No Summary Available')
-    
+    summary = getattr(entry, 'summary', '') or getattr(entry, 'description', 'No Summary Available')
     url = getattr(entry, 'link', '#')
+    
+    # Attempt to extract image from media content
+    image_url = ""
+    if hasattr(entry, 'media_content') and entry.media_content:
+        image_url = entry.media_content[0].get('url', '')
+    elif hasattr(entry, 'media_thumbnail') and entry.media_thumbnail:
+        image_url = entry.media_thumbnail[0].get('url', '')
+    else:
+        # Fallback: try to parse <img> from summary HTML
+        soup = BeautifulSoup(summary, 'html.parser')
+        img_tag = soup.find('img')
+        if img_tag and img_tag.get('src'):
+            image_url = img_tag['src']
     
     return {
         "title": title,
         "summary": summary,
         "url": url,
-        "image_url": "",  # This remains a placeholder for now
+        "image_url": image_url,
         "style": "normal"
     }
+
 
 def fetch_and_parse_articles():
     """
