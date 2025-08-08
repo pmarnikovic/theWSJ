@@ -34,12 +34,12 @@ def fetch_and_parse_articles():
             "http://www.marketwatch.com/rss/topstories",
         ],
         "main": [
-            "https://smallbiztrends.com/",
-            "http://https://www.uschamber.com/small-business"
+            "https://smallbiztrends.com/.rss",
+            "http://https://www.uschamber.com/small-business.rss"
         ],
         "meme": [
-            "https://www.reddit.com/r/wallstreetbets/",
-            "https://www.reddit.com/r/SuperStonk/",
+            "https://www.reddit.com/r/wallstreetbets/.rss",
+            "https://www.reddit.com/r/SuperStonk/".rss,
         ]
     }
 
