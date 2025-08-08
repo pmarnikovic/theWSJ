@@ -34,7 +34,7 @@ def fetch_and_parse_articles():
             "http://www.marketwatch.com/rss/topstories",
         ],
         "main": [
-            "https://smallbiztrends.com/.rss",
+            "https://www.uschamber.com/co/co-rss-feeds",
             "http://https://www.uschamber.com/small-business.rss"
         ],
         "meme": [
