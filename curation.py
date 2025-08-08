@@ -18,7 +18,7 @@ def get_article_content(entry):
         "title": title,
         "summary": summary,
         "url": url,
-        "image_url": image_pool[0],  # Always returns the first image
+        "image_url": "",  # This remains a placeholder for now
         "style": "normal"
     }
 
