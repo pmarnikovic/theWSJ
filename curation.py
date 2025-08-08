@@ -22,8 +22,6 @@ def get_article_content(entry):
         "style": "normal"
     }
 
-
-
 def fetch_and_parse_articles():
     """
     Fetches articles from various RSS feeds, categorizes them, and returns a list.
