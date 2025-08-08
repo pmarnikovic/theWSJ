@@ -38,8 +38,8 @@ def fetch_and_parse_articles():
             "http://https://www.uschamber.com/small-business"
         ],
         "meme": [
-            "https://www.reddit.com/r/wallstreetbets/.rss",
-            "https://www.reddit.com/r/SuperStonk/.rss",
+            "https://www.reddit.com/r/wallstreetbets/",
+            "https://www.reddit.com/r/SuperStonk/",
         ]
     }
 
