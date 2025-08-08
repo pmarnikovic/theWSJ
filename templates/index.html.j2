@@ -17,58 +17,59 @@
 
     <!-- Dark theme overrides -->
     <style>
-      :root { color-scheme: dark; }
+  :root { color-scheme: dark; }
 
-      html, body {
-        background: #000 !important;
-        color: #e6e6e6;
-      }
+  html, body {
+    background: #000 !important;
+    color: #e6e6e6;
+  }
 
-      h1, h2, h3 { color: #ffffff; }
+  h1, h2, h3 { color: #ffffff; }
 
-      /* Ensure header/footer blend with dark background */
-      .site-header, .site-footer {
-        background: #000;
-        color: #e6e6e6;
-      }
+  .site-header, .site-footer {
+    background: #000;
+    color: #e6e6e6;
+  }
 
-      /* Navigation links */
-      .site-nav a {
-        color: #e6e6e6;
-        text-decoration: none;
-      }
-      .site-nav a:hover { color: #ffffff; }
+  .site-nav a {
+    color: #e6e6e6;
+    text-decoration: none;
+  }
+  .site-nav a:hover { color: #ffffff; }
 
-      /* Article cards on dark */
-      .article-card {
-        background: #111;
-        color: #e6e6e6;
-        border: 1px solid #222;
-        box-shadow: none;
-      }
+  .article-card {
+    background: #111;
+    color: #e6e6e6;
+    border: 1px solid #222;
+    box-shadow: none;
+  }
 
-      /* Images should not invert; keep default */
-      .article-card img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
+  .article-card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 
-      /* Links inside content */
-      a { color: #7ab6ff; }
-      a:hover { color: #a8cfff; }
+  a { color: #7ab6ff; }
+  a:hover { color: #a8cfff; }
 
-      /* Optional: sections transparent over black */
-      .news-category { background: transparent; }
+  .news-category { background: transparent; }
 
-      /* Place the three sections side-by-side */
-      .content {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        align-items: start;
-      }
-    </style>
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+
+  /* 🔁 Mobile override: switch to one column */
+  @media (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 </head>
 <body>
     <header class="site-header">
