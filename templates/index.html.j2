@@ -22,13 +22,9 @@
       html, body {
         background: #000 !important;
         color: #e6e6e6;
-        text-align: center;              /* center inline content */
       }
 
-      h1, h2, h3 { 
-        color: #ffffff; 
-        margin: 0.5em 0;
-      }
+      h1, h2, h3 { color: #ffffff; }
 
       /* Ensure header/footer blend with dark background */
       .site-header, .site-footer {
@@ -36,82 +32,43 @@
         color: #e6e6e6;
       }
 
-      /* center the inner container in header & footer */
-      .site-header .container,
-      .site-footer .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
       /* Navigation links */
-      .site-nav ul {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        padding: 0;
-        margin: 0.5em 0;
-      }
       .site-nav a {
         color: #e6e6e6;
         text-decoration: none;
-        margin: 0 0.5em;
       }
-      .site-nav a:hover {
-        color: #ffffff;
+      .site-nav a:hover { color: #ffffff; }
+
+      /* Article cards on dark */
+      .article-card {
+        background: #111;
+        color: #e6e6e6;
+        border: 1px solid #222;
+        box-shadow: none;
       }
+
+      /* Images should not invert; keep default */
+      .article-card img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Links inside content */
+      a { color: #7ab6ff; }
+      a:hover { color: #a8cfff; }
+
+      /* Optional: sections transparent over black */
+      .news-category { background: transparent; }
 
       /* Place the three sections side-by-side */
       .content {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
-        justify-content: center;        /* center the grid itself */
         align-items: start;
-        margin: 1em auto;
-        width: auto;                     /* allow grid to shrink-wrap */
       }
-
-      .news-category {
-        background: transparent;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      /* Article cards on dark */
-      .articles {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-rows: repeat(3, auto);
-        gap: 16px;
-        justify-content: center;
-      }
-
-      .article-card {
-        background: #111;
-        color: #e6e6e6;
-        border: 1px solid #222;
-        box-shadow: none;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1em;
-      }
-
-      /* Images should not invert; keep default */
-      .article-card img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 0.5em;
-      }
-
-      /* Links inside content */
-      a { color: #7ab6ff; }
-      a:hover { color: #a8cfff; }
     </style>
-
 </head>
 <body>
     <header class="site-header">
