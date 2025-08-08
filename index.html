@@ -148,15 +148,6 @@ ul li a {
   display: none !important;
 }
 
-#chatbot-widget {
-  /* Change this line: */
-  bottom: calc(max(16px, env(safe-area-inset-bottom)) + 60px);
-  
-  /* To this: */
-  bottom: calc(max(16px, env(safe-area-inset-bottom)) + 260px);
-}
-
-
 </style>
 
 
@@ -726,7 +717,7 @@ ul li a {
   #chatbot-widget {
     position: fixed;
     right: max(16px, env(safe-area-inset-right));
-    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 60px);
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 260px);
     width: min(360px, 92vw);
     max-height: min(70vh, 560px);
     display: flex;
