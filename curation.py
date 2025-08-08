@@ -30,7 +30,7 @@ def fetch_and_parse_articles():
     feeds = {
         "wall": [
             "https://www.reuters.com/rssFeed/businessNews",
-            "https://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo&region=US&lang=en-US",
+            "https://www.cnbc.com/rss-feeds/",
             "http://www.marketwatch.com/rss/topstories",
         ],
         "main": [
