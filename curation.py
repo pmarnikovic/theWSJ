@@ -86,7 +86,7 @@ def fetch_and_parse_articles():
                     print(f"No entries found in feed: {url}")
                     continue
 
-                for entry in feed.entries[:15]:
+                for entry in feed.entries:
                     article_data = get_article_content(entry)
                     article_data['category'] = category  # Assign the correct category
                     articles.append(article_data)
