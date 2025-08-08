@@ -149,6 +149,41 @@ ul li a {
 
 </head>
 <body>
+    
+    <!-- Scroll To Top Tab -->
+<div id="scroll-tab" onclick="scrollToTop()">Scroll To Top</div>
+
+<style>
+  #scroll-tab {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: #0078D4; /* Microsoft blue */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  }
+
+  #scroll-tab:hover {
+    background-color: #005A9E;
+  }
+</style>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+    
     <header class="site-header">
         <div class="container">
             <img src="images/Logo02.png" alt="The Wall Street Junction" class="site-logo">
@@ -1271,14 +1306,14 @@ ul li a {
                     <h3>5k -> 40k SPY straddle play market open today</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk2xsk/lly_yolo_americans_aint_gonna_stop_being_fat/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>LLY YOLO - Americans ain’t gonna stop being Fat</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkihiw/im_long_ethereum_options/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>I’m Long Ethereum Options</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk2xsk/lly_yolo_americans_aint_gonna_stop_being_fat/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>LLY YOLO - Americans ain’t gonna stop being Fat</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mjr20k/thank_you_pltr_for_this_magical_ride_the_last/" target="_blank"><article class="article-card normal">
@@ -1306,14 +1341,19 @@ ul li a {
                     <h3>What a crazy year so far !! 200% gains YTD</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk5iye/theres_just_no_way_i_keep_getting_trolled_with/" target="_blank"><article class="article-card normal">
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkj7u2/i_finally_understand/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
-                    <h3>There’s just no way I keep getting trolled with NVDA</h3>
+                    <h3>I finally understand</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkj27h/still_holding_pltr_since_ipo_been_writing_covered/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Still holding PLTR Since IPO! Been writing covered calls every two weeks…</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk5iye/theres_just_no_way_i_keep_getting_trolled_with/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>There’s just no way I keep getting trolled with NVDA</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk0au9/guys_amd_saved_my_15k_loss_yesterday_and_gave_me/" target="_blank"><article class="article-card normal">
@@ -1326,24 +1366,19 @@ ul li a {
                     <h3>Nebius Rockets on Q2 Beat: Revenue Soars 625 %, AI Cloud Turns Profitable, Outlook Hiked to $1 B - Is This the Next Palantir?</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkj7u2/i_finally_understand/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>I finally understand</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mjw00j/daily_discussion_thread_for_august_07_2025/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Daily Discussion Thread for August 07, 2025</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mjhm1f/made_back_all_my_yearly_losses_in_3_days/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Made back all my yearly losses in 3 days</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk5pka/first_10k_month_ever/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>First 10k month ever 🚀</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mjhm1f/made_back_all_my_yearly_losses_in_3_days/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>Made back all my yearly losses in 3 days</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk0pzr/another_good_day_im_quitting_day_trading_for/" target="_blank"><article class="article-card normal">
@@ -1436,6 +1471,11 @@ ul li a {
                     <h3>Who is gonna chicken out?</h3>
                 </article></a>
                 
+                <a href="https://www.reddit.com/r/stocks/comments/1mkjpju/feim_frequency_electronics_a_64yearold_company/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>$FEIM / FREQUENCY ELECTRONICS: A 64-Year-Old Company Ready to Supply the Next Global Technology Revolution</h3>
+                </article></a>
+                
                 <a href="https://www.reddit.com/r/stocks/comments/1mkeda1/do_ceos_pay_to_go_on_with_kramer_on_fast_money/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Do CEOs pay to go on with Kramer on Fast Money?</h3>
@@ -1459,11 +1499,6 @@ ul li a {
                 <a href="https://www.reddit.com/r/stocks/comments/1mkerjp/preparing_for_ipos/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Preparing for IPOs</h3>
-                </article></a>
-                
-                <a href="https://www.reddit.com/r/stocks/comments/1mkjpju/feim_frequency_electronics_a_64yearold_company/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>$FEIM / FREQUENCY ELECTRONICS: A 64-Year-Old Company Ready to Supply the Next Global Technology Revolution</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/stocks/comments/1mk32uc/whats_up_with_mid_cap_tech_stocks_today/" target="_blank"><article class="article-card normal">
