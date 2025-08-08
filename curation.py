@@ -62,7 +62,6 @@ def fetch_and_parse_articles():
         ],
         "main": [
             "http://rss.cnn.com/rss/cnn_topstories.rss",
-            "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml",
             "https://www.npr.org/rss/rss.php?id=1001",
         ],
         "meme": [
