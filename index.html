@@ -694,7 +694,7 @@ ul li a {
   #chatbot-toggle {
     position: fixed;
     right: max(16px, env(safe-area-inset-right));
-    bottom: max(16px, env(safe-area-inset-bottom));
+    bottom: max(16px, env(safe-area-inset-bottom)) + 40px);
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -717,8 +717,8 @@ ul li a {
   #chatbot-widget {
     position: fixed;
     right: max(16px, env(safe-area-inset-right));
-    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 260px);
-    width: min(360px, 92vw);
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 100px);
+    width: min(300px, 92vw);
     max-height: min(70vh, 560px);
     display: flex;
     flex-direction: column;
@@ -828,7 +828,7 @@ ul li a {
   }
 
   // Demo system greeting
-  appendMessage('How can I help?', 'system');
+  appendMessage('ASK ME ANYTHING!', 'system');
 
   elToggle.addEventListener('click', () => setOpen(elWidget.hidden));
   elClose.addEventListener('click', () => setOpen(false));
