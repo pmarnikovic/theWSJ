@@ -143,6 +143,22 @@ ul li a {
 </style>
 
 
+<script>
+  // Prevent browser from restoring scroll position
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Force scroll to top on page load
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;            // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, Edge
+  });
+</script>
+
+
+
 </head>
 <body>  
     
