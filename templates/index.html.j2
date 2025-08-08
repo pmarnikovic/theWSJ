@@ -149,6 +149,41 @@ ul li a {
 
 </head>
 <body>
+    
+    <!-- Scroll To Top Tab -->
+<div id="scroll-tab" onclick="scrollToTop()">Scroll To Top</div>
+
+<style>
+  #scroll-tab {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: #0078D4; /* Microsoft blue */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  }
+
+  #scroll-tab:hover {
+    background-color: #005A9E;
+  }
+</style>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+    
     <header class="site-header">
         <div class="container">
             <img src="images/Logo02.png" alt="The Wall Street Junction" class="site-logo">
