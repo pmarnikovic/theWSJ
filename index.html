@@ -22,9 +22,13 @@
       html, body {
         background: #000 !important;
         color: #e6e6e6;
+        text-align: center;              /* center inline content */
       }
 
-      h1, h2, h3 { color: #ffffff; }
+      h1, h2, h3 { 
+        color: #ffffff; 
+        margin: 0.5em 0;
+      }
 
       /* Ensure header/footer blend with dark background */
       .site-header, .site-footer {
@@ -32,43 +36,82 @@
         color: #e6e6e6;
       }
 
+      /* center the inner container in header & footer */
+      .site-header .container,
+      .site-footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       /* Navigation links */
+      .site-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0.5em 0;
+      }
       .site-nav a {
         color: #e6e6e6;
         text-decoration: none;
+        margin: 0 0.5em;
       }
-      .site-nav a:hover { color: #ffffff; }
-
-      /* Article cards on dark */
-      .article-card {
-        background: #111;
-        color: #e6e6e6;
-        border: 1px solid #222;
-        box-shadow: none;
+      .site-nav a:hover {
+        color: #ffffff;
       }
-
-      /* Images should not invert; keep default */
-      .article-card img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-
-      /* Links inside content */
-      a { color: #7ab6ff; }
-      a:hover { color: #a8cfff; }
-
-      /* Optional: sections transparent over black */
-      .news-category { background: transparent; }
 
       /* Place the three sections side-by-side */
       .content {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
+        justify-content: center;        /* center the grid itself */
         align-items: start;
+        margin: 1em auto;
+        width: auto;                     /* allow grid to shrink-wrap */
       }
+
+      .news-category {
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Article cards on dark */
+      .articles {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(3, auto);
+        gap: 16px;
+        justify-content: center;
+      }
+
+      .article-card {
+        background: #111;
+        color: #e6e6e6;
+        border: 1px solid #222;
+        box-shadow: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+      }
+
+      /* Images should not invert; keep default */
+      .article-card img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 0.5em;
+      }
+
+      /* Links inside content */
+      a { color: #7ab6ff; }
+      a:hover { color: #a8cfff; }
     </style>
+
 </head>
 <body>
     <header class="site-header">
@@ -1158,16 +1201,16 @@
                 
                 <article class="article-card normal">
                     <img src="" alt="Article Image">
-                    <h3>Duolingo Shares Surge on Strong Q2 Results Despite AI Backlash</h3>
-                    <p><!-- SC_OFF --><div class="md"><p>Duolingo’s second-quarter 2025 results were strong: revenue grew 41 % compared with last year, paid subscribers rose 46 % and the company logged its highest profit ever. Because of this, Duolingo raised its outlook for the rest of 2025.</p> <p><a href="https://finance.yahoo.com/news/duolingo-surges-user-growth-ai-204545840.html">https://finance.yahoo.com/news/duolingo-surges-user-growth-ai-204545840.html</a></p> <p><a href="https://investors.duolingo.com/news-releases/news-release-details/duolingo-reports-41-revenue-growth-46-subscription-revenue">https://investors.duolingo.com/news-releases/news-release-details/duolingo-reports-41-revenue-growth-46-subscription-revenue</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href="https://www.reddit.com/user/RomeInvictusmax"> /u/RomeInvictusmax </a> <br /> <span><a href="https://www.reddit.com/r/stocks/comments/1mjz6kb/duolingo_shares_surge_on_strong_q2_results/">[link]</a></span> &#32; <span><a href="https://www.reddit.com/r/stocks/comments/1mjz6kb/duolingo_shares_surge_on_strong_q2_results/">[comments]</a></span></p>
-                    <a href="https://www.reddit.com/r/stocks/comments/1mjz6kb/duolingo_shares_surge_on_strong_q2_results/" target="_blank">Read more</a>
+                    <h3>Block shares pop 11% on full-year guidance boost</h3>
+                    <p><!-- SC_OFF --><div class="md"><p>Block shares jumped in extended trading on Thursday after the fintech company increased its forecast for the year.</p> <p>Here is how the company did, compared to analysts’ consensus estimates from LSEG.</p> <ul> <li><strong>Earnings per share:</strong> 62 cents adjusted vs. 69 cents expected</li> </ul> <p>Block doesn’t report a revenue figure, but said gross profit rose 14% from a year earlier to $2.54 billion, beating analyst estimates of $2.46 billion for the quarter. Gross payment volume increased 10% to $64.25 billion.</p> <p>Block raised its guidance for full-year gross profit to $10.17 billion, representing 14% growth from a year earlier. In its prior earnings report, Block said gross profit for the year would come in at $9.96 billion.</p> <p>The company expects full-year adjusted operating Income of $2.03 billion, or a 20% margin. For the third quarter, the company expects gross profit to grow 16% from a year ago to $2.6 billion, with an operating margin of 18%.</p> <p>Square payment volume in the quarter grew 10% from a year earlier.</p> <p>Source: <a href="https://www.cnbc.com/2025/08/07/block-xyz-q2-2025-earnings-report.html">https://www.cnbc.com/2025/08/07/block-xyz-q2-2025-earnings-report.html</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href="https://www.reddit.com/user/Puginator"> /u/Puginator </a> <br /> <span><a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/">[link]</a></span> &#32; <span><a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/">[comments]</a></span></p>
+                    <a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/" target="_blank">Read more</a>
                 </article>
                 
                 <article class="article-card normal">
                     <img src="" alt="Article Image">
-                    <h3>Block shares pop 11% on full-year guidance boost</h3>
-                    <p><!-- SC_OFF --><div class="md"><p>Block shares jumped in extended trading on Thursday after the fintech company increased its forecast for the year.</p> <p>Here is how the company did, compared to analysts’ consensus estimates from LSEG.</p> <ul> <li><strong>Earnings per share:</strong> 62 cents adjusted vs. 69 cents expected</li> </ul> <p>Block doesn’t report a revenue figure, but said gross profit rose 14% from a year earlier to $2.54 billion, beating analyst estimates of $2.46 billion for the quarter. Gross payment volume increased 10% to $64.25 billion.</p> <p>Block raised its guidance for full-year gross profit to $10.17 billion, representing 14% growth from a year earlier. In its prior earnings report, Block said gross profit for the year would come in at $9.96 billion.</p> <p>The company expects full-year adjusted operating Income of $2.03 billion, or a 20% margin. For the third quarter, the company expects gross profit to grow 16% from a year ago to $2.6 billion, with an operating margin of 18%.</p> <p>Square payment volume in the quarter grew 10% from a year earlier.</p> <p>Source: <a href="https://www.cnbc.com/2025/08/07/block-xyz-q2-2025-earnings-report.html">https://www.cnbc.com/2025/08/07/block-xyz-q2-2025-earnings-report.html</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href="https://www.reddit.com/user/Puginator"> /u/Puginator </a> <br /> <span><a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/">[link]</a></span> &#32; <span><a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/">[comments]</a></span></p>
-                    <a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/" target="_blank">Read more</a>
+                    <h3>Duolingo Shares Surge on Strong Q2 Results Despite AI Backlash</h3>
+                    <p><!-- SC_OFF --><div class="md"><p>Duolingo’s second-quarter 2025 results were strong: revenue grew 41 % compared with last year, paid subscribers rose 46 % and the company logged its highest profit ever. Because of this, Duolingo raised its outlook for the rest of 2025.</p> <p><a href="https://finance.yahoo.com/news/duolingo-surges-user-growth-ai-204545840.html">https://finance.yahoo.com/news/duolingo-surges-user-growth-ai-204545840.html</a></p> <p><a href="https://investors.duolingo.com/news-releases/news-release-details/duolingo-reports-41-revenue-growth-46-subscription-revenue">https://investors.duolingo.com/news-releases/news-release-details/duolingo-reports-41-revenue-growth-46-subscription-revenue</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href="https://www.reddit.com/user/RomeInvictusmax"> /u/RomeInvictusmax </a> <br /> <span><a href="https://www.reddit.com/r/stocks/comments/1mjz6kb/duolingo_shares_surge_on_strong_q2_results/">[link]</a></span> &#32; <span><a href="https://www.reddit.com/r/stocks/comments/1mjz6kb/duolingo_shares_surge_on_strong_q2_results/">[comments]</a></span></p>
+                    <a href="https://www.reddit.com/r/stocks/comments/1mjz6kb/duolingo_shares_surge_on_strong_q2_results/" target="_blank">Read more</a>
                 </article>
                 
                 <article class="article-card normal">
