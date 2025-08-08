@@ -128,6 +128,25 @@ ul li a {
 
 </style>
 
+
+<script>
+  // Prevent the browser from restoring scroll position
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Always jump to top on load
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;            // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, Edge
+  });
+
+  // Optional: if the URL has a hash (e.g., #meme-street), remove it so it won't auto-jump
+  // history.replaceState(null, '', window.location.pathname + window.location.search);
+</script>
+
+
 </head>
 <body>
     <header class="site-header">
@@ -1272,14 +1291,14 @@ ul li a {
                     <h3>All in RKLB before earning, let’s see how this plays</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk3qxe/fat_people_dont_like_drugs/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Fat people don’t like drugs</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkg5dx/how_cooked_am_i_pltr_175p_and_180p/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>How cooked am I! PLTR 175P and 180P</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk3qxe/fat_people_dont_like_drugs/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>Fat people don’t like drugs</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mjr2w7/what_a_crazy_year_so_far_200_gains_ytd/" target="_blank"><article class="article-card normal">
@@ -1292,19 +1311,24 @@ ul li a {
                     <h3>There’s just no way I keep getting trolled with NVDA</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk0au9/guys_amd_saved_my_15k_loss_yesterday_and_gave_me/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Guys AMD saved my $15K loss yesterday and gave me some profits. 🫂</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkj27h/still_holding_pltr_since_ipo_been_writing_covered/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Still holding PLTR Since IPO! Been writing covered calls every two weeks…</h3>
                 </article></a>
                 
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk0au9/guys_amd_saved_my_15k_loss_yesterday_and_gave_me/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>Guys AMD saved my $15K loss yesterday and gave me some profits. 🫂</h3>
+                </article></a>
+                
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk0tup/nebius_rockets_on_q2_beat_revenue_soars_625_ai/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Nebius Rockets on Q2 Beat: Revenue Soars 625 %, AI Cloud Turns Profitable, Outlook Hiked to $1 B - Is This the Next Palantir?</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mkj7u2/i_finally_understand/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>I finally understand</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mjw00j/daily_discussion_thread_for_august_07_2025/" target="_blank"><article class="article-card normal">
@@ -1330,11 +1354,6 @@ ul li a {
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk3ixi/oh_nbis_how_i_love_you/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>oh $NBIS how i love you</h3>
-                </article></a>
-                
-                <a href="https://www.reddit.com/r/wallstreetbets/comments/1mk19lj/doordash_delivered_earnings_and_puts_up_my_hungry/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Doordash delivered earnings and puts up my hungry hungry ass</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/stocks/comments/1l0kgkw/rate_my_portfolio_rstocks_quarterly_thread_june/" target="_blank"><article class="article-card normal">
@@ -1372,14 +1391,14 @@ ul li a {
                     <h3>Markets don't care about tariffs because they are largely exagerated</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/stocks/comments/1mk01si/continuing_claims_for_unemployment_benefits_hit/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Continuing claims for unemployment benefits hit highest level since November 2021</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/stocks/comments/1mkea5z/tesla_disbands_dojo_supercomputer_team_bloomberg/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Tesla disbands Dojo Supercomputer Team, Bloomberg Reports</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/stocks/comments/1mk01si/continuing_claims_for_unemployment_benefits_hit/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>Continuing claims for unemployment benefits hit highest level since November 2021</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/stocks/comments/1mkbjpf/block_shares_pop_11_on_fullyear_guidance_boost/" target="_blank"><article class="article-card normal">
@@ -1417,14 +1436,14 @@ ul li a {
                     <h3>Who is gonna chicken out?</h3>
                 </article></a>
                 
-                <a href="https://www.reddit.com/r/stocks/comments/1mk3yov/uber_in_talks_with_banks_private_equity_firms_to/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Uber in talks with banks, private equity firms to fund Waymo expansion</h3>
-                </article></a>
-                
                 <a href="https://www.reddit.com/r/stocks/comments/1mkeda1/do_ceos_pay_to_go_on_with_kramer_on_fast_money/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>Do CEOs pay to go on with Kramer on Fast Money?</h3>
+                </article></a>
+                
+                <a href="https://www.reddit.com/r/stocks/comments/1mk3yov/uber_in_talks_with_banks_private_equity_firms_to/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>Uber in talks with banks, private equity firms to fund Waymo expansion</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/stocks/comments/1mk40tz/i_think_the_market_overreacted_to_crox_earnings/" target="_blank"><article class="article-card normal">
@@ -1442,14 +1461,14 @@ ul li a {
                     <h3>Preparing for IPOs</h3>
                 </article></a>
                 
+                <a href="https://www.reddit.com/r/stocks/comments/1mkjpju/feim_frequency_electronics_a_64yearold_company/" target="_blank"><article class="article-card normal">
+                    <img src="" alt="Article Image">
+                    <h3>$FEIM / FREQUENCY ELECTRONICS: A 64-Year-Old Company Ready to Supply the Next Global Technology Revolution</h3>
+                </article></a>
+                
                 <a href="https://www.reddit.com/r/stocks/comments/1mk32uc/whats_up_with_mid_cap_tech_stocks_today/" target="_blank"><article class="article-card normal">
                     <img src="" alt="Article Image">
                     <h3>What's up with mid cap tech stocks today?</h3>
-                </article></a>
-                
-                <a href="https://www.reddit.com/r/stocks/comments/1mkjd71/any_thoughts_on_bullish_ipo/" target="_blank"><article class="article-card normal">
-                    <img src="" alt="Article Image">
-                    <h3>Any thoughts on Bullish IPO?</h3>
                 </article></a>
                 
                 <a href="https://www.reddit.com/r/stocks/comments/1mk084s/nebius_nbis_reports_second_quarter_financial/" target="_blank"><article class="article-card normal">
