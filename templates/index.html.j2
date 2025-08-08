@@ -429,7 +429,7 @@ ul li a {
   function setOpen(isOpen) {
     if (isOpen) {
       elWidget.hidden = false;
-      elToggle.setAttribute('aria-expanded', 'true');
+      elToggle.setAttribute('aria-expanded', 'false');
       // Focus input after paint
       setTimeout(() => elInput.focus(), 0);
     } else {
