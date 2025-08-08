@@ -157,22 +157,25 @@ ul li a {
   #scroll-tab {
     position: fixed;
     top: 10px;
-    right: 20px;
-    background-color: #0078D4; /* Microsoft blue */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
     color: white;
     padding: 8px 16px;
     border-radius: 6px;
+    border: 2px solid white;
     font-family: sans-serif;
     cursor: pointer;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(255,255,255,0.2);
     transition: background-color 0.3s ease;
   }
 
   #scroll-tab:hover {
-    background-color: #005A9E;
+    background-color: #333333;
   }
 </style>
+
 
 <script>
   function scrollToTop() {
