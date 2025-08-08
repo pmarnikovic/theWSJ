@@ -807,16 +807,17 @@ ul li a {
   const elMessages = document.getElementById('chatbot-messages');
 
   function setOpen(isOpen) {
-  if (isOpen) {
-    elWidget.style.display = 'flex'; // or 'block', depending on your layout
-    elToggle.setAttribute('aria-expanded', 'true');
-    setTimeout(() => elInput.focus(), 0);
-  } else {
-    elWidget.style.display = 'none';
-    elToggle.setAttribute('aria-expanded', 'false');
-    elToggle.focus();
+    if (isOpen) {
+      elWidget.hidden = false;
+      elToggle.setAttribute('aria-expanded', 'true');
+      // Focus input after paint
+      setTimeout(() => elInput.focus(), 0);
+    } else {
+      elWidget.hidden = true;
+      elToggle.setAttribute('aria-expanded', 'false');
+      elToggle.focus();
+    }
   }
-}
 
 
   function appendMessage(text, role = 'bot') {
