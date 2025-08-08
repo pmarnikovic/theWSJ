@@ -14,13 +14,13 @@ def get_article_content(entry):
     
     url = getattr(entry, 'link', '#')
     
-   return {
-        "title": title,
-        "summary": summary,
-        "url": url,
-        "image_url": "",  # This remains a placeholder for now
-        "style": "normal"
-    }
+return {
+    "title": title,
+    "summary": summary,
+    "url": url,
+    "image_url": "",  # This remains a placeholder for now
+    "style": "normal"
+}
 
 def fetch_and_parse_articles():
     """
