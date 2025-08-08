@@ -35,7 +35,7 @@ def fetch_and_parse_articles():
         ],
         "main": [
             "https://www.uschamber.com/co/co-rss-feeds",
-            "http://https://www.uschamber.com/small-business.rss"
+            "https://www.npr.org/rss/rss.php?id=1001"
         ],
         "meme": [
             "https://www.reddit.com/r/wallstreetbets/.rss",
