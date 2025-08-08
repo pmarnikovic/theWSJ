@@ -14,13 +14,23 @@ def get_article_content(entry):
     
     url = getattr(entry, 'link', '#')
     
-    return {
-        "title": title,
-        "summary": summary,
-        "url": url,
-        "image_url": random.choice(image_pool),
-        "style": "normal"
-    }
+    import random
+
+        image_pool = [
+            "https://example.com/image1.jpg",
+            "https://example.com/image2.jpg",
+            "https://example.com/image3.jpg"
+        ]
+        
+        def get_article_data(title, summary, url):
+            return {
+                "title": title,
+                "summary": summary,
+                "url": url,
+                "image_url": random.choice(image_pool),
+                "style": "normal"
+            }
+
 
 def fetch_and_parse_articles():
     """
