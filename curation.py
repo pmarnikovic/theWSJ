@@ -1,6 +1,3 @@
-import feedparser
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-
 import re
 import html
 import feedparser
