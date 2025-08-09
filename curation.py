@@ -83,13 +83,14 @@ def fetch_and_parse_articles():
 
                 for entry in feed.entries[:10]:
                     article_data = get_article_content(entry)
-                    if not article_data.get('image_url'):
-                    continue
                     article_data['category'] = category  # Assign the correct category
                     articles.append(article_data)
             except Exception as e:
                 print(f"An error occurred while processing feed {url}: {e}")
 
+                if not article_data.get('image_url'):
+                    continue
+    
     print(f"✅ Successfully fetched {len(articles)} articles in total.")
     return articles
 
