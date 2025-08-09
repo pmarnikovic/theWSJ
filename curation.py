@@ -12,27 +12,27 @@ def get_article_content(entry):
 
     # 1. media_content
     media = getattr(entry, 'media_content', [])
-#    if isinstance(media, list) and media:
-#        image_url = media[0].get('url')
+    if isinstance(media, list) and media:
+        image_url = media[0].get('url')
 
     # 2. media_thumbnail
     if image_url:
         thumbnail = getattr(entry, 'media_thumbnail', [])
         if isinstance(thumbnail, list) and thumbnail:
             image_url = thumbnail[0].get('url')
-#
-#    # 3. enclosures
-#    if not image_url:
-#        for enclosure in getattr(entry, 'enclosures', []):
-#            if enclosure.get('type', '').startswith('image/'):
-#                image_url = enclosure.get('href')
-#                break
-#
-#    # 4. <img> in summary
-#    if not image_url:
-#        match = re.search(r'<img[^>]+src="([^">]+)"', summary)
-#        if match:
-#            image_url = match.group(1)
+
+    # 3. enclosures
+    if not image_url:
+        for enclosure in getattr(entry, 'enclosures', []):
+            if enclosure.get('type', '').startswith('image/'):
+                image_url = enclosure.get('href')
+                break
+
+    # 4. <img> in summary
+    if not image_url:
+        match = re.search(r'<img[^>]+src="([^">]+)"', summary)
+        if match:
+            image_url = match.group(1)
 
     # 5. Final fallback: if no image found, don't include image_url
     if not image_url:
