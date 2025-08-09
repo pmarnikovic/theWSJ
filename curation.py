@@ -59,6 +59,7 @@ def fetch_and_parse_articles():
         "wall": [
             "https://www.investing.com/rss/news_25.rss",
             "https://www.investing.com/rss/news_14.rss",
+            "https://www.investing.com/rss/news_95.rss",
             "https://finance.yahoo.com/news/rss",
             "https://finance.yahoo.com/topic/stock-market/rss",
             "https://finance.yahoo.com/topic/tech/rss",
