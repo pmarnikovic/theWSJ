@@ -6,6 +6,14 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 # Regex to find the first <img src="...">
 IMG_SRC_REGEX = re.compile(r'<img[^>]+src=["\']([^"\'>]+)["\']', re.IGNORECASE)
 
+# Common "fake" image patterns to skip (1x1 pixels, tracking, placeholders)
+BAD_IMAGE_PATTERNS = [
+    "1x1", "spacer.gif", "pixel.gif", "blank.gif", "data:image", "transparent.gif"
+]
+
+VALID_IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".gif", ".webp")
+
+
 def normalize_image_url(url: str | None) -> str | None:
     """Clean and normalize an image URL."""
     if not url:
@@ -17,12 +25,27 @@ def normalize_image_url(url: str | None) -> str | None:
         url = "https:" + url
     return url
 
+
 def is_valid_image_url(url: str | None) -> bool:
-    """Allow only http(s) URLs."""
+    """Stricter validation: must be http(s), have allowed extension, and not match bad patterns."""
     if not url:
         return False
-    url = url.lower()
-    return url.startswith("http://") or url.startswith("https://")
+    url_lower = url.lower()
+
+    # Must be http(s)
+    if not (url_lower.startswith("http://") or url_lower.startswith("https://")):
+        return False
+
+    # Skip known bad patterns
+    if any(pattern in url_lower for pattern in BAD_IMAGE_PATTERNS):
+        return False
+
+    # Optional: require file extension looks like an image
+    if not url_lower.endswith(VALID_IMAGE_EXTENSIONS):
+        return False
+
+    return True
+
 
 def extract_img_from_html(html_fragment: str) -> str | None:
     """Extract first image src from HTML content."""
@@ -30,6 +53,7 @@ def extract_img_from_html(html_fragment: str) -> str | None:
         return None
     match = IMG_SRC_REGEX.search(html_fragment)
     return match.group(1) if match else None
+
 
 def get_article_content(entry):
     """Extract relevant fields from an RSS entry."""
@@ -68,21 +92,20 @@ def get_article_content(entry):
             if image_url:
                 break
 
-    # Normalize and validate
+    # Normalize
     image_url = normalize_image_url(image_url)
-    if not is_valid_image_url(image_url):
-        image_url = None
 
     return {
         "title": title,
         "summary": summary,
         "url": url,
-        "image_url": image_url,  # Always present, None if missing
+        "image_url": image_url,  # May be None or invalid
         "style": "normal",
     }
 
+
 def fetch_and_parse_articles():
-    """Fetch, parse, and filter articles to only those with valid images."""
+    """Fetch, parse, and filter articles to only those with *valid* images."""
     feeds = {
         "wall": [
             "https://www.investing.com/rss/news_25.rss",
@@ -129,7 +152,7 @@ def fetch_and_parse_articles():
                     total_seen += 1
                     article_data = get_article_content(entry)
 
-                    # Skip if no valid image
+                    # Strict image validation here
                     if not is_valid_image_url(article_data["image_url"]):
                         skipped_no_image += 1
                         continue
@@ -141,10 +164,11 @@ def fetch_and_parse_articles():
                 print(f"An error occurred while processing feed {url}: {e}")
 
     print(
-        f"✅ Kept {len(articles)} articles with images. "
-        f"Skipped {skipped_no_image} without images out of {total_seen} total."
+        f"✅ Kept {len(articles)} articles with valid images. "
+        f"Skipped {skipped_no_image} without usable images out of {total_seen} total."
     )
     return articles
+
 
 # --- Main script execution ---
 if __name__ == "__main__":
