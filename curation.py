@@ -74,6 +74,7 @@ def fetch_and_parse_articles():
 
         "meme": [
             "https://www.reddit.com/r/wallstreetbets/.rss",
+            "https://www.reddit.com/r/WallStreetBetsCrypto/.rss",
             "https://www.reddit.com/r/SuperStonk/.rss",
         ]
     }
