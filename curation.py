@@ -57,9 +57,13 @@ def fetch_and_parse_articles():
             "http://www.marketwatch.com/rss/topstories",
         ],
         "main": [
-            "http://rss.cnn.com/rss/cnn_topstories.rss",
-            "https://www.npr.org/rss/rss.php?id=1001",
+            "https://www.cbsnews.com/latest/rss/main",
+            "https://www.pbs.org/newshour/feeds/rss/editorials",
+            "https://www.ft.com/?format=rss",
+            "https://rss.csmonitor.com/feeds/all",
+            "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml",
         ],
+
         "meme": [
             "https://www.reddit.com/r/wallstreetbets/.rss",
             "https://www.reddit.com/r/SuperStonk/.rss",
