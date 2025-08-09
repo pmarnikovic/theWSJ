@@ -58,6 +58,7 @@ def fetch_and_parse_articles():
     feeds = {
         "wall": [
             "https://finance.yahoo.com/news/rss",
+            "https://www.investing.com/rss/news_25.rss",
             "https://finance.yahoo.com/topic/stock-market/rss",
             "https://finance.yahoo.com/topic/tech/rss",
             "https://finance.yahoo.com/topic/crypto/rss",
