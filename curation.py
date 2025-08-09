@@ -14,7 +14,7 @@ def get_article_content(entry):
     media = getattr(entry, 'media_content', [])
     if isinstance(media, list) and media:
         image_url = media[0].get('url')
-
+<!-- Hide
     # 2. media_thumbnail
     if not image_url:
         thumbnail = getattr(entry, 'media_thumbnail', [])
@@ -33,7 +33,7 @@ def get_article_content(entry):
         match = re.search(r'<img[^>]+src="([^">]+)"', summary)
         if match:
             image_url = match.group(1)
-
+-->
     # 5. Final fallback: if no image found, don't include image_url
     if not image_url:
         image_url = None
