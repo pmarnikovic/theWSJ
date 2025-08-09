@@ -16,7 +16,7 @@ def get_article_content(entry):
         image_url = media[0].get('url')
 
     # 2. media_thumbnail
-    if image_url:
+    if not image_url:
         thumbnail = getattr(entry, 'media_thumbnail', [])
         if isinstance(thumbnail, list) and thumbnail:
             image_url = thumbnail[0].get('url')
