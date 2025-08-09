@@ -62,11 +62,10 @@ def fetch_and_parse_articles():
             "http://www.marketwatch.com/rss/topstories",
         ],
         "main": [
-            "https://succeedasyourownboss.com/feed",
-            "https://www.ft.com/?format=rss",
-            "https://feeds.feedburner.com/SmallBusinessTrends",
             "https://smallbusinessbonfire.com/feed",
-            "https://smallbusiness.co.uk/feed",            
+            "https://feeds.feedburner.com/SmallBusinessTrends",
+            "https://succeedasyourownboss.com/feed",
+            "https://www.ft.com/?format=rss",            
         ],
 
         "meme": [
