@@ -30,13 +30,17 @@ def get_article_content(entry):
 
     # 4. <img> in summary
     if not image_url:
-        match = re.search(r'<img[^>]+src="([^">]+)"', summary)
+        match = re.search(r'<img[^>]+src=["\']([^"\'>]+)["\']', summary)
         if match:
             image_url = match.group(1)
 
-    # 5. Final fallback: if no image found, don't include image_url
-    if not image_url:
-        image_url = None
+    # 5. <img> in content:encoded
+    if not image_url and hasattr(entry, 'content'):
+        for content_block in entry.content:
+            match = re.search(r'<img[^>]+src=["\']([^"\'>]+)["\']', content_block.value)
+            if match:
+                image_url = match.group(1)
+                break
 
     return {
         "title": title,
@@ -45,6 +49,7 @@ def get_article_content(entry):
         **({"image_url": image_url} if image_url else {}),
         "style": "normal"
     }
+
 
 def fetch_and_parse_articles():
     """
