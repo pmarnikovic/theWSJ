@@ -54,7 +54,7 @@ def fetch_and_parse_articles():
         "wall": [
             "https://www.reuters.com/rssFeed/businessNews",
             "https://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo&region=US&lang=en-US",
-    
+            "http://www.marketwatch.com/rss/topstories",
         ],
         
         "main": [
