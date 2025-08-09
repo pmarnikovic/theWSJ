@@ -42,6 +42,11 @@ def get_article_content(entry):
                 image_url = match.group(1)
                 break
 
+    # 6. Final fallback: if no image found, don't include image_url
+    if not image_url:
+        image_url = None
+
+    
     return {
         "title": title,
         "summary": summary,
