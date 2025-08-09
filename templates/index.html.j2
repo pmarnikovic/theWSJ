@@ -390,7 +390,7 @@ ul li a {
   }
   .cb-msg.user   { align-self: flex-end; background: #1f2937; }
   .cb-msg.bot    { align-self: flex-start; background: #0b0b0b; }
-  .cb-msg.system { align-self: center; font-size: 18px; opacity: 0.3; background: transparent; border: none; }
+  .cb-msg.system { align-self: center; font-size: 18px; opacity: 0.2; background: transparent; border: none; }
 
   .cb-form {
     display: grid;
@@ -452,7 +452,7 @@ ul li a {
   }
 
   // Demo system greeting
-  appendMessage('AI Powered by GPT', 'system');
+  appendMessage('ChatBot Powered by Azure OpenAI', 'system');
 
   elToggle.addEventListener('click', () => setOpen(elWidget.hidden));
   elClose.addEventListener('click', () => setOpen(false));
