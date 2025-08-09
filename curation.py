@@ -3,17 +3,11 @@ import html
 import feedparser
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-
+# Regex to find the first <img src="...">
 IMG_SRC_REGEX = re.compile(r'<img[^>]+src=["\']([^"\'>]+)["\']', re.IGNORECASE)
 
-
 def normalize_image_url(url: str | None) -> str | None:
-    """
-    Clean and normalize an image URL:
-    - Unescape HTML entities (&amp; -> &)
-    - Trim quotes/whitespace
-    - Convert protocol-relative URLs (//...) to https://...
-    """
+    """Clean and normalize an image URL."""
     if not url:
         return None
     url = html.unescape(url).strip().strip('"').strip("'")
@@ -23,28 +17,22 @@ def normalize_image_url(url: str | None) -> str | None:
         url = "https:" + url
     return url
 
-
 def is_valid_image_url(url: str | None) -> bool:
-    """
-    Allow only http(s) URLs; reject empty, data:, javascript:, about:, etc.
-    """
+    """Allow only http(s) URLs."""
     if not url:
         return False
     url = url.lower()
     return url.startswith("http://") or url.startswith("https://")
 
-
 def extract_img_from_html(html_fragment: str) -> str | None:
-    """
-    Find the first <img src="..."> in an HTML fragment.
-    """
+    """Extract first image src from HTML content."""
     if not html_fragment:
         return None
     match = IMG_SRC_REGEX.search(html_fragment)
     return match.group(1) if match else None
 
-
 def get_article_content(entry):
+    """Extract relevant fields from an RSS entry."""
     title = getattr(entry, "title", "No Title Provided")
     summary = getattr(entry, "summary", "") or getattr(entry, "description", "No Summary Available")
     url = getattr(entry, "link", "#")
@@ -69,7 +57,7 @@ def get_article_content(entry):
                 image_url = enclosure.get("href")
                 break
 
-    # 4. <img> in summary/description
+    # 4. <img> in summary
     if not image_url:
         image_url = extract_img_from_html(summary)
 
@@ -89,16 +77,12 @@ def get_article_content(entry):
         "title": title,
         "summary": summary,
         "url": url,
-        **({"image_url": image_url} if image_url else {}),
+        "image_url": image_url,  # Always present, None if missing
         "style": "normal",
     }
 
-
 def fetch_and_parse_articles():
-    """
-    Fetches articles from various RSS feeds, categorizes them, filters to only those with images,
-    and returns a list.
-    """
+    """Fetch, parse, and filter articles to only those with valid images."""
     feeds = {
         "wall": [
             "https://www.investing.com/rss/news_25.rss",
@@ -145,8 +129,8 @@ def fetch_and_parse_articles():
                     total_seen += 1
                     article_data = get_article_content(entry)
 
-                    # Skip if no image_url
-                    if not article_data.get("image_url"):
+                    # Skip if no valid image
+                    if not is_valid_image_url(article_data["image_url"]):
                         skipped_no_image += 1
                         continue
 
@@ -162,26 +146,24 @@ def fetch_and_parse_articles():
     )
     return articles
 
-
 # --- Main script execution ---
 if __name__ == "__main__":
     articles = fetch_and_parse_articles()
 
-    # Set up Jinja2 environment to load templates from the 'templates' folder
+    # Set up Jinja2
     env = Environment(
         loader=FileSystemLoader(searchpath="templates"),
         autoescape=select_autoescape(["html", "xml"]),
     )
 
-    # Load your template file
+    # Load template
     template = env.get_template("index.html.j2")
 
-    # Render template with articles
+    # Render HTML
     rendered_html = template.render(articles=articles)
 
-    # Write rendered HTML to index.html
+    # Write to file
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(rendered_html)
 
     print("✅ index.html successfully generated with articles.")
-
