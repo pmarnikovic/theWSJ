@@ -221,11 +221,12 @@ ul li a {
 <br>
 <br>
 <br>
+<br>
 <div style="height: 20px;"></div>
 
     <main class="content">
         <section id="wall-street" class="news-category">
-            <h2>Wall Street News</h2>
+            <h1>Wall Street News</h1>
             <div class="articles">
                 {% for article in articles if article.category == 'wall' %}
                 <a href="{{ article.url }}" target="_blank">
@@ -242,7 +243,7 @@ ul li a {
 
 
         <section id="main-street" class="news-category">
-            <h2>Main Street News</h2>
+            <h1>Main Street News</h1>
             <div class="articles">
                 {% for article in articles if article.category == 'main' %}
                 <a href="{{ article.url }}" target="_blank">
@@ -258,7 +259,7 @@ ul li a {
         </section>
 
         <section id="meme-street" class="news-category">
-            <h2>Meme Street News</h2>
+            <h1>Meme Street News</h1>
             <div class="articles">
                 {% for article in articles if article.category == 'meme' %}
                 <a href="{{ article.url }}" target="_blank">
