@@ -239,7 +239,8 @@ img:not([src]) {
                 <a href="{{ article.url }}" target="_blank">
                     <article class="article-card {{ article.style }}">
                         {% if article.image_url %}
-                        <img src="{{ article.image_url }}" alt="">
+                        <img src="{{ article.image_url }}" alt=""
+                        onerror="this.style.display='none';">
                         {% endif %}
                         <h3>{{ article.title }}</h3>
                     </article>
