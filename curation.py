@@ -59,7 +59,7 @@ def fetch_and_parse_articles():
         "main": [
             "https://www.pbs.org/newshour/feeds/rss/editorials",
             "https://www.ft.com/?format=rss",
-            "http://rss.cnn.com/rss/cnn_topstories.rss",
+            "https://www.entrepreneur.com/latest/rss"
         ],
 
         "meme": [
