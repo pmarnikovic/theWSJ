@@ -57,7 +57,6 @@ def fetch_and_parse_articles():
     """
     feeds = {
         "wall": [
-            "http://www.marketwatch.com/rss/topstories",
             "https://finance.yahoo.com/news/rss",
             "https://moxie.foxbusiness.com/google-publisher/small-business.xml",
         ],
