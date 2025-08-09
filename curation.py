@@ -12,14 +12,14 @@ def get_article_content(entry):
 
     # 1. media_content
     media = getattr(entry, 'media_content', [])
-    if isinstance(media, list) and media:
-        image_url = media[0].get('url')
+#    if isinstance(media, list) and media:
+#        image_url = media[0].get('url')
 
     # 2. media_thumbnail
-#    if not image_url:
-#        thumbnail = getattr(entry, 'media_thumbnail', [])
-#        if isinstance(thumbnail, list) and thumbnail:
-#            image_url = thumbnail[0].get('url')
+    if image_url:
+        thumbnail = getattr(entry, 'media_thumbnail', [])
+        if isinstance(thumbnail, list) and thumbnail:
+            image_url = thumbnail[0].get('url')
 #
 #    # 3. enclosures
 #    if not image_url:
