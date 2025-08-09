@@ -61,10 +61,11 @@ def fetch_and_parse_articles():
             "https://finance.yahoo.com/topic/tech/rss",
             "https://finance.yahoo.com/topic/crypto/rss",
             "https://finance.yahoo.com/topic/earnings/rss",
-            "https://moxie.foxbusiness.com/google-publisher/small-business.xml",
+            
         ],
         "main": [
             "https://feeds.feedburner.com/SmallBusinessTrends",
+            "https://moxie.foxbusiness.com/google-publisher/small-business.xml",
             "https://smallbusinessbonfire.com/feed",
             "https://succeedasyourownboss.com/feed",
             "https://www.ft.com/?format=rss",            
