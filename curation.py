@@ -59,6 +59,8 @@ def fetch_and_parse_articles():
         "wall": [
             "https://finance.yahoo.com/topic/stock-market/rss",
             "https://finance.yahoo.com/topic/tech/rss",
+            "https://finance.yahoo.com/topic/crypto/rss",
+            "https://finance.yahoo.com/topic/earnings/rss",
             "https://moxie.foxbusiness.com/google-publisher/small-business.xml",
         ],
         "main": [
