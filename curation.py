@@ -56,17 +56,13 @@ def fetch_and_parse_articles():
             "https://feeds.finance.yahoo.com/rss/2.0/headline?s=yhoo&region=US&lang=en-US",
             "http://www.marketwatch.com/rss/topstories",
         ],
-        
         "main": [
-            "https://www.cbsnews.com/latest/rss/main",
-            "https://www.pbs.org/newshour/feeds/rss/editorials",
-            
+            "http://rss.cnn.com/rss/cnn_topstories.rss",
+            "https://www.npr.org/rss/rss.php?id=1001",
         ],
-
         "meme": [
             "https://www.reddit.com/r/wallstreetbets/.rss",
             "https://www.reddit.com/r/SuperStonk/.rss",
-        
         ]
     }
 
@@ -91,7 +87,7 @@ def fetch_and_parse_articles():
                     articles.append(article_data)
             except Exception as e:
                 print(f"An error occurred while processing feed {url}: {e}")
-                   
+
     print(f"✅ Successfully fetched {len(articles)} articles in total.")
     return articles
 
