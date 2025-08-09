@@ -113,10 +113,6 @@ ul li a {
     padding: 20;
 }
 
-#wall-street h2 {
-  text-decoration: underline;
-}
-
 #main-street {
     display: flex;
     flex-direction: column;
@@ -125,20 +121,12 @@ ul li a {
     padding: 20;
 }
 
-#main-street h2 {
-  text-decoration: underline;
-}
-
 #meme-street {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20;
-}
-
-#meme-street h2 {
-  text-decoration: underline;
 }
 
 #chatbot-widget {
@@ -230,12 +218,13 @@ ul li a {
             </nav>
         </div>
     </header>
-
+<br>
+<br>
 <div style="height: 20px;"></div>
 
     <main class="content">
         <section id="wall-street" class="news-category">
-            <h2>Wall Street</h2>
+            <h2>Wall Street News</h2>
             <div class="articles">
                 
                 <a href="https://www.marketwatch.com/story/is-gen-z-really-drinking-less-alcohol-or-just-being-choosier-about-when-they-indulge-i-love-a-good-mojito-388ae920?mod=mw_rss_topstories" target="_blank"><article class="article-card normal">
@@ -292,7 +281,7 @@ ul li a {
         </section>
 
         <section id="main-street" class="news-category">
-            <h2>Main Street</h2>
+            <h2>Main Street News</h2>
             <div class="articles">
                 
                 <a href="https://www.cnn.com/business/live-news/fox-news-dominion-trial-04-18-23/index.html" target="_blank"><article class="article-card normal">
@@ -694,7 +683,7 @@ ul li a {
         </section>
 
         <section id="meme-street" class="news-category">
-            <h2>Meme Street</h2>
+            <h2>Meme Street News</h2>
             <div class="articles">
                 
                 <a href="https://www.reddit.com/r/wallstreetbets/comments/1ml9qje/analysis_of_earnings_reports_for_week_0804/" target="_blank"><article class="article-card normal">
@@ -1013,7 +1002,7 @@ ul li a {
   #chatbot-toggle {
     position: fixed;
     right: max(16px, env(safe-area-inset-right));
-    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 190px);
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 0px);
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -1036,7 +1025,7 @@ ul li a {
   #chatbot-widget {
     position: fixed;
     right: max(16px, env(safe-area-inset-right));
-    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 0px);
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 80px);
     width: min(360px, 92vw);
     max-height: min(70vh, 560px);
     display: flex;
